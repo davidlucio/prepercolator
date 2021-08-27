@@ -1,0 +1,422 @@
+/** VARIABLES & FONTS **/
+:root{
+    --HardLuckFade:     rgba(102,102,119,.5);
+    --HardLuckShadow:   rgba(  50,  50,  50, 1);
+
+    --HardLuckGrey:     rgba(100,100,120,1);
+    --HardLuckLiteBlue: rgba(  0,180,220,1);
+    --HardLuckDarkBlue: rgba( 20, 50, 80,1);
+    --HardLuckOrange:   rgba(250, 150, 25,1);
+    
+    --textback:     2px    2px     0px var(--HardLuckShadow),
+                    -2px   2px     0px var(--HardLuckShadow),
+                    2px    -2px    0px var(--HardLuckShadow),
+                    -2px   -2px    0px var(--HardLuckShadow);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+
+/* Begin */
+
+body{
+    background-color: var(--HardLuckDarkBlue);
+    font-family: "Teko", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.center{
+    text-align: center;
+    margin:0px;
+}
+
+/********************************/
+/*********** HEADER *************/
+/********************************/
+
+header{
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+    min-height: 100px;
+    width: 100%;
+
+    background: url('../images/header-hardluck.png') no-repeat left 0px center / cover;
+
+}
+
+header h1,
+header h2 {
+    text-shadow: var(--textback);
+}
+
+header h1{
+    display:block;
+    position:absolute;
+    left:0px;
+    top: 0px;
+    padding:10px;
+    
+    font-size: 250%;
+}
+
+header h1 span{
+    display: block;
+
+    font-size:55%;
+    color: var(--HardLuckLiteBlue);
+}
+
+header h2{
+    display:block;
+    position:absolute;
+    bottom:0px;
+    right: 0px;
+
+    padding:10px;
+    text-align: right;
+    font-size:250%;
+    color: var(--HardLuckOrange);
+}
+
+/********************************/
+/********** NAVIGATION **********/
+/********************************/
+
+nav{
+    display:flex;
+    flex-flow: wrap;
+    padding-bottom:3px;
+    justify-content: center;
+    align-content: space-evenly;
+    align-items: center;
+    background: linear-gradient( rgb(180, 255, 255), var(--HardLuckLiteBlue) ) no-repeat center / cover;
+    font-size: 120%;
+}
+
+nav .menu-item{
+    flex: 1 1 20%;
+    text-align: center;
+    margin:9px;
+    padding:0px;
+    border-radius: 10px;
+}
+
+nav .menu-item a{
+    color: var(--HardLuckDarkBlue);
+    text-decoration: none;
+    padding: 0px 5px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+
+nav .menu-item a:hover{
+    border-color: var(--HardLuckOrange);
+    box-shadow: 2px 2px 2px 2px var(--HardLuckShadow);
+}
+
+nav .menu-item.menu-item.selected a{
+    background-color: var(--HardLuckOrange);
+    box-shadow: 2px 2px 2px 2px var(--HardLuckShadow);
+    color: black;
+}
+
+
+/********************************/
+/*********** CONTENT ************/
+/********************************/
+
+section{
+    max-width: 800px;
+    display: block;
+    position: relative;
+    margin: 20px auto 30px auto;
+    padding: 15px;
+}
+
+section h3{
+    font-size: 180%;
+    margin: 5px 0px 20px 0px;
+}
+
+section h4{
+    font-size: 120%;
+    margin: 0px 0px 15px 0px;
+}
+
+section p{
+    line-height: 120%;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+section hr{
+    margin: 30px 0px;
+}
+
+/*HOME*/
+
+section img.profile-picture{
+    width: 250px;
+    height: 250px;
+    margin: 0px 20px 20px 0px;
+    border-radius: 50%;
+    box-shadow: 7px 7px 10px 2px black;
+    float: left;
+}
+
+section img.puppy-picture{
+    width: 250px;
+    height: 250px;
+    margin: 0px 0px 20px 20px;
+    border-radius: 20px;
+    box-shadow: 7px 7px 10px 2px black;
+    float: right;
+}
+
+/*CARD*/
+
+section#Projects h3,
+section#Projects h4{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section#Projects h3.center{
+    margin-bottom: 0px;
+}
+
+section#Projects aside.project-choices{
+    display:flex;
+    flex-flow: row wrap;
+    align-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+section#Projects aside figure{
+    display:block;
+    position:relative;
+    flex: 2 2 30%;
+    width: calc(33% - 20px);
+    margin: 10px;
+    border: 5px inset black;
+}
+
+section#Projects aside figure img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+}
+
+section#Projects aside figure figcaption{
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 50px;
+    padding: 20px 10px 10px 10px;
+    color: white;
+    text-shadow: var(--textback);
+    background: linear-gradient(0deg, var(--HardLuckGrey), var(--HardLuckFade));
+}
+
+section#Projects aside figure:hover,
+section#Projects aside figure:focus,
+section#Projects aside figure.active{
+    transition: .5s ease;
+    border-color: var(--HardLuckOrange);
+}
+
+section#Projects aside figure:hover img{
+    transition: .5s ease;
+    opacity: .7;
+}
+
+/* FOCUS */
+
+section#Projects article{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-evenly;
+    justify-content: center;
+    align-items: self-start;
+
+    width: calc(100% - 10px);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    background: radial-gradient( circle at 0% 0%, black, var(--HardLuckGrey) );
+}
+
+section#Projects article img{
+    width: calc(50% - 10px);
+    margin: 0px 15px 0px 0px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 0px black;
+}
+
+section#Projects article div.description {
+    display: block;
+    position: relative;
+    width: calc(50% - 10px);
+}
+
+section#Projects article div.description p {
+    text-align: left;
+}
+
+section#Projects article a {
+    text-decoration: none;
+    color: var(--HardLuckLiteBlue);
+}
+
+section#Projects article a:hover {
+    text-shadow: var(--textback);
+}
+
+section#Projects article .repository-link {
+    display:block;
+    margin: 60px 0px 0px 0px;
+    font-weight: 800;
+    font-size: 125%;
+}
+
+/* CONTACT */
+
+section#Contact p{
+    width: 100%;
+    text-align: center;
+    font-size: 170%;
+    color: var(--HardLuckLiteBlue);
+}
+
+section#Contact p a{
+    text-decoration: none;
+    color: var(--HardLuckLiteBlue);
+}
+
+section#Contact p a:hover {
+    color: white;
+}
+
+
+
+p a::before{
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    margin-right: 15px;
+}
+
+p.contact-email a::before{
+    font-weight: 900;
+    content: "\f199";
+}
+
+p.contact-phone a::before{
+    font-weight: 900;
+    content: "\f098";
+}
+
+p.contact-linkedin a::before{
+    font-family: "Font Awesome 6 Brands";
+    content: "\f08c";
+}
+
+p.contact-github a::before{
+    font-family: "Font Awesome 6 Brands";
+    content: "\f092";
+}
+
+
+/********************************/
+/************ FOOTER ************/
+/********************************/
+
+footer{
+    display: block;
+    position:fixed;
+    width: 100vw;
+    bottom:0px;
+    left:0px;
+    background-color: black;
+}
+
+footer p{
+    padding: 5px;
+    text-align: center;
+    font-size: 80%;
+    font-weight: 400;
+}
+
+/********************************/
+/********** RESPONSIVE **********/
+/********************************/
+
+@media screen and (max-width: 780px) {
+
+    nav {
+        font-size:100%
+    }
+
+    nav .menu-item{
+        margin: 5px;
+    }
+
+    section#Projects aside figure{
+        flex: 1 1 50%;
+        width: calc(100% - 10px);
+        margin: 5px;
+    }
+
+    section#Projects aside figure img{
+        height: 90px;
+    }
+
+    section#Projects article img{
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+    }
+    
+    section#Projects article div.description {
+        width: 100%;
+    }
+
+    section#Projects article .repository-link {
+        margin: 30px 0px 0px 0px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    header h2{
+        display:none;
+    }
+
+    section img.profile-picture{
+        display:block;
+        float: unset;
+        margin: 0px auto 35px auto;
+    }
+
+    section img.puppy-picture{
+        width: 150px;
+        height: 150px;
+    }
+
+    section p{
+        text-align: left;
+    }
+
+    section h3{
+        text-align: center;;
+    }
+    
+}
