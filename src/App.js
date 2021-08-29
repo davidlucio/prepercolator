@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import UserContext from './components/context/UserContext';
-import MyComponent from './components/MyComponent';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+
+// import MyComponent from './components/MyComponent';
+import BusinessPortal from './pages/BusinessPortal';
+import './css/BisCss.css';
+import HomePage from './pages/HomePage';
+
 
 function App() {
   // Define global vars + setter functions as needed here (Keep setters below their vars)
   // Theme and Toggle
   const [ userTheme, setUserTheme ] = useState('light');
   const toggleUserTheme = () => {
-    switch (userTheme) {
-      case 'light':
-        setUserTheme('dark');
-        break;
-        
-        case 'dark':
-          setUserTheme('light');
-          break;
-
-      default :
-        break;
-    }
+    const currentTheme = userTheme
+     currentTheme === 'light' ? setUserTheme('dark') : setUserTheme('light');
   };
 
   // User Settings and Update Methods (dont think we want/need password in state...)
@@ -34,6 +35,7 @@ function App() {
 
   // Creating global obj of vars
   const user = {
+    admin: true,
     username: username,
     updateUserName,
     email: email,
@@ -76,7 +78,29 @@ function App() {
 
   return (
     <UserContext.Provider value={user}>
-      <MyComponent/>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+              <li>
+                <Link to="/supersecretbusinessportal">Business</Link>
+              </li>
+            </ul>
+          </nav>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/supersecretbusinessportal">
+              <BusinessPortal user={user}/>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </UserContext.Provider>
   )
 };
