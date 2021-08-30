@@ -1,5 +1,5 @@
-import axios from 'axios';
 import React from 'react';
+import axios from 'axios';
 import { Request } from 'react-axios';
 
 export default class BusinessPortal extends React.Component {
@@ -49,7 +49,7 @@ export default class BusinessPortal extends React.Component {
              ? <Request
                 instance={axios.create({})}
                 method="get"
-                url="http://localhost:3001/api/ingredients"
+                url="http://localhost:3001/api/ingredient/"
                 debounce={200}
                 isReady={true}
                 onSuccess={(response)=> {
@@ -58,7 +58,7 @@ export default class BusinessPortal extends React.Component {
                          <div className="bpAvailable">
                        <h3>Available Ingredients:</h3>
                         <ul>
-                         <li>Ingredient <span><button onClick={this.state.sellOutIngredient}>Sold Out</button><button onClick={this.state.removeIngredient}>Remove</button></span></li>
+                         <li>Ingredient Name <span><button onClick={this.state.sellOutIngredient}>Sold Out</button><button onClick={this.state.removeIngredient}>Remove</button></span></li>
                         </ul>
                       </div>
                       <div className="bpActions">
@@ -98,16 +98,12 @@ export default class BusinessPortal extends React.Component {
                 }}
                 onLoading={()=>{
                     return (
-                        <div>
-                            <p>Loading...</p>
-                        </div>
+                        <div>Loading...</div>
                     )
                 }}
                 onError={(error)=>{
                     return (
-                        <div>
-                            <p>Something went wrong...</p>
-                        </div>
+                        <div> {error} Something went wrong...</div>
                     )
                 }}
                 />
@@ -115,7 +111,7 @@ export default class BusinessPortal extends React.Component {
                 <Request
                  instance={axios.create({})}
                  method="get"
-                 url="http://localhost:3001/api/drinks"
+                 url="http://localhost:3001/api/drinks/"
                  debounce={200}
                  isReady={true}
                  onSuccess={(response)=>{
