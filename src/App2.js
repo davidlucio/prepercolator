@@ -7,10 +7,8 @@ import {
   Link
 } from 'react-router-dom';
 
-// import MyComponent from './components/MyComponent';
 import BusinessPortal from './pages/BusinessPortal';
-import './css/BisCss.css';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage'
 
 export default function App() {
   // Define global vars + setter functions as needed here (Keep setters below their vars)
