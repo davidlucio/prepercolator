@@ -13,7 +13,6 @@
         "web-vitals": "^1.1.2"
     },
     "scripts": {
-
         "build-css": "node-sass --include-path ./src --include-path ./node_modules src/ -o src/",
         "watch-css": "npm run build-css && node-sass --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
         "start": "npm-run-all -p watch-css start-js",
