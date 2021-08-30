@@ -1,15 +1,24 @@
 {
-    "name": "Map PWA",
-    "short_name": "Map PWA",
-    "start_url": ".",
-    "background_color": "#ABCDEF",
-    "theme_color": "#ABCDEF",
-    "display": "standalone",
-    "icons": [
-        {
-            "src": "./images/favicon.ico",
-            "sizes": "32x32",
-            "type": "image/x-icon"
-        }
-    ]
+  "short_name": "Prepercolator",
+  "name": "Prepercolator",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/images/appletouch.ico",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/logo_bold.png",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#00aabb",
+  "background_color": "#412919"
 }
