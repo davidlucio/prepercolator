@@ -34,6 +34,9 @@ function App() {
   };
 
   // Creating global obj of vars
+  // Is user already logged in?
+  // session ? user = { user } : user ={ user }
+
   const user = {
     admin: true,
     username: username,
@@ -77,25 +80,27 @@ function App() {
   }
 
   return (
+    // TODO: Set usercontext value equal to user data from login/session
     <UserContext.Provider value={user}>
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
+          <nav style={{backgroundColor:'whitesmoke', height: 'fit-content'}}>
+            <ul style={{display: 'flex', flexDirection: 'row'}}>
+              <li style={{margin: 10}}>
+                <Link style={{textDecoration: 'none'}} to="/">Home</Link>
               </li>
-              <li>
-                <Link to="/profile">Profile</Link>
+              <li style={{margin: 10}}>
+                <Link style={{textDecoration: 'none'}} to="/profile">Profile</Link>
               </li>
-              <li>
-                <Link to="/supersecretbusinessportal">Business</Link>
+              <li style={{margin: 10}}>
+                <Link style={{textDecoration: 'none'}} to="/supersecretbusinessportal">Business</Link>
               </li>
             </ul>
           </nav>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/supersecretbusinessportal">
+              {/* TODO: Feed Business Portal Session Data */}
               <BusinessPortal user={user}/>
             </Route>
           </Switch>
