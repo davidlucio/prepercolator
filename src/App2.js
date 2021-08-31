@@ -7,6 +7,8 @@ import {
   Link
 } from 'react-router-dom';
 
+import '../src/assets/styles/core.scss'
+
 import BusinessPortal from './pages/BusinessPortal';
 import HomePage from './pages/HomePage'
 

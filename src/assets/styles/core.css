@@ -40,109 +40,95 @@ ul {
 body {
   font-size: 18px;
   font-family: "Arimo", sans-serif; }
-
-body header {
-  display: block;
-  position: relative;
-  background-color: #00aabb;
-  height: 150px;
-  margin-bottom: 20px; }
-
-body header img.logo {
-  display: block;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 120px;
-  height: 120px;
-  background-color: #00aabb;
-  border: 0px #412919 solid;
-  border-radius: 50% 50% 50% 50%;
-  box-shadow: 5px 5px 7px 0px black; }
-
-body header nav {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: 15px;
-  align-items: flex-start;
-  justify-content: flex-end;
-  align-content: space-between;
-  background-color: #FFFFFF;
-  border-radius: 400px 0px 0px 0px / 100% 0px 0px 0px;
-  box-shadow: inset 7px 14px 15px -10px black; }
-
-body main {
-  display: block;
-  max-width: 800px;
-  padding: 15px;
-  margin: 0px auto 30px auto;
-  border: 1px solid black; }
-
-body main .my-cup {
-  display: flex;
-  position: relative;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 15px 0px 5px;
-  background-color: #E0DDB0;
-  border-bottom-left-radius: 100% 32px;
-  border-bottom-right-radius: 100% 32px;
-  box-shadow: 0px 20px 15px -23px black;
-  /* Ingredient Vars */
-  /* Inherited Vars */ }
-
-body main .my-cup.cup-8oz {
-  height: 300px;
-  width: 250px; }
-
-body main .my-cup.cup-12oz {
-  height: 400px;
-  width: 300px; }
-
-body main .my-cup.cup-16oz {
-  height: 500px;
-  width: 300px; }
-
-body main .my-cup::before {
-  content: "";
-  position: absolute;
-  height: calc(100% - 15px);
-  width: 20%;
-  top: 15px;
-  left: -13%;
-  background-color: #FFFFFF;
-  -webkit-transform: skewX(3deg); }
-
-body main .my-cup::after {
-  content: "";
-  position: absolute;
-  height: calc(100% - 15px);
-  width: 20%;
-  top: 15px;
-  right: -13%;
-  background-color: #FFFFFF;
-  -webkit-transform: skewX(-3deg); }
-
-body main .my-cup div.ingredient {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: -10px;
-  padding-top: 5px;
-  border-bottom-left-radius: 100% 32px;
-  border-bottom-right-radius: 100% 32px;
-  color: #FFFFFF; }
-
-body main .my-cup div.ingredient.coffee {
-  height: 50%;
-  background: linear-gradient(180deg, #2e1f15 0%, #2e1f15 50%, #000000 100%); }
-
-body main .my-cup div.ingredient.syrup {
-  height: 10%;
-  background: linear-gradient(180deg, #661133 0%, #661133 50%, #000000 100%); }
-
-body main .my-cup div.ingredient.percent-10 {
-  height: 10%; }
+  body header {
+    display: block;
+    position: relative;
+    background-color: #00aabb;
+    height: 150px;
+    margin-bottom: 20px; }
+    body header img.logo {
+      display: block;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 120px;
+      height: 120px;
+      background-color: #00aabb;
+      border: 0px #412919 solid;
+      border-radius: 50% 50% 50% 50%;
+      box-shadow: 5px 5px 7px 0px black; }
+    body header nav {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      align-items: flex-start;
+      justify-content: flex-end;
+      align-content: space-between;
+      background-color: #FFFFFF;
+      border-radius: 400px 0px 0px 0px / 100% 0px 0px 0px;
+      box-shadow: inset 7px 14px 15px -10px black; }
+  body main {
+    display: block;
+    max-width: 800px;
+    padding: 15px;
+    margin: 0px auto 30px auto;
+    border: 1px solid black; }
+    body main .my-cup {
+      display: flex;
+      position: relative;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 15px 0px 5px;
+      background-color: #E0DDB0;
+      border-bottom-left-radius: 100% 32px;
+      border-bottom-right-radius: 100% 32px;
+      box-shadow: 0px 20px 15px -23px black;
+      /* Ingredient Vars */
+      /* Inherited Vars */ }
+      body main .my-cup.cup-8oz {
+        height: 300px;
+        width: 250px; }
+      body main .my-cup.cup-12oz {
+        height: 400px;
+        width: 300px; }
+      body main .my-cup.cup-16oz {
+        height: 500px;
+        width: 300px; }
+      body main .my-cup::before {
+        content: "";
+        position: absolute;
+        height: calc(100% - 15px);
+        width: 20%;
+        top: 15px;
+        left: -13%;
+        background-color: #FFFFFF;
+        -webkit-transform: skewX(3deg); }
+      body main .my-cup::after {
+        content: "";
+        position: absolute;
+        height: calc(100% - 15px);
+        width: 20%;
+        top: 15px;
+        right: -13%;
+        background-color: #FFFFFF;
+        -webkit-transform: skewX(-3deg); }
+      body main .my-cup div.ingredient {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: -10px;
+        padding-top: 5px;
+        border-bottom-left-radius: 100% 32px;
+        border-bottom-right-radius: 100% 32px;
+        color: #FFFFFF; }
+        body main .my-cup div.ingredient.coffee {
+          height: 50%;
+          background: linear-gradient(180deg, #2e1f15 0%, #2e1f15 50%, #000000 100%); }
+        body main .my-cup div.ingredient.syrup {
+          height: 10%;
+          background: linear-gradient(180deg, #661133 0%, #661133 50%, #000000 100%); }
+        body main .my-cup div.ingredient.percent-10 {
+          height: 10%; }
