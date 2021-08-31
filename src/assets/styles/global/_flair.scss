@@ -11,5 +11,9 @@
     @else if $location==bottomright {
         box-shadow: 5px 5px 7px 0px black;
     }
+    
+    @else if $location==icon {
+        box-shadow: 5px 10px 8px -5px black;
+    }
 
 }
