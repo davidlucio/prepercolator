@@ -17,6 +17,9 @@ const API = {
     },
     addNewDrinkTemplate: function(newDrinkTemplate){
         return axios.post(`${URL_PREFIX}/drinks/`);
+    },
+    deleteIngredientById: function(id){
+        return axios.delete(`${URL_PREFIX}/ingredients/${id}`);
     }
 }
 
