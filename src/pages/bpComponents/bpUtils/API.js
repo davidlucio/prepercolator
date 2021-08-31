@@ -8,6 +8,15 @@ const API = {
     },
     getDrinkTemplates: function(){
         return axios.get(`${URL_PREFIX}/drinks/`);
+    },
+    getTypes: function(){
+        return axios.get(`${URL_PREFIX}/types/`);
+    },
+    addNewIngredient: function(newIngredient){
+        return axios.post(`${URL_PREFIX}/ingredients/`, newIngredient);
+    },
+    addNewDrinkTemplate: function(newDrinkTemplate){
+        return axios.post(`${URL_PREFIX}/drinks/`);
     }
 }
 

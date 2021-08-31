@@ -11,26 +11,6 @@ export default function BusinessPortal({ user }) {
         ingredientType: null,
         isVegan: false,
     })
-    const handleInputChange = (event) => {
-        switch (event.target.type) {
-            case 'checkbox': 
-                const value = !this.state.newIngredient.isVegan;
-                this.setState({newIngredient: { isVegan: value }})
-                break;
-            case 'text': 
-                this.setState({ingredientName:event.target.value})
-                break;
-            case 'select':
-                this.setState({ingredientType: event.target.key})
-                break;
-            default:
-                break;
-        }
-    }
-    const sellOutIngredient = (event) => {
-        // const ingredientId = event.target.key;
-        return event.target.key;
-    }
 
     return (
         <div className="businessPortal">
