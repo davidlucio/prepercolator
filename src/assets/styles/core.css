@@ -139,6 +139,7 @@ body main .cup-holder .my-cup div.ingredient {
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 7%;
   margin-top: -10px;
   padding-top: 5px;
   border-bottom-left-radius: 100% 32px;
@@ -152,9 +153,6 @@ body main .cup-holder .my-cup div.ingredient.coffee {
 body main .cup-holder .my-cup div.ingredient.syrup {
   height: 10%;
   background: linear-gradient(180deg, #661133 0%, #661133 50%, #000000 100%); }
-
-body main .cup-holder .my-cup div.ingredient.percent-5 {
-  height: 5%; }
 
 body main .cup-holder .my-cup div.ingredient.percent-10 {
   height: 10%; }
