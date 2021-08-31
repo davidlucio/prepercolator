@@ -12,6 +12,13 @@ export default function IngredientsTable() {
     });
   }, []);
 
+  const updateTable = () => {
+    API.getIngredients().then((res) => {
+      console.log(res.data);
+      setIngredients(res.data);
+    });
+  };
+
   const sellOutIngredient = (event) => {
     let id = event.target.value;
     console.log(`Setting IngredientID:${id} to sold out`);
@@ -27,6 +34,7 @@ export default function IngredientsTable() {
     API.deleteIngredientById(id).then((res) => {
       console.log(`Successfully deleted Ingredient. ${res}`);
     });
+    updateTable();
   };
 
   return (
@@ -50,7 +58,7 @@ export default function IngredientsTable() {
           })}
         </ul>
       </div>
-      <NewIngredientForm />
+      <NewIngredientForm updateTable={updateTable} />
     </div>
   );
 }
