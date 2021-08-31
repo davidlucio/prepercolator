@@ -2,13 +2,30 @@ import React, { useState, useEffect } from 'react';
 import API from './bpUtils/API';
 
 export default function IngredientsTable() {
+
   const [ingredients, setIngredients] = useState([]);
+  const [deleteStage, setDeleteStage] = useState(0);
   useEffect(()=>{
     API.getIngredients().then((res)=>{
       console.log(res.data);
       setIngredients(res.data);
     })
   },[])
+
+  const sellOutIngredient = (event) => {
+    let id = event.target.value;
+    console.log(`Setting IngredientID:${id} to sold out`);
+    
+  }
+  const promptDelete = (event) => {
+    setDeleteStage('X')
+  }
+  const deleteIngredient = (event) => {
+    console.log('User double-clicked delete, move to delete item')
+    setDeleteStage(0);
+    
+  }
+
     return (
         <div className="bpViewIngredients">
           <div className="bpAvailable">
@@ -16,7 +33,13 @@ export default function IngredientsTable() {
               <ul>
                 { 
                   ingredients.map((ingredient)=>{
-                    return <li key={ingredient.id}>{ingredient.ingredient_name} <span><button>Sell Out</button><button>Remove</button></span></li>
+                    return (
+                      <li>
+                        <p key={ingredient.id}>{ingredient.ingredient_name}</p> 
+                        <button value={ingredient.id} onClick={sellOutIngredient}>Sell Out</button>
+                        <button value={ingredient.id} onClick={promptDelete} onDoubleClick={deleteIngredient}>Delete</button>
+                      </li>
+                    )
                   })
                 }
               </ul>

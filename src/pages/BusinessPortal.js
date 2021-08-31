@@ -27,10 +27,6 @@ export default function BusinessPortal({ user }) {
                 break;
         }
     }
-    const sellOutIngredient = (event) => {
-        // const ingredientId = event.target.key;
-        return event.target.key;
-    }
 
     return (
         <div className="businessPortal">

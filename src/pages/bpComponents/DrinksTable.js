@@ -15,7 +15,7 @@ export default function DrinksTable() {
         <div className="bpViewDrinks">
           <div className="bpDrinkTemplates">
               <h3>Current Drink Templates:</h3>
-              { drinks.map(drink=>{
+              {/* { drinks.map(drink=>{
                   return(
                       <>
                         <h5 key={drink.id}>{drink.drink_name}</h5>
@@ -26,7 +26,7 @@ export default function DrinksTable() {
                         </ul>
                       </>
                   )
-              })}
+              })} */}
           </div>
         </div>
     )
