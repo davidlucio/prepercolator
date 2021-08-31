@@ -6,6 +6,7 @@ import UserContext from "./components/context/UserContext";
 
 export default function App() {
   const user = {
+    id: 1,
     admin: true,
     username: "Testing User",
     email: "test@test.test",

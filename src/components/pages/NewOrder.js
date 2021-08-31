@@ -4,8 +4,8 @@ import OrderCard from "../cards/OrderCard";
 
 export default function NewOrder() {
   return (
-    <div className="newOrderPage">
+    <main className="newOrderPage">
       <OrderCard />
-    </div>
+    </main>
   );
 }
