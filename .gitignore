@@ -130,4 +130,3 @@ yarn-error.log*
 # Manual
 
 /.vscode
-package-lock.json

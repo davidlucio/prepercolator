@@ -3,5 +3,12 @@
 @import "./global/_colors.scss";
 @import "./global/_fonts.scss";
 @import "./global/_images.scss";
+@import "./global/_flair.scss";
 
-@import "./components/_header.scss";
+body{
+    font-size: 18px;
+    font-family: $font_1;
+
+    @import "./components/_header.scss";
+    @import "./components/_content.scss";
+}
