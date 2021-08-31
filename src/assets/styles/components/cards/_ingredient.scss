@@ -34,7 +34,11 @@ div.ingredient {
         background: $color_syrup;
     }
 
-    &.percent-10{
-        height: 10%;
+    // Percentage based heights for dynamic calculations
+    @for $i from 1 through 20{
+        &.percent-#{$i * 5} { 
+            height: #{$i * 5%};
+        }
     }
+
 }

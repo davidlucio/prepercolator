@@ -1,59 +1,72 @@
 // Cup Vars
     $cup_lip: 15px;
     $cup_curve: 100% 32px;
-    $color_cup: #E0DDB0;
 
-.my-cup{
+    //$color_cup: #E0DDB0;
+    $color_cup: linear-gradient(121deg,
+    #E0DDB0 0%,
+    #E0DDB0 41%,
+    #000000 100%);
 
+.cup-holder{
     display: flex;
-    position: relative;
-    flex-direction: column-reverse; // NOTE: REVERSED FOR STACKS
-    align-items: center;            // Horizontal (as Column)
-    justify-content: flex-start;    // Vertical (as Column)
-    // align-content: space-between;  // Distance apart
-    
-    padding: $cup_lip 0px 5px;
-    background-color: $color_cup;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
 
-    border-bottom-left-radius: $cup_curve;
-    border-bottom-right-radius: $cup_curve;
-    @include shadow(bottom);
-    
-    &.cup-8oz{
-        height: 300px;
-        width: 250px;
-    }
-    &.cup-12oz{
-        height: 400px;
-        width: 300px;
-    }
-    &.cup-16oz{
-        height: 500px;
-        width: 300px;
-    }
+    .my-cup{
 
-    // Left side skew
-    &::before{
-        content: "";
-        position: absolute;
-        height: calc(100% - #{$cup_lip});
-        width: 20%;
-        top: $cup_lip;
-        left: -13%;
-        background-color: $background-light;
-        -webkit-transform: skewX(3deg);
-    }
-    &::after{
-        content: "";
-        position: absolute;
-        height: calc(100% - #{$cup_lip});
-        width: 20%;
-        top: $cup_lip;
-        right: -13%;
-        background-color: $background-light;
-        -webkit-transform: skewX(-3deg);
-    }
+        display: flex;
+        position: relative;
+        flex-direction: column-reverse; // NOTE: REVERSED FOR STACKS
+        align-items: center;            // Horizontal (as Column)
+        justify-content: flex-start;    // Vertical (as Column)
+        // align-content: space-between;  // Distance apart
+        
+        padding: #{$cup_lip + 10px} 0px 5px;
+        background: $color_cup;
 
-    @import "_ingredient.scss";
+        border-bottom-left-radius: $cup_curve;
+        border-bottom-right-radius: $cup_curve;
+        @include shadow(bottom);
+        
+        &.cup-8oz{
+            height: 300px;
+            width: 250px;
+        }
+        &.cup-12oz{
+            height: 400px;
+            width: 300px;
+        }
+        &.cup-16oz{
+            height: 500px;
+            width: 300px;
+        }
 
+        // Left side skew
+        &::before{
+            content: "";
+            position: absolute;
+            height: calc(100% - #{$cup_lip});
+            width: 20%;
+            top: $cup_lip;
+            left: -13%;
+            background-color: $background-light;
+            -webkit-transform: skewX(3deg);
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            height: calc(100% - #{$cup_lip});
+            width: 20%;
+            top: $cup_lip;
+            right: -13%;
+            background-color: $background-light;
+            -webkit-transform: skewX(-3deg);
+        }
+
+        @import "_ingredient.scss";
+
+    }
 }
