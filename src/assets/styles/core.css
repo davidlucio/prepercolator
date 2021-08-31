@@ -132,3 +132,14 @@ body {
           background: linear-gradient(180deg, #661133 0%, #661133 50%, #000000 100%); }
         body main .my-cup div.ingredient.percent-10 {
           height: 10%; }
+    body main .businesssPortal {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      body main .businesssPortal .bpViewSelect {
+        display: flex;
+        flex-direction: row; }
+        body main .businesssPortal .bpViewSelect .bpWelcome {
+          font-size: 2rem; }
