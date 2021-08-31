@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 
-export default function NewIngredientForm() {
+export default function NewIngredientForm({ updateTable }) {
   const [newExistingType, setNewExistingType] = useState(false);
   const [types, setTypes] = useState([]);
   const [newIngredient, setNewIngredient] = useState({
     ingredient_name: "",
-    type_id: null,
+    typeId: 0,
     is_vegan: false,
+    price_per_unit: 1.0,
+    tier: "Base",
   });
 
   useEffect(() => {
@@ -18,11 +20,11 @@ export default function NewIngredientForm() {
   }, []);
 
   const handleInputChange = (event) => {
-    switch (event.target.type) {
-      case "checkbox":
+    switch (event.target.name) {
+      case "newExisting":
         setNewExistingType(!newExistingType);
         break;
-      case "text":
+      case "ingredientName":
         if (event.target.name === "ingredientName") {
           const value = {
             ...newIngredient,
@@ -31,16 +33,29 @@ export default function NewIngredientForm() {
           setNewIngredient(value);
         }
         break;
-      case "select":
+      case "ingredientType":
         if (event.target.name === "ingredientType") {
-          console.log(event.target.value);
           const value = {
             ...newIngredient,
-            type_id: event.target.value,
+            typeId: event.target.value,
           };
           setNewIngredient(value);
           break;
         }
+      case "pricePerUnit":
+        let past = {
+          ...newIngredient,
+          price_per_unit: event.target.value,
+        };
+        setNewIngredient(past);
+        break;
+      case "tier":
+        let paast = {
+          ...newIngredient,
+          tier: event.target.value,
+        };
+        setNewIngredient(paast);
+        break;
     }
   };
 
@@ -53,6 +68,14 @@ export default function NewIngredientForm() {
         console.log(`New Ingredient added: ${res}`);
       });
     }
+    setNewIngredient({
+      ingredient_name: "",
+      typeId: 0,
+      is_vegan: false,
+      price_per_unit: 1.0,
+      tier: "Base",
+    });
+    updateTable();
   };
 
   return (
@@ -111,12 +134,35 @@ export default function NewIngredientForm() {
             value={newIngredient.ingredient_name}
           />
           <label className="bpActionsCbLabel">
+            Tier:
+            <select
+              name="tier"
+              value={newIngredient.tier}
+              onChange={handleInputChange}
+            >
+              <option value={"Base"}>Base</option>
+              <option value={"Main"}>Main</option>
+              <option value={"Flavor"}>Flavor</option>
+              <option value={"Topping"}>Topping</option>
+            </select>
+          </label>
+          <label className="bpActionsCbLabel">
             Vegan:
             <input
               className="bpActionsCb"
               name="isVegan"
               type="checkbox"
               checked={newIngredient.is_vegan}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label className="bpActionsCbLabel">
+            Price per Unit:
+            <input
+              className="bpActionsCb"
+              name="pricePerUnit"
+              type="number"
+              value={newIngredient.price_per_unit}
               onChange={handleInputChange}
             />
           </label>

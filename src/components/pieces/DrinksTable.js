@@ -4,7 +4,7 @@ import API from "../utils/API";
 import DrinkTemplateCard from "../cards/DrinkTemplateCard";
 import NewDrinkTemplateForm from "../forms/NewDrinkTemplateForm";
 
-export default function DrinksTable() {
+export default function DrinksTable({ user }) {
   const [drinks, setDrinks] = useState([]);
   const [ingredients, setIngredients] = useState([]);
 
@@ -28,7 +28,7 @@ export default function DrinksTable() {
             return <DrinkTemplateCard key={drink.id} drink={drink} />;
           })}
         </div>
-        <NewDrinkTemplateForm ingredients={ingredients} />
+        <NewDrinkTemplateForm user={user} ingredients={ingredients} />
       </div>
     </div>
   );
