@@ -8,3 +8,21 @@ $font_2: 'Lemonada', cursive;
 $font_3: 'Medula One', cursive;
 
 // Font Awesome Icons 
+
+@mixin icon($name, $try: 400){
+    
+    font-family: "Font Awesome 6 Pro";
+    font-weight: $try;
+
+    @if $name=="plus"{
+        content: '\f055';
+    }
+
+    @else if $name=="minus"{
+        content: '\f056';
+    }
+
+    @else{
+        content: '\f06a';
+    }
+}

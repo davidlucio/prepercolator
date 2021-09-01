@@ -4,7 +4,7 @@ header{
     width: 100%;
     background-color: $color-primary1;
     height: 150px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 
     img.logo{
         display: block;
@@ -17,7 +17,6 @@ header{
         height: 120px;
 
         background-color: $color-primary1;
-        // border: 5px $color-primary2 solid;
         border-radius: 50% 50% 50% 50%;
         @include shadow(icon);
     }
