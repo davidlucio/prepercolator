@@ -8,10 +8,10 @@ export default function Login(props) {
   const [password, setPassword] = useState("");
   let history = useHistory();
   useEffect(() => {
-    if (props.user.token) {
+    if (props.user?.username) {
       history.push("/");
     }
-  }, [props.user]);
+  }, [props.user?.username]);
   const handleChange = (e) => {
     switch (e.target.name) {
       case "username":
@@ -35,13 +35,14 @@ export default function Login(props) {
       email: email,
       password: password,
     };
-
+    console.log(loginUser);
     const res = await API.login(loginUser);
     const user = res.data;
+    console.log(user);
     if (user !== undefined) {
       localStorage.setItem("token", user.token);
       console.log(user);
-      props.setUser(user);
+      props.setUser(user.user);
       history.push("/");
     } else {
       return <div>Incorrect Username, email or password</div>;
