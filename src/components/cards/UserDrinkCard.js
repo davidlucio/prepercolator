@@ -1,5 +1,5 @@
 import React from 'react';
-import Cup from './Cup';
+import Cup from './UserCurrentCup';
 
 export default function UserDrinkCard({ drink, user }){
     return (

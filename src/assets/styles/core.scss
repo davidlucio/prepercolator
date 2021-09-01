@@ -1,15 +1,23 @@
-@import "reset.scss";
+/** Reset All Styles **/
+@import "./reset/reset.scss";
 
+/** Variable files (Some Brand Specific) **/
 @import "./global/_colors.scss";
 @import "./global/_fonts.scss";
 @import "./global/_images.scss";
 @import "./global/_flair.scss";
 
+/** Page Elements **/
 body{
     font-size: 18px;
     font-family: $font_1;
 
+    /** <header> **/
     @import "./components/_header.scss";
+
+    /** <main> **/
     @import "./components/_content.scss";
+
+    /** <footer> **/
     @import "./components/_footer.scss";
 }

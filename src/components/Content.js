@@ -1,5 +1,7 @@
-import React from "react";
+/** FORMER ROUTER - DEPRECATED **/
 
-export default function Content({ drinkIngredients, setDrinkIngredients }) {
-  return <main className="currentPage"></main>;
-}
+// import React from "react";
+
+// export default function Content({ drinkIngredients, setDrinkIngredients }) {
+//   return <main className="currentPage"></main>;
+// }
