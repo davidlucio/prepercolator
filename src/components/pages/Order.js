@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 
-import OrderCard from "../cards/OrderCard";
+
 import Header from "../Header";
+import OrderCard from "../cards/OrderCard";
+import Footer from "../Footer";
+
 
 export default function Order({ user }) {
-  const [order, setOrder] = useState([]);
+    const [order, setOrder] = useState([]);
 
-  return (
-    <main className="newOrderPage">
-      <Header user={user} />
-      <OrderCard user={user} order={order} setOrder={setOrder} />
-    </main>
-  );
+    return (
+        <>
+            <Header user={user} />
+            <main className="newOrderPage">
+                <OrderCard user={user} order={order} setOrder={setOrder} />
+            </main>
+            <Footer/>
+        </>
+    );
 }

@@ -1,3 +1,4 @@
+/** Reset All Styles **/
 @import url("https://fonts.googleapis.com/css2?family=Arimo&family=Lemonada:wght@300&family=Medula+One&display=swap");
 * {
   margin: 0;
@@ -35,13 +36,18 @@ ol,
 ul {
   list-style: none; }
 
+/** Variable files (Some Brand Specific) **/
 /** BRAND COLORS **/
 /** GLOBAL FONTS **/
 /** SPRITES **/
+/** Page Elements **/
 body {
   font-size: 18px;
   font-family: "Arimo", sans-serif;
-  /** Overwrite for React root **/ }
+  /** <header> **/
+  /** <main> **/
+  /** Overwrite for React root **/
+  /** <footer> **/ }
   body header {
     display: block;
     position: relative;

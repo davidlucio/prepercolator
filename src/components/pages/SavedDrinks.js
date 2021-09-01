@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import UserDrinkCard from "./UserDrinkCard";
+import UserDrinkCard from "../cards/UserDrinkCard";
 
 export default function SavedDrinks({ user }) {
   return (
