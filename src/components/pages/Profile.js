@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import SavedDrinks from "../cards/SavedDrinks";
-import Settings from "../pages/Settings";
+import Settings from "../cards/Settings";
+import Header from "../Header";
 
-export default function Profile({ user }) {
+import UserContext from "../context/UserContext";
+
+export default function Profile() {
+  const user = useContext(UserContext);
   return (
     <main>
+      <Header user={user} />
       <h2>{user.username}'s Profile</h2>
       <SavedDrinks user={user} />
       <Settings user={user} />

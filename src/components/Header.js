@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../assets/images/logo_bold.png";
+import UserContext from "./context/UserContext";
 
-export default function Header({ user }) {
+export default function Header() {
+  const user = useContext(UserContext);
+
+  const logout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("userId");
+  };
   return (
     <header>
       <nav>
@@ -15,11 +22,14 @@ export default function Header({ user }) {
           <li>
             <Link to="/user/profile">Profile</Link>
           </li>
-          {/* If user logged in... add link to saved drink/profile,
-          else link to signup/login */}
-          {user.admin ? (
+          {user.admin === true ? (
             <li>
               <Link to="/supersecretbusinessportal">Business</Link>
+            </li>
+          ) : null}
+          {user ? (
+            <li>
+              <button onClick={logout}>Logout</button>
             </li>
           ) : null}
         </ul>

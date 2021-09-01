@@ -47,10 +47,5 @@ export default function App() {
     },
   };
 
-  return (
-    <Nav>
-      <Header />
-      <Footer />
-    </Nav>
-  );
+  return <Nav />;
 }

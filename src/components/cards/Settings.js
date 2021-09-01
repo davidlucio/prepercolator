@@ -1,5 +1,7 @@
 import React from "react";
 
+import Header from "../Header";
+
 export default function Settings({ user }) {
   return (
     <main className="userSettings">

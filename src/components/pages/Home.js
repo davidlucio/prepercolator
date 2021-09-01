@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Cup from "../cards/Cup";
+
+import Header from "../Header";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Home({ user }) {
   return (
     <main>
+      <Header user={user} />
       <section className="ingredientList">
         <div className="anti-scroll">
           <ul className="ingredients-bases">
