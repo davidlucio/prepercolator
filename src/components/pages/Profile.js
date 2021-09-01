@@ -3,15 +3,13 @@ import SavedDrinks from "../cards/SavedDrinks";
 import Settings from "../cards/Settings";
 import Header from "../Header";
 
-import UserContext from "../context/UserContext";
 import { useHistory } from "react-router-dom";
 
-export default function Profile() {
-  const user = useContext(UserContext);
+export default function Profile({ user }) {
   let history = useHistory();
 
   useEffect(() => {
-    if (!user.token) {
+    if (!user.username) {
       history.push("/login");
     }
   }, []);

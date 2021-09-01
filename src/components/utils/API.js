@@ -25,13 +25,25 @@ const API = {
     return axios.delete(`${URL_PREFIX}/ingredients/${id}`);
   },
   getUserByToken: function (token) {
-    return axios.get(`${URL_PREFIX}/users/${token}`);
+    return axios.get(`${URL_PREFIX}/users/user`, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
   },
   deleteUserByToken: function (token) {
-    return axios.delete(`${URL_PREFIX}/users/${token}`);
+    return axios.delete(`${URL_PREFIX}/users/delete`, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
   },
   getOrderbyUserToken: function (token) {
-    return axios.get(`${URL_PREFIX}/orders/${token}`);
+    return axios.get(`${URL_PREFIX}/orders/${token}`, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
   },
   login: function (user) {
     return axios.post(`${URL_PREFIX}/users/login`, user);

@@ -8,7 +8,7 @@ export default function SavedDrinks({ user }) {
     <main>
       <h2>{user.username}'s Saved Drinks</h2>
       <div className="drinkSlideshow">
-        {user.token ? (
+        {user.drinks ? (
           <>
             {user.drinks.map((drink) => {
               return <UserDrinkCard key={drink.id} drink={drink} user={user} />;
