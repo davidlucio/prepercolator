@@ -2,27 +2,26 @@ import React, { useState, useEffect } from "react";
 
 import Cup from "../cards/Cup";
 import Content from "../Content";
-import DrinksTable from "../pieces/DrinksTable";
 import API from "../utils/API";
 
 import Header from "../Header";
 
 export default function Drink({ user }) {
   const [size, setSize] = useState(12);
+  const [drinkName, setDrinkName] = useState("");
   const [drinkIngredients, setDrinkIngredients] = useState([]);
   const [drinkIngredientsAmnt, setDrinkIngredientsAmnt] = useState([]);
-  const [drinkName, setDrinkName] = useState("");
 
   useEffect(() => {
-    // Check drink size against sum of drinkIngredients to see if drink has room for more ingredients
-    const sumIngr = 0;
-    drinkIngredients.forEach((drink) => {
-      sumIngr = sumIngr + drink.unitAmount;
-    });
-    if (sumIngr > size) {
-      return <div>You've added more than fits in your cup!!</div>;
-    }
-  });
+    // TODO: (MAYBE) Check drink size against sum of drinkIngredients to see if drink has room for more ingredients
+    // const sumIngr = 0;
+    // drinkIngredients.forEach((drink) => {
+    //   sumIngr = sumIngr + drink.unitAmount;
+    // });
+    // if (sumIngr > size) {
+    //   return <div>You've added more than fits in your cup!!</div>;
+    // }
+  }, []);
 
   const addIngredient = (id) => {
     API.getIngredients().then((res) => {
@@ -61,8 +60,17 @@ export default function Drink({ user }) {
       <Header user={user} />
       <Cup cupSize={size} drinkIngredients={drinkIngredients} />
       <Content
+        size={size}
+        setSize={setSize}
+        drinkName={drinkName}
+        setDrinkName={setDrinkName}
         drinkIngredients={drinkIngredients}
         setDrinkIngredients={setDrinkIngredients}
+        addIngredient={addIngredient}
+        removeIngredient={removeIngredient}
+        saveDrink={saveDrink}
+        drinkIngredientsAmnt={drinkIngredientsAmnt}
+        setDrinkIngredientsAmnt={setDrinkIngredientsAmnt}
       />
     </main>
   );
