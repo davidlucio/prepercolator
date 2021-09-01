@@ -17,6 +17,7 @@ div.ingredient {
     justify-content: center;    // Vertical
 
     width: 100%;
+    min-height: 7%;
     margin-top: -10px;
     padding-top: 5px;
 
@@ -35,10 +36,33 @@ div.ingredient {
     }
 
     // Percentage based heights for dynamic calculations
-    @for $i from 1 through 20{
+    @for $i from 2 through 20{
         &.percent-#{$i * 5} { 
             height: #{$i * 5%};
         }
+    }
+
+    span{
+        position:relative;
+
+        &::after{
+            position: relative;
+            top: 0px;
+            right:-5px;
+            font-size: 90%;
+            @include icon('minus', 900);
+        }
+
+        &:hover, &:focus{
+            color: $color-primary1;
+            //text-shadow: 0 0 3px $font-white;
+            font-weight: 600;
+
+            &::after{
+                color: red;
+            }
+        }
+        
     }
 
 }
