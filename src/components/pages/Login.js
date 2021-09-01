@@ -2,6 +2,8 @@ import React, { useState, createContext } from "react";
 import { Redirect } from "react-router-dom";
 import API from "../utils/API";
 
+import Nav from "../Nav";
+
 export default function Login({ user, setUser }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -32,18 +34,18 @@ export default function Login({ user, setUser }) {
 
     const res = await API.login(loginUser);
     const user = res.data;
-
-    if (user) {
-      user.isAuthenticated = true;
-      const UserContext = createContext(user);
-      return <Redirect to="/" user={user} />;
+    if (user !== undefined) {
+      console.log(user);
+      sessionStorage.setItem("userId", user.id);
+      localStorage.setItem("userId", user.id);
+      return <Redirect to="/" />;
     } else {
       return <div>Incorrect Username, email or password</div>;
     }
   };
 
   return (
-    <div>
+    <main>
       <h3>Sign in</h3>
       <div>
         <input
@@ -68,6 +70,6 @@ export default function Login({ user, setUser }) {
       <button type="submit" name="login" onClick={handleLogin}>
         Login
       </button>
-    </div>
+    </main>
   );
 }

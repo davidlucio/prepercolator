@@ -27,6 +27,9 @@ const API = {
   getUserSavedDrinks: function (id) {
     return axios.get(`${URL_PREFIX}/users/${id}/savedDrinks`);
   },
+  getUserById: function (id) {
+    return axios.get(`${URL_PREFIX}/users/${id}`);
+  },
   // NEED TO IMPLEMENT THESE TWO (API.LOGIN.then((res)=>{console.log(res.data)SOMETHINGELSE}))
   login: function (user) {
     return axios.post(`${URL_PREFIX}/users/login`, user);

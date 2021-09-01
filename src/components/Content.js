@@ -1,6 +1,5 @@
 import React from "react";
-import Home from "./pages/Home";
 
-export default function Content() {
+export default function Content({ drinkIngredients, setDrinkIngredients }) {
   return <main className="currentPage"></main>;
 }

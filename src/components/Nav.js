@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,8 +6,10 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Home from "./pages/Home";
+import API from "./utils/API";
+
 import BusinessPortal from "./pages/BusinessPortal";
+import Home from "./pages/Home";
 import SavedDrinks from "./cards/SavedDrinks";
 import Drink from "./pages/Drink";
 import OrderHistory from "./pages/OrderHistory";
@@ -16,21 +18,31 @@ import NewOrder from "./pages/NewOrder";
 import "../assets/styles/core.css";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
+import UserContext from "./context/UserContext";
 
 export default function Nav() {
+  // let user = sessionStorage.getItem("user")
+  let userId = sessionStorage.getItem("userId");
+  console.log();
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    API.getUserById(userId).then((user) => {
+      setUser(user);
+    });
+  }, []);
   return (
     <UserContext.Provider value={user}>
       <Router>
         {/* Header Takes in User to check if user is admin and render business link */}
         <Switch>
           <Route exact path="/">
-            {user.isAuthenticated ? <Home user={user} /> : <Login />}
+            {user ? <Home /> : <Login />}
           </Route>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/supersecretbusinessportal">
-            {user ? <BusinessPortal user={user} /> : <Redirect to="/login" />}
+            {user ? <BusinessPortal /> : <Redirect to="/login" />}
           </Route>
           <Route path="/drink">
             {user ? <Drink /> : <Redirect to="/login" />}
@@ -42,10 +54,10 @@ export default function Nav() {
             {user ? <SavedDrinks /> : <Redirect to="/login" />}
           </Route>
           <Route path="/user/orders">
-            {user ? <OrderHistory user={user} /> : <Redirect to="/login" />}
+            {user ? <OrderHistory /> : <Redirect to="/login" />}
           </Route>
           <Route path="/user/profile">
-            {user ? <Profile user={user} /> : <Redirect to="/login" />}
+            {user ? <Profile /> : <Redirect to="/login" />}
           </Route>
         </Switch>
       </Router>
