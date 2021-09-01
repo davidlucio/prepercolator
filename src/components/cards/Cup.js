@@ -9,9 +9,9 @@ export default function Cup({ cupSize, drinkIngredients, handleDrink }) {
     return (
         <section className="cup-holder">
             <div className={`my-cup cup-${cupSize}`}>
-                <div className="ingredient coffee percent-70">{ "Dark Roast" }</div>
-                <div className="ingredient syrup percent-10">{ "Vanilla" }</div>
-                <div className="ingredient syrup percent-10">{ "Hazelnut" }</div>
+                <div className="ingredient coffee percent-70"><span>{ "Espresso" }</span></div>
+                <div className="ingredient syrup percent-10"><span>{ "Vanilla" }</span></div>
+                <div className="ingredient syrup percent-10"><span>{ "Hazelnut" }</span></div>
             </div>
         </section>
         

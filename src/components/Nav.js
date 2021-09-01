@@ -16,7 +16,7 @@ export default function Nav({ user }) {
       <Switch>
         <Route exact path="/">
           {user ? <Home /> : <SignIn />}
-          <Home />
+          {/* <Home /> */}
         </Route>
         <Route path="/supersecretbusinessportal">
           <BusinessPortal user={user} />
