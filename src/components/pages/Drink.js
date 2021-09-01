@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 
-/** PAGE CONTENTS */
 import Header from "../Header";
 import UserAddIngredientMenu from "../cards/UserAddIngredientMenu";
 import UserCurrentCup from "../cards/UserCurrentCup";
-import DrinksTable from "../pieces/DrinksTable"; //TODO
+// import DrinksTable from "../pieces/DrinksTable"; //TODO
 import Footer from "../Footer";
+
 
 export default function Drink({ user }) {
     const [cupSize, setCupSize] = useState(12);
@@ -58,34 +58,39 @@ export default function Drink({ user }) {
     };
 
     return (
-        <main>
+        <>
             <Header user={user} />
 
-            <UserCurrentCup 
-                cupSize={size}
-                setCupSize={setSize}
-                drinkIngredients={drinkIngredients}
-                setDrinkIngredients={setDrinkIngredients}
-            />
+            <main>
 
-            <UserAddIngredientMenu
-                cupSize={size}
-                setCupSize={setSize}
-                drinkName={drinkName}
-                setDrinkName={setDrinkName}
+                <UserCurrentCup 
+                    cupSize={cupSize}
+                    setCupSize={setCupSize}
+                    drinkIngredients={drinkIngredients}
+                    setDrinkIngredients={setDrinkIngredients}
+                />
+
+                <UserAddIngredientMenu
+                    cupSize={cupSize}
+                    setCupSize={setCupSize}
+                    drinkName={drinkName}
+                    setDrinkName={setDrinkName}
+                    
+                    drinkIngredients={drinkIngredients}
+                    setDrinkIngredients={setDrinkIngredients}
+
+                    addIngredient={addIngredient}
+                    removeIngredient={removeIngredient}
+                    saveDrink={saveDrink}
+
+                    drinkIngredientsAmnt={drinkIngredientsAmnt}
+                    setDrinkIngredientsAmnt={setDrinkIngredientsAmnt}
+                />
+
                 
-                drinkIngredients={drinkIngredients}
-                setDrinkIngredients={setDrinkIngredients}
-
-                addIngredient={addIngredient}
-                removeIngredient={removeIngredient}
-                saveDrink={saveDrink}
-
-                drinkIngredientsAmnt={drinkIngredientsAmnt}
-                setDrinkIngredientsAmnt={setDrinkIngredientsAmnt}
-            />
+            </main>
 
             <Footer />
-        </main>
+        </>
     );
 }
