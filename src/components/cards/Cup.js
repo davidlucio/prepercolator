@@ -1,5 +1,4 @@
 import React from "react";
-import API from "../utils/API";
 
 export default function Cup({ cupSize, drinkIngredients, handleDrink }) {
   // array of ingredients

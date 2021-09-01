@@ -1,13 +1,17 @@
-import React, { useState, createContext } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import API from "../utils/API";
 
-import Nav from "../Nav";
-
-export default function Login({ user, setUser }) {
+export default function Login(props) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let history = useHistory();
+  useEffect(() => {
+    if (props.user.token) {
+      history.push("/");
+    }
+  }, [props.user]);
   const handleChange = (e) => {
     switch (e.target.name) {
       case "username":
@@ -35,15 +39,14 @@ export default function Login({ user, setUser }) {
     const res = await API.login(loginUser);
     const user = res.data;
     if (user !== undefined) {
+      localStorage.setItem("token", user.token);
       console.log(user);
-      sessionStorage.setItem("userId", user.id);
-      localStorage.setItem("userId", user.id);
-      return <Redirect to="/" />;
+      props.setUser(user);
+      history.push("/");
     } else {
       return <div>Incorrect Username, email or password</div>;
     }
   };
-
   return (
     <main>
       <h3>Sign in</h3>

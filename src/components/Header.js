@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../assets/images/logo_bold.png";
-import UserContext from "./context/UserContext";
 
-export default function Header() {
-  const user = useContext(UserContext);
-
+export default function Header({ user }) {
   const logout = (e) => {
     e.preventDefault();
     localStorage.removeItem("userId");
@@ -22,11 +19,14 @@ export default function Header() {
           <li>
             <Link to="/user/profile">Profile</Link>
           </li>
-          {user.admin === true ? (
+          {user.admin ? (
             <li>
-              <Link to="/supersecretbusinessportal">Business</Link>
+              <Link to="/supersecretbusinessportal" />
             </li>
           ) : null}
+          <li>
+            <Link to="/supersecretbusinessportal">Business</Link>
+          </li>
           {user ? (
             <li>
               <button onClick={logout}>Logout</button>

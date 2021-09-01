@@ -1,63 +1,63 @@
 import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import API from "./utils/API";
+import UserContext from "./context/UserContext";
 
 import BusinessPortal from "./pages/BusinessPortal";
+import Login from "./pages/Login";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 import SavedDrinks from "./cards/SavedDrinks";
 import Drink from "./pages/Drink";
 import OrderHistory from "./pages/OrderHistory";
-import NewOrder from "./pages/NewOrder";
+import Order from "./pages/Order";
 
 import "../assets/styles/core.css";
-import Profile from "./pages/Profile";
-import Login from "./pages/Login";
-import UserContext from "./context/UserContext";
 
 export default function Nav() {
   // let user = sessionStorage.getItem("user")
-  let userId = sessionStorage.getItem("userId");
-  console.log();
   const [user, setUser] = useState({});
+  let token = localStorage.getItem("token");
+
+  // const [history, setHistory] = useState([]);
   useEffect(() => {
-    API.getUserById(userId).then((user) => {
-      setUser(user);
-    });
+    // userId = sessionStorage.getItem("userId");
+    if (token !== null || undefined) {
+      token = localStorage.getItem("token");
+      API.getUserByToken(token).then((res) => {
+        setUser(res.data);
+      });
+    }
   }, []);
+
   return (
     <UserContext.Provider value={user}>
       <Router>
-        {/* Header Takes in User to check if user is admin and render business link */}
         <Switch>
           <Route exact path="/">
-            {user ? <Home /> : <Login />}
+            <Home user={user} setUser={setUser} />
           </Route>
           <Route path="/login">
-            <Login />
+            <Login user={user} setUser={setUser} />
           </Route>
           <Route path="/supersecretbusinessportal">
-            {user ? <BusinessPortal /> : <Redirect to="/login" />}
+            <BusinessPortal user={user} setUser={setUser} />
           </Route>
           <Route path="/drink">
-            {user ? <Drink /> : <Redirect to="/login" />}
+            <Drink user={user} setUser={setUser} />
           </Route>
           <Route path="/order">
-            {user ? <NewOrder /> : <Redirect to="/login" />}
+            <Order user={user} setUser={setUser} />
           </Route>
           <Route path="/user/drinks">
-            {user ? <SavedDrinks /> : <Redirect to="/login" />}
+            <SavedDrinks user={user} setUser={setUser} />
           </Route>
           <Route path="/user/orders">
-            {user ? <OrderHistory /> : <Redirect to="/login" />}
+            <OrderHistory user={user} setUser={setUser} />
           </Route>
           <Route path="/user/profile">
-            {user ? <Profile /> : <Redirect to="/login" />}
+            <Profile user={user} setUser={setUser} />
           </Route>
         </Switch>
       </Router>

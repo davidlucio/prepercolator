@@ -42,6 +42,7 @@ export default function NewIngredientForm({ updateTable }) {
           setNewIngredient(value);
           break;
         }
+        break;
       case "pricePerUnit":
         let past = {
           ...newIngredient,
@@ -55,6 +56,8 @@ export default function NewIngredientForm({ updateTable }) {
           tier: event.target.value,
         };
         setNewIngredient(paast);
+        break;
+      default:
         break;
     }
   };

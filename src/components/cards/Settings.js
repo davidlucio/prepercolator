@@ -1,12 +1,10 @@
 import React from "react";
 
-import Header from "../Header";
-
 export default function Settings({ user }) {
   return (
     <main className="userSettings">
       <div className="userAvatar">
-        <img>{user.photo}</img>
+        <img alt="userphoto">{user.photo}</img>
         <h1>{user.username}</h1>
         <p>Email:{user.email}</p>
       </div>

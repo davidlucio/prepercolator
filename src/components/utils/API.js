@@ -6,9 +6,9 @@ const API = {
   getIngredients: function () {
     return axios.get(`${URL_PREFIX}/ingredients/`);
   },
-  //   getIngredientByTier: function () {
-  //     return axios.get(`${URL_PREFIX}TODO`);
-  //   },
+  getIngredientByTier: function (tier) {
+    return axios.get(`${URL_PREFIX}/ingredients/${tier}`);
+  },
   getDrinkTemplates: function () {
     return axios.get(`${URL_PREFIX}/drinks/`);
   },
@@ -24,13 +24,15 @@ const API = {
   deleteIngredientById: function (id) {
     return axios.delete(`${URL_PREFIX}/ingredients/${id}`);
   },
-  getUserSavedDrinks: function (id) {
-    return axios.get(`${URL_PREFIX}/users/${id}/savedDrinks`);
+  getUserByToken: function (token) {
+    return axios.get(`${URL_PREFIX}/users/${token}`);
   },
-  getUserById: function (id) {
-    return axios.get(`${URL_PREFIX}/users/${id}`);
+  deleteUserByToken: function (token) {
+    return axios.delete(`${URL_PREFIX}/users/${token}`);
   },
-  // NEED TO IMPLEMENT THESE TWO (API.LOGIN.then((res)=>{console.log(res.data)SOMETHINGELSE}))
+  getOrderbyUserToken: function (token) {
+    return axios.get(`${URL_PREFIX}/orders/${token}`);
+  },
   login: function (user) {
     return axios.post(`${URL_PREFIX}/users/login`, user);
   },
