@@ -75,9 +75,7 @@ export default function NewIngredientForm({ updateTable }) {
       price_per_unit: 1.0,
       tier: "Base",
     });
-    updateTable();
   };
-
   return (
     <div className="bpActions">
       <h3>Add a New Ingredient</h3>

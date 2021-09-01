@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router";
 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import UserContext from "./components/context/UserContext";
+import Header from "./components/Header";
 
 export default function App() {
-  const user = {
+  const users = {
     id: 1,
     admin: true,
     username: "Testing User",
@@ -45,10 +47,5 @@ export default function App() {
     },
   };
 
-  return (
-    <UserContext.Provider value={user}>
-      <Nav user={user} />
-      <Footer />
-    </UserContext.Provider>
-  );
+  return <Nav />;
 }
