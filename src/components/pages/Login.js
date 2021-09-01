@@ -1,6 +1,5 @@
-import React, { createContext, useState } from "react";
+import React, { useState, createContext } from "react";
 import { Redirect } from "react-router-dom";
-import UserContext from "../context/UserContext";
 import API from "../utils/API";
 
 export default function Login({ user, setUser }) {
@@ -23,19 +22,26 @@ export default function Login({ user, setUser }) {
         break;
     }
   };
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     let loginUser = {
       username: username,
       email: email,
       password: password,
     };
-    API.login(loginUser).then((res) => {
-      console.log(res.data);
-      const userContext = createContext("User", res.data);
-      return <Redirect to="/" />;
-    });
+
+    const res = await API.login(loginUser);
+    const user = res.data;
+
+    if (user) {
+      user.isAuthenticated = true;
+      const UserContext = createContext(user);
+      return <Redirect to="/" user={user} />;
+    } else {
+      return <div>Incorrect Username, email or password</div>;
+    }
   };
+
   return (
     <div>
       <h3>Sign in</h3>

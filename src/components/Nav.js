@@ -16,33 +16,30 @@ import NewOrder from "./pages/NewOrder";
 import "../assets/styles/core.css";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
-import UserContext from "./context/UserContext";
 
 export default function Nav() {
-  const user = useContext(UserContext);
   return (
     <UserContext.Provider value={user}>
       <Router>
         {/* Header Takes in User to check if user is admin and render business link */}
         <Switch>
           <Route exact path="/">
-            {user ? <Home user={user} /> : <Login />}
+            {user.isAuthenticated ? <Home user={user} /> : <Login />}
           </Route>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/supersecretbusinessportal">
-            <BusinessPortal user={user} />
+            {user ? <BusinessPortal user={user} /> : <Redirect to="/login" />}
           </Route>
           <Route path="/drink">
-            <Drink />
+            {user ? <Drink /> : <Redirect to="/login" />}
           </Route>
           <Route path="/order">
             {user ? <NewOrder /> : <Redirect to="/login" />}
           </Route>
           <Route path="/user/drinks">
             {user ? <SavedDrinks /> : <Redirect to="/login" />}
-            <SavedDrinks />
           </Route>
           <Route path="/user/orders">
             {user ? <OrderHistory user={user} /> : <Redirect to="/login" />}

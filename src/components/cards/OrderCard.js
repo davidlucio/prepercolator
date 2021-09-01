@@ -7,7 +7,7 @@ export default function OrderCard({ order }) {
     <div>
       <h2>Your Order:</h2>
       <ul>
-        {/* {order.length === 0 ? (
+        {order.length === 0 ? (
           <li>
             Add a Drink to your order<a>+</a>
             <Link to="/user/drinks">View Saved Drinks</Link>
@@ -16,7 +16,7 @@ export default function OrderCard({ order }) {
           order.map((item) => {
             return <OrderItem item={item} />;
           })
-        )} */}
+        )}
       </ul>
     </div>
   );
