@@ -1,57 +1,19 @@
 import React, {useState, useEffect} from "react";
 import API from "../utils/API";
 
-// function organizeMenu(unsortedMenu){
-//     let sortedMenu = [];
-//     unsortedMenu.map( (oneIngredient) => {
-//         var tierName = oneIngredient.tier;
-//         if( !sortedMenu[tierName] ){
-//             sortedMenu[tierName] = [];
-//         }
-//         var tempObj = {
-//             "id" : oneIngredient.id,
-//             "name" : oneIngredient.ingredient_name
-//         };
-//         sortedMenu[oneIngredient.tier].push(tempObj);
-//     });
-//     return sortedMenu;
-// }
+export default function AddIngredientMenu({ drinkIngredients, setDrinkIngredients, drinkIngredientsAmnt, setDrinkIngredientsAmnt }) {
 
-export default function AddIngredientMenu({ drinkIngredients, handleDrink }) {
-
-    // Get Ingredient List!
     const [ingredientMenu, setIngredientMenu] = useState([]);
-    // let sortedArray = [];
     useEffect(() => {
-        API.getIngredients()
+        API.getIngredientByTier()
         .then( (val) =>{
-            // Here are your ingredients...
             setIngredientMenu(val.data);
         })
         .catch( (err) =>{
-            // Something's broken, idiot...
             console.log(err)
         });
     }, []);
 
-    // // Sort Ingredient List!
-    // if(ingredientMenu !== [] && ingredientMenu !== null){
-    //     sortedArray = organizeMenu(ingredientMenu);
-    // }
-
-    // console.log( sortedArray.length );
-    // console.log( sortedArray );
-
-    // if( sortedArray !== null && sortedArray !== [] ){
-        
-    //     sortedArray.map( (tier) => {
-    //         console.log(tier);
-    //     });
-
-    //     // sortedArray.forEach(element => {
-    //     //     console.log(element);
-    //     // });
-    // }
 
     // Compile HTML!
     return (

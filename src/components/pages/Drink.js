@@ -8,22 +8,21 @@ import UserCurrentCup from "../cards/UserCurrentCup";
 import DrinksTable from "../pieces/DrinksTable"; //TODO
 import Footer from "../Footer";
 
-
 export default function Drink({ user }) {
-    const [size, setSize] = useState(12);
+    const [cupSize, setCupSize] = useState(12);
+    const [drinkName, setDrinkName] = useState("");
     const [drinkIngredients, setDrinkIngredients] = useState([]);
     const [drinkIngredientsAmnt, setDrinkIngredientsAmnt] = useState([]);
-    const [drinkName, setDrinkName] = useState("");
 
     useEffect(() => {
-        // Check drink size against sum of drinkIngredients to see if drink has room for more ingredients
-        const sumIngr = 0;
-        drinkIngredients.forEach((drink) => {
-            sumIngr = sumIngr + drink.unitAmount;
-        });
-        if (sumIngr > size) {
-            return <div>You've added more than fits in your cup!!</div>;
-        }
+        // TODO: (MAYBE) Check drink size against sum of drinkIngredients to see if drink has room for more ingredients
+        // const sumIngr = 0;
+        // drinkIngredients.forEach((drink) => {
+        //   sumIngr = sumIngr + drink.unitAmount;
+        // });
+        // if (sumIngr > size) {
+        //   return <div>You've added more than fits in your cup!!</div>;
+        // }
     }, []);
 
     const addIngredient = (id) => {
@@ -59,28 +58,34 @@ export default function Drink({ user }) {
     };
 
     return (
-        <>
+        <main>
             <Header user={user} />
-            <main>
 
-                <UserAddIngredientMenu
-                    drinkIngredients={drinkIngredients}
-                    setDrinkIngredients={setDrinkIngredients}
-                />
+            <UserCurrentCup 
+                cupSize={size}
+                setCupSize={setSize}
+                drinkIngredients={drinkIngredients}
+                setDrinkIngredients={setDrinkIngredients}
+            />
 
-                <UserCurrentCup 
-                    cupSize={size}
-                    changeCupSize={setSize}
-                    drinkIngredients={drinkIngredients}
-                    setDrinkIngredients={setDrinkIngredients}
-                />
-
-                {/** <UserCart /> **/}
-
-                {/** <UserSavedDrinks /> */}
+            <UserAddIngredientMenu
+                cupSize={size}
+                setCupSize={setSize}
+                drinkName={drinkName}
+                setDrinkName={setDrinkName}
                 
-            </main>
-            <Footer/>
-        </>
+                drinkIngredients={drinkIngredients}
+                setDrinkIngredients={setDrinkIngredients}
+
+                addIngredient={addIngredient}
+                removeIngredient={removeIngredient}
+                saveDrink={saveDrink}
+
+                drinkIngredientsAmnt={drinkIngredientsAmnt}
+                setDrinkIngredientsAmnt={setDrinkIngredientsAmnt}
+            />
+
+            <Footer />
+        </main>
     );
 }

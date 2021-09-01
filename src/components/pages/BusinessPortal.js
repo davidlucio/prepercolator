@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import IngredientsTable from "../pieces/IngredientsTable";
 import DrinksTable from "../pieces/DrinksTable";
 import Header from "../Header";
+import { useHistory } from "react-router-dom";
 
 export default function BusinessPortal({ user }) {
   const [view, setView] = useState("ingredients");
+  let history = useHistory();
+
+  useEffect(() => {
+    if (user.admin === false) {
+      history.push("/");
+    }
+  }, []);
 
   return (
     <div className="businessPortal">

@@ -9,7 +9,7 @@ export default function OrderHistory({ user }) {
       <Header user={user} />
       <h2>Your Previous Orders:</h2>
       {user.orderHistory.map((order) => {
-        <OrderCard order={order} />;
+        return <OrderCard order={order} />;
       })}
     </main>
   );
