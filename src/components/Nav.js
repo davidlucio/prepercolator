@@ -16,9 +16,7 @@ import Order from "./pages/Order";
 import "../assets/styles/core.css";
 
 export default function Nav() {
-  // let user = sessionStorage.getItem("user")
   const [user, setUser] = useState({});
-
   useEffect(() => {
     let token = localStorage.getItem("token");
     console.log(token);
