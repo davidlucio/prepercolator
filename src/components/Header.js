@@ -6,7 +6,7 @@ import Logo from "../assets/images/logo_bold.png";
 export default function Header({ user }) {
   const logout = (e) => {
     e.preventDefault();
-    localStorage.removeItem("userId");
+    localStorage.removeItem("token");
   };
   return (
     <header>
