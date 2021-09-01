@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import OrderItem from "../pieces/OrderItem";
 
 export default function OrderCard({ user, order, setOrder }) {
-  let arr = [];
+  const [drinkToAdd, setDrinkToAdd] = useState({});
 
+  const handleSelect = (e) => {
+    e.preventDefault();
+    setDrinkToAdd(e.target.value);
+  };
   const addDrink = (e) => {
     e.preventDefault();
-    let drinkToAdd;
+    let updatedOrder = [...order];
+    updatedOrder.push(e.target.value);
+    setOrder(updatedOrder);
   };
 
   return (
@@ -19,7 +25,11 @@ export default function OrderCard({ user, order, setOrder }) {
             <li>Add a Drink to your order</li>
             <li>
               <form name="orderform">
-                <select>
+                <select
+                  name="savedDrinkSelect"
+                  value={drinkToAdd}
+                  onChange={handleSelect}
+                >
                   {user.drinks ? (
                     user.drinks.map((drink) => {
                       return (
@@ -32,7 +42,7 @@ export default function OrderCard({ user, order, setOrder }) {
                     <>Loading...</>
                   )}
                 </select>
-                <button type="submit" onClick={addDrink}>
+                <button name="addDrink" type="submit" onClick={addDrink}>
                   Add
                 </button>
               </form>

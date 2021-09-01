@@ -19,16 +19,13 @@ import Order from "./pages/Order";
 import "../assets/styles/core.css";
 
 export default function Nav() {
-  // let user = sessionStorage.getItem("user")
   const [user, setUser] = useState({});
-  let token = localStorage.getItem("token");
-
-  // const [history, setHistory] = useState([]);
   useEffect(() => {
-    // userId = sessionStorage.getItem("userId");
-    if (token !== null || undefined) {
-      token = localStorage.getItem("token");
+    let token = localStorage.getItem("token");
+    console.log(token);
+    if (token) {
       API.getUserByToken(token).then((res) => {
+        console.log(res.data);
         setUser(res.data);
       });
     }
