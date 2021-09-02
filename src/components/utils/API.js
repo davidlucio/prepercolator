@@ -12,6 +12,13 @@ const API = {
   getDrinkTemplates: function () {
     return axios.get(`${URL_PREFIX}/drinks/`);
   },
+  getUserDrinks: function (token) {
+    return axios.get(`${URL_PREFIX}/drinks/user`, {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    });
+  },
   getTypes: function () {
     return axios.get(`${URL_PREFIX}/type/`);
   },
