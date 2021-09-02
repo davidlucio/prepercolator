@@ -1,17 +1,17 @@
 /* Ingredient Vars */
-$color_base: linear-gradient(180deg,
+$color_base: radial-gradient(
     #2e1f15 0%,
     #2e1f15 50%,
     #000000 100%);
-$color_main: linear-gradient(180deg,
+$color_main: radial-gradient(
     #ffffff 0%,
     #ffffff 50%,
     #000000 100%);
-$color_flavor: linear-gradient(180deg,
+$color_flavor: radial-gradient(
     #661133 0%,
     #661133 50%,
     #000000 100%);
-$color_topping: linear-gradient(180deg,
+$color_topping: radial-gradient(
     #90d6d6 0%,
     #90d6d6 50%,
     #000000 100%);
@@ -40,6 +40,7 @@ div.ingredient {
     &.main{
         height: 15%;
         background: $color_main;
+        color: $font-black;
     }
     &.flavor{
         height: 10%;
