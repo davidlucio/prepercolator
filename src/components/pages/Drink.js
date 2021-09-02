@@ -8,7 +8,6 @@ import UserAddIngredientMenu from "../cards/UserAddIngredientMenu";
 import UserCurrentCup from "../cards/UserCurrentCup";
 // import DrinksTable from "../pieces/DrinksTable"; //TODO
 import Footer from "../Footer";
-import { forEachLimit } from "async";
 
 export default function Drink({ user }) {
   const [cupSize, setCupSize] = useState(12);
@@ -33,7 +32,7 @@ export default function Drink({ user }) {
     });
     setDrinkIngredientsINT(temp);
   }, []);
-  // SAVE, SAVE + ADD TO ORDER BUTTONS =? on save, add to saved drinks and go home? on saveand order, pull order from ls, add, send to order page
+
   const addIngredient = (id) => {
     API.getIngredients().then((res) => {
       res.data.forEach((element) => {
@@ -75,6 +74,7 @@ export default function Drink({ user }) {
 
     // FROM USE EFFECT
     let prices = [];
+    let holder = [];
     let sum = 0;
     ingredients.forEach((ingredient) => {
       for (let i = 0; i < drinkIngredientsINT.length; i++) {
@@ -89,10 +89,13 @@ export default function Drink({ user }) {
     prices.forEach((price) => {
       drinkIngredientsAmnt.forEach((units) => {
         let val = price * units;
-        sum += val;
+        holder.push(val);
       });
     });
 
+    for (let i = 0; i < holder.length; i++) {
+      sum += holder[i];
+    }
     console.log(sum);
     setDrinkPrice(sum);
     drinkToSave.price = sum;
@@ -126,18 +129,32 @@ export default function Drink({ user }) {
     });
 
     // FROM USE EFFECT
-    let temp = [];
-    drinkIngredients.forEach((ingredient) => {
-      let price = ingredient.price;
-      temp.push(price);
+    let prices = [];
+    let holder = [];
+    let sum = 0;
+    ingredients.forEach((ingredient) => {
+      for (let i = 0; i < drinkIngredientsINT.length; i++) {
+        const drinkId = drinkIngredientsINT[i];
+        if (ingredient.id === drinkId) {
+          prices.push(ingredient.price_per_unit);
+        }
+      }
     });
-    setPriceArr(temp);
-    for (let i = 0; i < priceArr.length; i++) {
-      let price = priceArr[i];
-      let amnt = drinkIngredientsAmnt[i];
-      setSum((sum = price * amnt));
+
+    console.log(prices);
+    prices.forEach((price) => {
+      drinkIngredientsAmnt.forEach((units) => {
+        let val = price * units;
+        holder.push(val);
+      });
+    });
+
+    for (let i = 0; i < holder.length; i++) {
+      sum += holder[i];
     }
+    console.log(sum);
     setDrinkPrice(sum);
+    drinkToSave.price = sum;
     // END
 
     API.addNewDrinkTemplate(drinkToSave).then((res) => {
