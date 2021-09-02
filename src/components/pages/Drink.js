@@ -10,6 +10,7 @@ import UserCurrentCup from "../cards/UserCurrentCup";
 import Footer from "../Footer";
 
 export default function Drink({ user }) {
+  // Single vars to reduce if it doesnt break things...
   const [cupSize, setCupSize] = useState(12);
   const [drinkName, setDrinkName] = useState("");
   const [drinkIngredients, setDrinkIngredients] = useState([]);
@@ -18,7 +19,22 @@ export default function Drink({ user }) {
   const [drinkPrice, setDrinkPrice] = useState(0);
   const [sum, setSum] = useState(0);
   const [priceArr, setPriceArr] = useState([]);
+
+  // ==================================================
+
+  // Arr of Ingredient's Objects
   const [ingredients, setIngredients] = useState([]);
+  // CONVERTING TO STATE OBJ IF HELPFUL...
+  const [newDrink, setNewDrink] = useState({
+    drink_name: "",
+    ingredients: [],
+    ingredient_amount: [],
+    is_vegan: false,
+    is_steamed: false,
+    userId: user.id,
+    size: 12,
+    price: 0,
+  });
 
   let history = useHistory();
 
@@ -52,6 +68,11 @@ export default function Drink({ user }) {
 
   const handleName = (e) => {
     setDrinkName(e.target.value);
+    // FOR SINGLE OBJ VARIENT
+    setNewDrink({
+      ...newDrink,
+      drink_name: e.target.value,
+    });
   };
 
   const saveDrink = () => {
@@ -67,17 +88,28 @@ export default function Drink({ user }) {
     drinkToSave.ingredients.forEach((ingredient) => {
       if (ingredient.is_vegan === false) {
         drinkToSave.is_vegan = false;
+        // OBJ VARIENT
+        setNewDrink({
+          ...newDrink,
+          is_vegan: false,
+        });
       } else {
         drinkToSave.is_vegan = true;
+        // OBJ VARIENT
+        setNewDrink({
+          ...newDrink,
+          is_vegan: true,
+        });
       }
     });
-    // FROM USE EFFECT
+
+    // Calculating total price
     let prices = [];
     let sum = 0;
     ingredients.forEach((ingredient) => {
-      for (let i = 0; i < drinkIngredientsINT.length; i++) {
-        const drinkId = drinkIngredientsINT[i];
-        if (ingredient.id === drinkId) {
+      for (let i = 0; i < drinkIngredients.length; i++) {
+        const drinkId = drinkIngredients[i];
+        if (ingredient.id == drinkId) {
           prices.push(ingredient.price_per_unit);
         }
       }
@@ -92,6 +124,14 @@ export default function Drink({ user }) {
     console.log(sum);
     setDrinkPrice(sum);
     drinkToSave.price = sum;
+    // END PRICE CALCS
+
+    // OBJ VARIENT
+    setNewDrink({
+      ...newDrink,
+      price: sum,
+    });
+
     console.log(drinkToSave);
     API.addNewDrinkTemplate(drinkToSave).then((res) => {
       if (res.status === 200) {
@@ -113,8 +153,18 @@ export default function Drink({ user }) {
     drinkToSave.ingredients.forEach((ingredient) => {
       if (ingredient.is_vegan === false) {
         drinkToSave.is_vegan = false;
+        // OBJ...
+        setNewDrink({
+          ...newDrink,
+          is_vegan: false,
+        });
       } else {
         drinkToSave.is_vegan = true;
+        // obj...
+        setNewDrink({
+          ...newDrink,
+          is_vegan: true,
+        });
       }
     });
 
@@ -136,6 +186,7 @@ export default function Drink({ user }) {
     API.addNewDrinkTemplate(drinkToSave).then((res) => {
       if (res.status === 200) {
         console.log("Drink added!");
+        console.log(drinkToSave);
       } else console.log("something went wrong...");
     });
 
@@ -153,14 +204,12 @@ export default function Drink({ user }) {
   return (
     <>
       <Header user={user} />
-
       <input
         name="drinkName"
         type="text"
         value={drinkName}
         onChange={handleName}
       />
-
       <main>
         <UserCurrentCup
           cupSize={cupSize}
@@ -170,7 +219,6 @@ export default function Drink({ user }) {
           drinkIngredientsAmnt={drinkIngredientsAmnt}
           setDrinkIngredientsAmnt={setDrinkIngredientsAmnt}
         />
-
         <UserAddIngredientMenu
           cupSize={cupSize}
           setCupSize={setCupSize}
@@ -183,13 +231,13 @@ export default function Drink({ user }) {
           saveDrink={saveDrink}
           drinkIngredientsAmnt={drinkIngredientsAmnt}
           setDrinkIngredientsAmnt={setDrinkIngredientsAmnt}
+          newDrink={newDrink}
+          setNewDrink={setNewDrink}
         />
-        <div>
+        <div className="btnHolder">
           <button onClick={saveDrink}>Save</button>
-          <button onClick={saveAndAddDrink}>Save and Add to Order</button>
         </div>
       </main>
-
       <Footer />
     </>
   );
