@@ -125,7 +125,7 @@ body {
           top: 15px;
           left: -13%;
           background-color: #FFFFFF;
-          -webkit-transform: skewX(3deg); }
+          transform: skewX(3deg); }
         body main .cup-holder .my-cup::after {
           content: "";
           position: absolute;
@@ -134,7 +134,7 @@ body {
           top: 15px;
           right: -13%;
           background-color: #FFFFFF;
-          -webkit-transform: skewX(-3deg); }
+          transform: skewX(-3deg); }
         body main .cup-holder .my-cup div.ingredient {
           display: flex;
           align-items: center;
