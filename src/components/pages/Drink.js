@@ -180,27 +180,8 @@ export default function Drink({ user }) {
       let amnt = drinkIngredientsAmnt[i];
       setSum((sum = price * amnt));
     }
-    setDrinkPrice(sum);
-    // END
-
-    API.addNewDrinkTemplate(drinkToSave).then((res) => {
-      if (res.status === 200) {
-        console.log("Drink added!");
-        console.log(drinkToSave);
-      } else console.log("something went wrong...");
-    });
-
-    // DRINK IS SAVED
-    let token = localStorage.getItem("token");
-    API.getUserByToken(token).then((res) => {
-      let drinks = res.data.drinks;
-      drinks.forEach((drink) => {
-        if (drink.drink_name === drinkToSave.drink_name) {
-          user.drinkWhoseIdINeed = drink.id;
-        }
-      });
-    });
   };
+
   return (
     <>
       <Header user={user} />

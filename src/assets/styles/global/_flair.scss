@@ -52,6 +52,72 @@
     }
 }
 
-$breakpoint_mobile: 480px;
-$breakpoint_small: 800px;
-$breakpoint_medium: 950px;
+@mixin prettyfield($type, $style){
+
+    @if $style==wide{
+        display: block;
+        width: 50%;
+        min-width: 200px;
+        margin: 15px auto;
+        line-height: 18px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    @if $style==login{
+        display: block;
+        width: 50%;
+        min-width: 200px;
+        margin: 15px auto;
+        line-height: 18px;
+        padding: 5px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    @if $style==solo{
+        display: block;
+        width: 50%;
+        min-width: 150px;
+
+        font-size: 150%;
+        margin: 15px auto;
+        padding: 3px;
+
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none;
+        border-bottom: 3px dashed $color-primary3;
+
+        text-align: center;
+    }
+
+    @if $type==button{
+        border: none;
+        color: $font-white;
+        font-weight: 600;
+        background: $color-primary2;
+
+        &:focus, &:hover, &:focus-visible, &:focus-within {
+            @include shadow(input);
+            outline: none;
+            border: none;
+            background: $font-white;
+            color: $color-primary3;
+        }
+    }
+
+    @if $type==input{
+
+        &:focus, &:hover, &:focus-visible, &:focus-within {
+            @include shadow(input);
+            outline: none;
+        }
+    }
+
+    &:-internal-autofill-selected {
+        appearance: menulist-button;
+        background-color: unset !important;
+    }
+
+}

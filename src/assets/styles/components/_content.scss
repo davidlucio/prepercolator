@@ -2,15 +2,15 @@ main {
   display: block;
   position: relative;
   max-width: 800px;
-  max-height: 800px;
   padding: 15px;
   padding-bottom: 50px;
   margin: 0px auto 30px auto;
   // border: 1px solid black;
 
   @import "./pages/_login.scss";
-  @import "./cards/_cup.scss";
-  @import "./cards/_ingredientMenu.scss";
+  @import "./pages/_landing.scss";
+  @import "./pages/_drink.scss";
+
   @import "./bp/_businessPage.scss";
   @import "./_home.scss";
   @import "./_order.scss";
