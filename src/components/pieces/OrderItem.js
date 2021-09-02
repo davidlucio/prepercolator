@@ -3,7 +3,6 @@ import React from "react";
 export default function OrderItem({ item, order, setOrder, index }) {
   const removeDrink = (e) => {
     let index = e.target.value;
-    console.log(index);
     let prev = [...order];
     prev.splice(index, 1);
     setOrder(prev);

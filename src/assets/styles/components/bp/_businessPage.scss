@@ -3,19 +3,45 @@ $primary_color: rgb(33, 33, 33);
 @mixin ingredientItem {
 }
 
-.businesssPortal {
-  height: 100vh;
+.businessPortal {
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: red;
 
   .bpViewSelect {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 
     .bpWelcome {
       font-size: 2rem;
+    }
+  }
+
+  .bpViewIngredients {
+    .bpAvailable {
+      h3 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      ul {
+        li {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+    .bpActions {
+      h3 {
+        text-align: center;
+      }
+      .bpForm {
+        display: flex;
+      }
     }
   }
 }

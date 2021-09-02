@@ -1,12 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import Logo from "../assets/images/logo_bold.png";
 
 export default function Header({ user }) {
+  let history = useHistory();
   const logout = (e) => {
     e.preventDefault();
     localStorage.removeItem("token");
+    history.push("/");
   };
   return (
     <header>

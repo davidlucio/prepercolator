@@ -9,21 +9,14 @@ export default function DrinkTemplateCard({ drink }) {
       </p>
       <p>Ingredients:</p>
       <ul>
-        {drink.ingredient !== undefined ? (
-          drink.ingredient.length === 1 ? (
-            <li>
-              {drink.ingredient.ingredient_name}{" "}
-              {drink.ingredient.ingredient_amount}
-            </li> ? (
-              drink.ingredient.map((ingredient) => {
-                return (
-                  <li key={ingredient.id}>
-                    {ingredient.ingredient_name} {ingredient.ingredient_amount}
-                  </li>
-                );
-              })
-            ) : null
-          ) : null
+        {drink.ingredient ? (
+          drink.ingredient.map((ingredient) => {
+            return (
+              <li key={ingredient.id}>
+                {ingredient.ingredient_name} {ingredient.ingredient_amount}
+              </li>
+            );
+          })
         ) : (
           <li>Looks like theres nothing here...</li>
         )}
