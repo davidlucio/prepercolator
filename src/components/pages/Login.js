@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import API from "../utils/API";
+import Footer from "../Footer"
 
 export default function Login(props) {
     const [username, setUsername] = useState("");
@@ -49,31 +50,47 @@ export default function Login(props) {
         }
     };
     return (
-        <main>
-            <h3>Sign in</h3>
-            <div>
-                <input
-                    name="username"
-                    type="text"
-                    value={username}
-                    onChange={handleChange}
-                />
-                <input
-                    name="email"
-                    type="email"
-                    value={email}
-                    onChange={handleChange}
-                />
-                <input
-                    name="password"
-                    type="password"
-                    value={password}
-                    onChange={handleChange}
-                />
-            </div>
-            <button type="submit" name="login" onClick={handleLogin}>
-                Login
-            </button>
-        </main>
+        <>
+            <main className="login-page">
+                <div className="login-window">
+                    <img className="logo" src="../assets/images/logo_bold_white.png"></img>
+                    <h1>Welcome to Prepercolator!</h1>
+                    <h3>Please Login</h3>
+                    <div>
+                        <input
+                            name="username"
+                            type="text"
+                            value={username}
+                            onChange={handleChange}
+                            placeholder="Username"
+                        />
+                        { /** }
+                        <input
+                            name="email"
+                            type="email"
+                            value={email}
+                            onChange={handleChange}
+                            placeholder="Email"
+                            required autocomplete="on"
+                            autocompletetype="email"
+                        />
+                        { /**/ }
+                        <input
+                            name="password"
+                            type="password"
+                            value={password}
+                            onChange={handleChange}
+                            placeholder="Password"
+                        />
+                    </div>
+                    <button type="submit" name="login" onClick={handleLogin}>
+                        Login
+                    </button>
+                </div>
+                
+            </main>
+
+            <Footer />
+        </>
     );
 }

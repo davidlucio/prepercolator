@@ -40,13 +40,31 @@ ul {
 /** BRAND COLORS **/
 /** GLOBAL FONTS **/
 /** SPRITES **/
+@keyframes tilt_left {
+  30% {
+    transform: rotate(0);
+    animation-timing-function: ease-out; }
+  50% {
+    transform: rotate(-45deg);
+    animation-timing-function: ease; }
+  80% {
+    transform: rotate(-45deg);
+    animation-timing-function: ease-out; }
+  100% {
+    transform: rotate(0);
+    animation-timing-function: ease; } }
+
+/** Overwrite for React root **/
+html, body, .App, #root, .root {
+  width: 100%;
+  height: 100%; }
+
 /** Page Elements **/
 body {
   font-size: 18px;
   font-family: "Arimo", sans-serif;
   /** <header> **/
   /** <main> **/
-  /** Overwrite for React root **/
   /** <footer> **/ }
 
 body header {
@@ -83,17 +101,79 @@ body header nav {
   border-radius: 400px 0px 0px 0px / 100% 0px 0px 0px;
   box-shadow: inset 7px 14px 15px -10px black; }
 
-body #root {
-  width: 100%; }
-
 body main {
   display: block;
   position: relative;
   max-width: 800px;
-  height: 600px;
+  max-height: 800px;
   padding: 15px;
   padding-bottom: 50px;
   margin: 0px auto 30px auto; }
+
+body main.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: unset;
+  max-height: unset;
+  margin: 0px;
+  padding: 0px;
+  background: #00aabb; }
+
+body main.login-page div.login-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0px auto; }
+
+body main.login-page div.login-window img.logo {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-top: -150px;
+  animation: tilt_left 5s infinite;
+  transition: animation 5s; }
+
+body main.login-page div.login-window h1 {
+  font-size: 150%;
+  color: #FFFFFF;
+  font-family: "Lemonada", cursive;
+  margin-bottom: 30px; }
+
+body main.login-page div.login-window h3 {
+  font-size: 130%;
+  margin-bottom: 5px; }
+
+body main.login-page div.login-window input, body main.login-page div.login-window button {
+  display: block;
+  width: 50%;
+  min-width: 200px;
+  margin: 15px auto;
+  line-height: 18px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px; }
+
+body main.login-page div.login-window input:focus, body main.login-page div.login-window input:hover, body main.login-page div.login-window input:focus-visible, body main.login-page div.login-window input:focus-within, body main.login-page div.login-window button:focus, body main.login-page div.login-window button:hover, body main.login-page div.login-window button:focus-visible, body main.login-page div.login-window button:focus-within {
+  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa;
+  outline: none;
+  border: none; }
+
+body main.login-page div.login-window button {
+  color: #FFFFFF;
+  font-weight: 600;
+  background: #412919; }
+
+body main.login-page div.login-window button:focus, body main.login-page div.login-window button:hover, body main.login-page div.login-window button:focus-visible, body main.login-page div.login-window button:focus-within {
+  background: #FFFFFF;
+  color: #4800aa; }
 
 body main .cup-holder {
   display: flex;
@@ -136,7 +216,7 @@ body main .cup-holder .my-cup::before {
   top: 15px;
   left: -13%;
   background-color: #FFFFFF;
-  -webkit-transform: skewX(3deg); }
+  transform: skewX(3deg); }
 
 body main .cup-holder .my-cup::after {
   content: "";
@@ -146,7 +226,7 @@ body main .cup-holder .my-cup::after {
   top: 15px;
   right: -13%;
   background-color: #FFFFFF;
-  -webkit-transform: skewX(-3deg); }
+  transform: skewX(-3deg); }
 
 body main .cup-holder .my-cup div.ingredient {
   display: flex;
@@ -467,30 +547,107 @@ body main .businessPortal {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: red; }
-
-body main .businessPortal .bpViewSelect {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly; }
+  align-items: center; }
 
 body main .businessPortal .bpViewSelect .bpWelcome {
-  font-size: 2rem; }
+  font-family: "Arimo", sans-serif;
+  font-size: 2rem;
+  padding: 1rem; }
+
+body main .businessPortal .bpViewSelect button {
+  margin: 0.5rem; }
 
 body main .businessPortal .bpViewIngredients .bpAvailable h3 {
-  font-size: 2rem;
-  text-align: center; }
+  font-family: "Arimo", sans-serif;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 0.6rem; }
 
 body main .businessPortal .bpViewIngredients .bpAvailable ul li {
+  padding: 0.1rem;
   display: flex;
   justify-content: space-between; }
 
 body main .businessPortal .bpViewIngredients .bpActions h3 {
+  margin: 0.5rem;
   text-align: center; }
 
 body main .businessPortal .bpViewIngredients .bpActions .bpForm {
-  display: flex; }
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  padding: 0.6rem; }
+
+body main .businessPortal .bpViewIngredients .bpActions .bpForm .newTypeLabel {
+  margin: 0 auto;
+  width: 60%;
+  text-align: center; }
+
+body main .businessPortal .bpViewIngredients .bpActions .bpForm .newTypeLabel p {
+  display: flex;
+  justify-content: space-evenly; }
+
+body main .businessPortal .bpViewIngredients .bpActions .bpForm .newTypeLabel p input {
+  margin: auto 0;
+  width: fit-content; }
+
+body main .businessPortal .bpViewIngredients .bpActions select {
+  margin: 0.2rem; }
+
+body main .businessPortal .bpViewIngredients .bpActions input {
+  margin: 0.2rem; }
+
+body main .businessPortal .bpViewIngredients .bpActions .newNameLabel {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center; }
+
+body main .businessPortal .bpViewIngredients .bpActions .newVeganLabel {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center; }
+
+body main .businessPortal .bpViewIngredients .bpActions .newPriceLabel {
+  display: flex;
+  margin: 0 auto;
+  width: 60%; }
+
+body main .businessPortal .bpViewIngredients .bpActions .newPriceLabel p {
+  min-width: fit-content;
+  margin: auto 0; }
+
+body main .businessPortal .bpViewIngredients .bpActions .newPriceLabel input {
+  margin: auto 0;
+  width: 27%; }
+
+body main .businessPortal .bpViewDrinks {
+  padding: 0.4rem; }
+
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates {
+  border: 1px solid grey;
+  padding: 0.5rem; }
+
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates h3 {
+  font-size: 1.4rem; }
+
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey; }
+
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard h5 {
+  text-align: center; }
+
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard p {
+  font-size: 0.5rem; }
+
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard h6 {
+  font-size: 0.8rem; }
+
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard ul li {
+  display: flex;
+  justify-content: space-between; }
 
 body footer {
   display: block;
