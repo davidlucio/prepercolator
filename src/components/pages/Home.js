@@ -21,15 +21,22 @@ export default function Home({ user }) {
     <>
       <Header user={user} />
 
-      <main className="landing-page">
-        <h1>Welcome back, <span className="username">{user.username}</span>!</h1>
-        <div>
-          <h2>What would you like to do?</h2>
-
-          <Link to="/order" onClick={newOrderHandle}>New Order</Link>
-
-          <Link to="/drink">New Drink</Link>
-          
+      <main>
+        <div className="homePage">
+          <h1 className="hpWelcome">Welcome back {user.username}!</h1>
+          <div>
+            <h5>What would you like to do?</h5>
+            <div className="btnBox">
+              <div className="orderLink">
+                <Link to="/order" onClick={newOrderHandle}>
+                  New Order
+                </Link>
+              </div>
+              <div className="drinkLink">
+                <Link to="/drink">New Drink</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 

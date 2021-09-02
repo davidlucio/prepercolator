@@ -12,7 +12,7 @@ export default function Order({ user }) {
   return (
     <>
       <Header user={user} order={order} />
-      <main className="newOrderPage">
+      <main>
         <OrderCard user={user} order={order} setOrder={setOrder} />
       </main>
       <Footer />

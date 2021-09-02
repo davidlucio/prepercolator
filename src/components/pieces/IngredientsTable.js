@@ -30,8 +30,9 @@ export default function IngredientsTable() {
 
   const deleteIngredient = (event) => {
     let id = event.target.value;
+    let token = localStorage.getItem("token");
     console.log("User double-clicked delete, move to delete item");
-    API.deleteIngredientById(id).then((res) => {
+    API.deleteIngredientById(id, token).then((res) => {
       console.log(`Successfully deleted Ingredient. ${res}`);
     });
     updateTable();
@@ -42,20 +43,27 @@ export default function IngredientsTable() {
       <div className="bpAvailable">
         <h3>Available Ingredients:</h3>
         <ul>
-          {ingredients.map((ingredient) => {
-            return (
-              <li key={ingredient.id}>
-                {ingredient.ingredient_name}
-                <button value={ingredient.id} onClick={sellOutIngredient}>
-                  Sell Out
-                </button>
-                <button value={ingredient.id} onDoubleClick={deleteIngredient}>
-                  Delete
-                </button>
-                {ingredient.isSoldOut ? <p>Sold Out</p> : null}
-              </li>
-            );
-          })}
+          {ingredients ? (
+            ingredients.map((ingredient) => {
+              return (
+                <li key={ingredient.id}>
+                  <span>{ingredient.ingredient_name}</span>
+                  <button value={ingredient.id} onClick={sellOutIngredient}>
+                    Sell Out
+                  </button>
+                  <button
+                    value={ingredient.id}
+                    onDoubleClick={deleteIngredient}
+                  >
+                    Delete
+                  </button>
+                  {ingredient.isSoldOut ? <p>Sold Out</p> : null}
+                </li>
+              );
+            })
+          ) : (
+            <li>Loading...</li>
+          )}
         </ul>
       </div>
       <NewIngredientForm className="newIngredient" updateTable={updateTable} />

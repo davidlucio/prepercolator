@@ -53,51 +53,56 @@ export default function OrderCard({ user, order, setOrder }) {
   });
 
   return (
-    <div>
+    <div className="orderCard">
       <h2>Your Order:</h2>
       <ul>
-        {order.map(function (currentelement, index, arrayobj) {
-          return (
-            <OrderItem
-              key={index}
-              index={index}
-              item={currentelement}
-              order={order}
-              setOrder={setOrder}
-            />
-          );
-        })}
-        <li>{runningPrice}</li>
-        <li>Add a Drink to your order</li>
-        <li>
-          <form name="orderform">
-            <select
-              name="savedDrinkSelect"
-              value={drinkToAdd}
-              onChange={handleSelect}
-              onSubmit={handleSelect}
-            >
-              {user.drinks ? (
-                user.drinks.map((drink) => {
-                  return (
-                    <option key={drink.id} value={drink.id}>
-                      {drink.drink_name}
-                    </option>
-                  );
-                })
-              ) : (
-                <>Loading...</>
-              )}
-            </select>
-            <button name="addDrink" type="submit" onClick={addDrink}>
-              Add
-            </button>
-            <button name="sendOrder" type="submit" onClick={sendOrder}>
-              Complete Order
-            </button>
-          </form>
-        </li>
+        {order ? (
+          order.map(function (currentelement, index, arrayobj) {
+            return (
+              <OrderItem
+                key={index}
+                index={index}
+                item={currentelement}
+                order={order}
+                setOrder={setOrder}
+              />
+            );
+          })
+        ) : (
+          <>Loading...</>
+        )}
+        <hr />
+        <p>Total: ${runningPrice}</p>
       </ul>
+      <div>
+        <p>Add a Drink to your order</p>
+        <form name="orderform">
+          <select
+            name="savedDrinkSelect"
+            value={drinkToAdd}
+            onChange={handleSelect}
+            onSubmit={handleSelect}
+          >
+            {user.drinks ? (
+              user.drinks.map((drink) => {
+                return (
+                  <option key={drink.id} value={drink.id}>
+                    {drink.drink_name}
+                  </option>
+                );
+              })
+            ) : (
+              <>Loading...</>
+            )}
+          </select>
+          <button name="addDrink" type="submit" onClick={addDrink}>
+            Add
+          </button>
+          <button name="sendOrder" type="submit" onClick={sendOrder}>
+            Complete Order
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,53 @@
+.homePage {
+  text-align: center;
+
+  .hpWelcome {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+
+  div {
+    h5 {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid grey;
+    }
+    .btnBox {
+      width: 50%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      .orderLink {
+        margin: 1rem;
+        a {
+          text-decoration: none;
+          color: black;
+          border: 1px solid grey;
+          border-radius: 5px;
+          padding: 0.2rem;
+          transition: transform 250ms ease;
+        }
+        &:hover,
+        &:focus {
+          transform: scale(0.95);
+          opacity: 0.8;
+        }
+      }
+      .drinkLink {
+        margin: 1rem;
+        a {
+          border: 1px solid grey;
+          border-radius: 5px;
+          padding: 0.2rem;
+          color: black;
+          text-decoration: none;
+          transition: transform 200ms ease-in-out;
+        }
+        &:hover,
+        &:focus {
+          transform: scale(0.95);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

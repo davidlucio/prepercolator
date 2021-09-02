@@ -114,6 +114,36 @@ body header nav {
   border-radius: 400px 0px 0px 0px / 100% 0px 0px 0px;
   box-shadow: inset 7px 14px 15px -10px black; }
 
+body header nav ul {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+body header nav ul li {
+  margin: 0 5px; }
+
+body header nav ul li a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 3px; }
+
+body header nav ul li a:hover {
+  opacity: 0.5; }
+
+body header nav ul li button {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 3px; }
+
+body header nav ul li button:hover {
+  opacity: 0.5;
+  cursor: pointer; }
+
 body main {
   display: block;
   position: relative;
@@ -666,10 +696,18 @@ body main .businessPortal .bpViewIngredients .bpAvailable h3 {
   text-align: center;
   padding: 0.6rem; }
 
+body main .businessPortal .bpViewIngredients .bpAvailable ul {
+  border: 1px solid grey;
+  padding: 0.3rem; }
+
 body main .businessPortal .bpViewIngredients .bpAvailable ul li {
-  padding: 0.1rem;
+  border-bottom: 1px solid grey;
+  padding: 0.2rem;
   display: flex;
   justify-content: space-between; }
+
+body main .businessPortal .bpViewIngredients .bpAvailable ul li span {
+  width: 25%; }
 
 body main .businessPortal .bpViewIngredients .bpActions h3 {
   margin: 0.5rem;
@@ -735,20 +773,195 @@ body main .businessPortal .bpViewDrinks .bpDrinkTemplates h3 {
 
 body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox {
   margin: 1rem 0;
-  padding: 0.5rem 0;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey; }
 
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard {
+  border: 1px solid grey;
+  margin: 1rem 0.3rem;
+  padding: 0.3rem; }
+
 body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard h5 {
-  text-align: center; }
+  text-align: center;
+  margin: 0.2rem; }
 
 body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard p {
-  font-size: 0.5rem; }
+  text-align: center;
+  font-size: 1rem;
+  margin: 0.3rem; }
 
 body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard h6 {
-  font-size: 0.8rem; }
+  font-size: 1rem;
+  padding: 0.3rem; }
+
+body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard ul {
+  width: 75%;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  margin: 0 auto; }
 
 body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBox .bpDrinkTemplateCard ul li {
+  padding: 0.2rem 1rem;
+  display: flex;
+  justify-content: space-between; }
+
+body main .homePage {
+  text-align: center; }
+
+body main .homePage .hpWelcome {
+  padding: 1rem;
+  font-size: 2rem; }
+
+body main .homePage div h5 {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid grey; }
+
+body main .homePage div .btnBox {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; }
+
+body main .homePage div .btnBox .orderLink {
+  margin: 1rem; }
+
+body main .homePage div .btnBox .orderLink a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.2rem;
+  transition: transform 250ms ease; }
+
+body main .homePage div .btnBox .orderLink:hover, body main .homePage div .btnBox .orderLink:focus {
+  transform: scale(0.95);
+  opacity: 0.8; }
+
+body main .homePage div .btnBox .drinkLink {
+  margin: 1rem; }
+
+body main .homePage div .btnBox .drinkLink a {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.2rem;
+  color: black;
+  text-decoration: none;
+  transition: transform 200ms ease-in-out; }
+
+body main .homePage div .btnBox .drinkLink:hover, body main .homePage div .btnBox .drinkLink:focus {
+  transform: scale(0.95);
+  opacity: 0.8; }
+
+body main .orderCard h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem; }
+
+body main .orderCard ul {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.8rem; }
+
+body main .orderCard ul li {
+  display: flex;
+  justify-content: space-evenly; }
+
+body main .orderCard ul li span {
+  width: fit-content; }
+
+body main .orderCard ul li button {
+  font-size: 1.3rem;
+  background-color: white;
+  padding: 1px;
+  border: none;
+  transition: transform 200ms ease; }
+
+body main .orderCard ul li button:hover, body main .orderCard ul li button:focus {
+  color: red;
+  transform: scale(1.1); }
+
+body main .orderCard ul hr {
+  margin: 5px; }
+
+body main .orderCard div {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: none; }
+
+body main .orderCard div p {
+  border: none;
+  text-align: center; }
+
+body main .orderCard div form {
+  margin: 0 auto;
+  padding: 5px;
+  border: none; }
+
+body main .orderCard div form select {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px; }
+
+body main .orderCard div form button {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  transition: all 250ms ease; }
+
+body main .orderCard div form button:hover {
+  opacity: 0.8;
+  transform: scale(0.95); }
+
+body main .profile h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem; }
+
+body main .profile .settings {
+  padding: 1rem;
+  border-top: 1px solid grey; }
+
+body main .profile .settings .userAvatar {
+  display: flex; }
+
+body main .profile .settings .userAvatar img {
+  display: none; }
+
+body main .profile .settings .userAvatar h1 {
+  font-size: 1.5rem;
+  margin: 1rem; }
+
+body main .profile .settings ul {
+  display: flex; }
+
+body main .profile .settings ul li {
+  padding: 5px; }
+
+body main .profile .bpDrinkTemplateCard {
+  background-color: #e9e8e7;
+  border-radius: 25px;
+  margin: 1rem auto;
+  max-width: 70%;
+  padding: 1rem 0; }
+
+body main .profile .bpDrinkTemplateCard h5 {
+  text-align: center;
+  margin: 5px; }
+
+body main .profile .bpDrinkTemplateCard p {
+  text-align: center;
+  margin: 5px; }
+
+body main .profile .bpDrinkTemplateCard h6 {
+  margin-left: 20%;
+  margin-bottom: 5px; }
+
+body main .profile .bpDrinkTemplateCard ul {
+  width: 50%;
+  margin: 0 auto; }
+
+body main .profile .bpDrinkTemplateCard ul li {
   display: flex;
   justify-content: space-between; }
 
