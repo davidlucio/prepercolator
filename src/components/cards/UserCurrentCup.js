@@ -1,10 +1,10 @@
 import React from "react";
 import API from "../utils/API";
 
-export default function UserCurrentCup({ cupSize, changeCupSize, drinkIngredients, handleDrink }) {
+export default function UserCurrentCup({ cupSize, setCupSize, drinkIngredients, setDrinkIngredients }) {
     // array of ingredients
 
-    
+
 
     // no drink handler for now
 

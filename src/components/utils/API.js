@@ -7,7 +7,7 @@ const API = {
     return axios.get(`${URL_PREFIX}/ingredients/`);
   },
   getIngredientByTier: function (tier) {
-    return axios.get(`${URL_PREFIX}/ingredients/${tier}`);
+    return axios.get(`${URL_PREFIX}/ingredients/tier/${tier}`);
   },
   getDrinkTemplates: function () {
     return axios.get(`${URL_PREFIX}/drinks/`);
