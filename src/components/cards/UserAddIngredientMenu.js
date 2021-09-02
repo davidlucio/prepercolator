@@ -1,97 +1,146 @@
+import { array } from "prop-types";
 import React, {useState, useEffect} from "react";
 import API from "../utils/API";
 
 export default function AddIngredientMenu({ drinkIngredients, setDrinkIngredients, drinkIngredientsAmnt, setDrinkIngredientsAmnt }) {
 
-    const [ingredientMenu, setIngredientMenu] = useState([]);
+    const [bases, updateBases] = useState([]);
+    const [mains, updateMains] = useState([]);
+    const [flavors, updateFlavors] = useState([]);
+    const [toppings, updateToppings] = useState([]);
+
     useEffect(() => {
-        API.getIngredientByTier()
+
+        // GET BASE INGREDIENTS
+        API.getIngredientByTier('base')
         .then( (val) =>{
-            setIngredientMenu(val.data);
+            updateBases(val.data);
         })
         .catch( (err) =>{
             console.log(err)
         });
+
+        // GET MAIN INGREDIENTS
+        API.getIngredientByTier('main')
+        .then( (val) =>{
+            updateMains(val.data);
+        })
+        .catch( (err) =>{
+            console.log(err)
+        });
+
+        // GET FLAVORS
+        API.getIngredientByTier('flavor')
+        .then( (val) =>{
+            updateFlavors(val.data);
+        })
+        .catch( (err) =>{
+            console.log(err)
+        });
+
+        // GET TOPPINGS
+        API.getIngredientByTier('topping')
+        .then( (val) =>{
+            updateToppings(val.data);
+        })
+        .catch( (err) =>{
+            console.log(err)
+        });
+
     }, []);
 
+    // TODO: Function for adding ingredient...
+    const checkIngredientCount = (id) => {
+        // Check if there already are ingredients...
+        // <span className="amount">1</span>
+    }
+
+    const addToCup = (id) =>{
+        let ingredientQueue = [...drinkIngredients];
+        let ingredientCount = [...drinkIngredientsAmnt];
+        if(ingredientQueue.includes(id)){
+            var key = ingredientQueue.indexOf(id);
+            ingredientCount[key] += 1;
+            setDrinkIngredientsAmnt(ingredientCount);
+            
+            console.log(`Adding more ${id} at index ${key} (Total = ${ ingredientCount[key] })`);
+        }
+        else{
+            ingredientQueue.push(id);
+            var key = ingredientQueue.indexOf(id);
+            ingredientCount[key] = 1;
+
+            setDrinkIngredientsAmnt(ingredientCount);
+            setDrinkIngredients(ingredientQueue);
+
+            console.log(`Adding one ${id}`);
+        }
+        return;
+    }
 
     // Compile HTML!
     return (
         <section className="ingredientList">
             <div className="anti-scroll">
                 
-                {/**}
-
                 <ul className="ingredients-bases">
-                    <label>Base</label>
-                    <li id="" className="ingredient-bean-1">
-                        Espresso<span className="amount">1</span>
-                    </li>
-                    <li id="" className="ingredient-bean-2">
-                        Medium Roast
-                    </li>
-                    <li id="" className="ingredient-bean-3">
-                        Blonde Roast
-                    </li>
-                    <li id="" className="ingredient-leaf-2">
-                        Green Tea
-                    </li>
-                    <li id="" className="ingredient-leaf-1">
-                        Earl Grey - Hot
-                    </li>
+                    <label>base</label>
+                    {
+                        bases.map( ingredient => (
+                            <li className={ ingredient.icon ? `ingredient-${ingredient.icon}` : "ingredient-liquid-0"}
+                                id={ingredient.id}
+                                key={`ingredient-${ingredient.id}`}
+                                onClick={ (e) => addToCup(e.target.id) }
+                            >
+                                { ingredient.ingredient_name }
+                            </li>
+                        ))
+                    }
                 </ul>
-
-                <ul className="ingredients-main">
-                    <label>Main</label>
-                    <li id="" className="ingredient-liquid-1">
-                        Whole Milk
-                    </li>
-                    <li id="" className="ingredient-liquid-1">
-                        Skim Milk
-                    </li>
-                    <li id="" className="ingredient-liquid-1">
-                        2% Milk
-                    </li>
-                    <li id="" className="ingredient-liquid-4">
-                        Almond Milk
-                    </li>
-                    <li id="" className="ingredient-liquid-3">
-                        Oat Milk
-                    </li>
-                    <li id="" className="ingredient-liquid-2">
-                        Soy Milk
-                    </li>
+                
+                <ul className="ingredients-mains">
+                    <label>main</label>
+                    {
+                        mains.map( ingredient => (
+                            <li className={ ingredient.icon ? `ingredient-${ingredient.icon}` : "ingredient-liquid-0"}
+                                id={ingredient.id}
+                                key={`ingredient-${ingredient.id}`}
+                                onClick={ (e) => addToCup(e.target.id) }
+                            >
+                                { ingredient.ingredient_name }
+                            </li>
+                        ))
+                    }
                 </ul>
 
                 <ul className="ingredients-flavors">
-                    <label>Flavors</label>
-                    <li id="" className="ingredient-syrup-1">
-                        Chocolate Syrup
-                    </li>
-                    <li id="" className="ingredient-syrup-2">
-                        Vanilla Syrup<span className="amount">1</span>
-                    </li>
-                    <li id="" className="ingredient-syrup-0">
-                        Hazelnut Syrup<span className="amount">1</span>
-                    </li>
-                    <li id="" className="ingredient-powder-1">
-                        Chocolate Powder
-                    </li>
-                    <li id="" className="ingredient-powder-2">
-                        Vanilla Powder
-                    </li>
+                    <label>flavors</label>
+                    {
+                        flavors.map( ingredient => (
+                            <li className={ ingredient.icon ? `ingredient-${ingredient.icon}` : "ingredient-liquid-0"}
+                                id={ingredient.id}
+                                key={`ingredient-${ingredient.id}`}
+                                onClick={ (e) => addToCup(e.target.id) }
+                            >
+                                { ingredient.ingredient_name }
+                            </li>
+                        ))
+                    }
                 </ul>
-
                 <ul className="ingredients-toppings">
-                    <label>Toppings</label>
-                    <li id="" className="ingredient-liquid-0">
-                        Milk Foam
-                    </li>
-                    <li id="" className="ingredient-powder-3">
-                        Cinnamon
-                    </li>
+                    <label>toppings</label>
+                    {
+                        toppings.map( ingredient => (
+                            <li className={ ingredient.icon ? `ingredient-${ingredient.icon}` : "ingredient-liquid-0"}
+                                id={ingredient.id}
+                                key={`ingredient-${ingredient.id}`}
+                                onClick={ (e) => addToCup(e.target.id) }
+                            >
+                                { ingredient.ingredient_name }
+                            </li>
+                        ))
+                    }
                 </ul>
-                {/**/}
 
             </div>
         </section>

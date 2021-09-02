@@ -1,11 +1,19 @@
 /* Ingredient Vars */
-$color_coffee: linear-gradient(180deg,
+$color_base: linear-gradient(180deg,
     #2e1f15 0%,
     #2e1f15 50%,
     #000000 100%);
-$color_syrup: linear-gradient(180deg,
+$color_main: linear-gradient(180deg,
+    #ffffff 0%,
+    #ffffff 50%,
+    #000000 100%);
+$color_flavor: linear-gradient(180deg,
     #661133 0%,
     #661133 50%,
+    #000000 100%);
+$color_topping: linear-gradient(180deg,
+    #90d6d6 0%,
+    #90d6d6 50%,
     #000000 100%);
 
 /* Inherited Vars */
@@ -25,14 +33,21 @@ div.ingredient {
     border-bottom-right-radius: $cup_curve;
     color: $font-white;
     
-    &.coffee{
+    &.base{
         height: 50%;
-        background: $color_coffee;
+        background: $color_base;
     }
-
-    &.syrup{
+    &.main{
+        height: 15%;
+        background: $color_main;
+    }
+    &.flavor{
         height: 10%;
-        background: $color_syrup;
+        background: $color_flavor;
+    }
+    &.topping{
+        height: 7%;
+        background: $color_topping;
     }
 
     // Percentage based heights for dynamic calculations
