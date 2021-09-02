@@ -48,445 +48,369 @@ body {
   /** <main> **/
   /** Overwrite for React root **/
   /** <footer> **/ }
-
-body header {
-  display: block;
-  position: relative;
-  width: 100%;
-  background-color: #00aabb;
-  height: 150px;
-  margin-bottom: 0px; }
-
-body header img.logo {
-  display: block;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 1;
-  width: 120px;
-  height: 120px;
-  background-color: #00aabb;
-  border-radius: 50% 50% 50% 50%;
-  box-shadow: 5px 10px 8px -5px black; }
-
-body header nav {
-  display: flex;
-  position: relative;
-  top: 2px;
-  width: 100%;
-  height: 100%;
-  padding: 15px;
-  align-items: flex-start;
-  justify-content: flex-end;
-  align-content: space-between;
-  background-color: #FFFFFF;
-  border-radius: 400px 0px 0px 0px / 100% 0px 0px 0px;
-  box-shadow: inset 7px 14px 15px -10px black; }
-
-body #root {
-  width: 100%; }
-
-body main {
-  display: block;
-  position: relative;
-  max-width: 800px;
-  height: 600px;
-  padding: 15px;
-  padding-bottom: 50px;
-  margin: 0px auto 30px auto; }
-
-body main .cup-holder {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: flex-end; }
-
-body main .cup-holder .my-cup {
-  display: flex;
-  position: relative;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 25px 0px 5px;
-  background: linear-gradient(121deg, #E0DDB0 0%, #E0DDB0 41%, #000000 100%);
-  border-bottom-left-radius: 100% 32px;
-  border-bottom-right-radius: 100% 32px;
-  box-shadow: 0px 20px 15px -23px black;
-  /* Ingredient Vars */
-  /* Inherited Vars */ }
-
-body main .cup-holder .my-cup.cup-8oz {
-  height: 300px;
-  width: 250px; }
-
-body main .cup-holder .my-cup.cup-12oz {
-  height: 400px;
-  width: 300px; }
-
-body main .cup-holder .my-cup.cup-16oz {
-  height: 500px;
-  width: 300px; }
-
-body main .cup-holder .my-cup::before {
-  content: "";
-  position: absolute;
-  height: calc(100% - 15px);
-  width: 20%;
-  top: 15px;
-  left: -13%;
-  background-color: #FFFFFF;
-  -webkit-transform: skewX(3deg); }
-
-body main .cup-holder .my-cup::after {
-  content: "";
-  position: absolute;
-  height: calc(100% - 15px);
-  width: 20%;
-  top: 15px;
-  right: -13%;
-  background-color: #FFFFFF;
-  -webkit-transform: skewX(-3deg); }
-
-body main .cup-holder .my-cup div.ingredient {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 7%;
-  margin-top: -10px;
-  padding-top: 5px;
-  border-bottom-left-radius: 100% 32px;
-  border-bottom-right-radius: 100% 32px;
-  color: #FFFFFF; }
-
-body main .cup-holder .my-cup div.ingredient.base {
-  height: 50%;
-  background: radial-gradient(#2e1f15 0%, #2e1f15 50%, #000000 100%); }
-
-body main .cup-holder .my-cup div.ingredient.main {
-  height: 15%;
-  background: radial-gradient(#ffffff 0%, #ffffff 50%, #000000 100%);
-  color: #000000; }
-
-body main .cup-holder .my-cup div.ingredient.flavor {
-  height: 10%;
-  background: radial-gradient(#661133 0%, #661133 50%, #000000 100%); }
-
-body main .cup-holder .my-cup div.ingredient.topping {
-  height: 7%;
-  background: radial-gradient(#90d6d6 0%, #90d6d6 50%, #000000 100%); }
-
-body main .cup-holder .my-cup div.ingredient.percent-10 {
-  height: 10%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-15 {
-  height: 15%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-20 {
-  height: 20%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-25 {
-  height: 25%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-30 {
-  height: 30%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-35 {
-  height: 35%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-40 {
-  height: 40%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-45 {
-  height: 45%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-50 {
-  height: 50%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-55 {
-  height: 55%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-60 {
-  height: 60%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-65 {
-  height: 65%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-70 {
-  height: 70%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-75 {
-  height: 75%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-80 {
-  height: 80%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-85 {
-  height: 85%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-90 {
-  height: 90%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-95 {
-  height: 95%; }
-
-body main .cup-holder .my-cup div.ingredient.percent-100 {
-  height: 100%; }
-
-body main .cup-holder .my-cup div.ingredient span {
-  position: relative; }
-
-body main .cup-holder .my-cup div.ingredient span::after {
-  position: relative;
-  top: 0px;
-  right: -5px;
-  font-size: 90%;
-  font-family: "Font Awesome 6 Pro";
-  font-weight: 900;
-  content: '\f056'; }
-
-body main .cup-holder .my-cup div.ingredient span:hover, body main .cup-holder .my-cup div.ingredient span:focus {
-  color: #00aabb;
-  font-weight: 600; }
-
-body main .cup-holder .my-cup div.ingredient span:hover::after, body main .cup-holder .my-cup div.ingredient span:focus::after {
-  color: red; }
-
-body main section.ingredientList {
-  background: #FFFFFF;
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 50;
-  width: 300px;
-  height: 500px;
-  padding: 0px 0px 0px 15px;
-  overflow: hidden;
-  border: 3px #00aabb solid;
-  border-radius: 30px;
-  box-shadow: 5px 5px 7px 0px black;
-  transition: left .5s; }
-
-body main section.ingredientList .anti-scroll {
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  padding-right: 25px;
-  box-sizing: content-box; }
-
-body main section.ingredientList ul {
-  margin: 20px 0px 30px 0px;
-  padding-right: 10px; }
-
-body main section.ingredientList ul label {
-  display: block;
-  width: 100%;
-  padding: 3px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  background: linear-gradient(#FFFFFF 0%, #00aabb 100%);
-  color: #412919;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 130%;
-  font-weight: 600;
-  font-family: "Lemonada", cursive;
-  box-shadow: 5px 5px 7px 0px black; }
-
-body main section.ingredientList ul li {
-  padding: 8px 0px 8px 35px;
-  margin-bottom: 10px;
-  font-weight: 600; }
-
-body main section.ingredientList ul li.ingredient-bean-0 {
-  background-image: url("../images/sprites/bean_0.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-bean-1 {
-  background-image: url("../images/sprites/bean_1.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-bean-2 {
-  background-image: url("../images/sprites/bean_2.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-bean-3 {
-  background-image: url("../images/sprites/bean_3.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-leaf-0 {
-  background-image: url("../images/sprites/leaf_0.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-leaf-1 {
-  background-image: url("../images/sprites/leaf_1.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-leaf-2 {
-  background-image: url("../images/sprites/leaf_2.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-liquid-0 {
-  background-image: url("../images/sprites/liquid_0.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-liquid-1 {
-  background-image: url("../images/sprites/liquid_1.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-liquid-2 {
-  background-image: url("../images/sprites/liquid_2.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-liquid-3 {
-  background-image: url("../images/sprites/liquid_3.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-liquid-4 {
-  background-image: url("../images/sprites/liquid_4.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-powder-0 {
-  background-image: url("../images/sprites/powder_0.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-powder-1 {
-  background-image: url("../images/sprites/powder_1.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-powder-2 {
-  background-image: url("../images/sprites/powder_2.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-powder-3 {
-  background-image: url("../images/sprites/powder_3.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-syrup-0 {
-  background-image: url("../images/sprites/syrup_0.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-syrup-1 {
-  background-image: url("../images/sprites/syrup_1.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li.ingredient-syrup-2 {
-  background-image: url("../images/sprites/syrup_2.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 30px; }
-
-body main section.ingredientList ul li span {
-  display: inline-block;
-  position: relative;
-  width: 22px;
-  height: 22px;
-  padding: 2px;
-  margin-left: 10px;
-  border-radius: 100%;
-  text-align: center;
-  background-color: #00aabb;
-  color: white; }
-
-body main section.ingredientList ul li::after {
-  position: relative;
-  top: 2px;
-  right: -10px;
-  color: #412919;
-  font-size: 120%;
-  font-family: "Font Awesome 6 Pro";
-  font-weight: 900;
-  content: '\f055'; }
-
-body main section.ingredientList ul li:hover, body main section.ingredientList ul li:focus {
-  text-shadow: 0 0 3px #00aabb;
-  font-weight: 600; }
-
-body main section.ingredientList ul li:hover span, body main section.ingredientList ul li:focus span {
-  text-shadow: none; }
-
-body main section.ingredientList ul li:hover::after, body main section.ingredientList ul li:focus::after {
-  color: #00aabb;
-  text-shadow: none; }
-
-@media screen and (min-width: 950px) {
-  body main section.ingredientList {
-    left: -10%; } }
-
-@media screen and (max-width: 800px) {
-  body main section.ingredientList {
-    border-radius: 0px 30px 30px 0px;
-    left: -275px; }
-  body main section.ingredientList ul {
-    padding-right: 30px; }
-  body main section.ingredientList:hover, body main section.ingredientList:focus {
-    left: -3px; }
-  body main section.ingredientList:hover ul, body main section.ingredientList:focus ul {
-    padding-right: 10px; } }
-
-body main .businesssPortal {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-body main .businesssPortal .bpViewSelect {
-  display: flex;
-  flex-direction: row; }
-
-body main .businesssPortal .bpViewSelect .bpWelcome {
-  font-size: 2rem; }
-
-body footer {
-  display: block;
-  position: fixed;
-  z-index: 99;
-  width: 100%;
-  bottom: 0px;
-  left: 0px;
-  padding: 5px 0px;
-  background-color: #412919; }
-
-body footer p {
-  width: 100%;
-  text-align: center;
-  color: #FFFFFF; }
+  body header {
+    display: block;
+    position: relative;
+    width: 100%;
+    background-color: #00aabb;
+    height: 150px;
+    margin-bottom: 0px; }
+    body header img.logo {
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      width: 120px;
+      height: 120px;
+      background-color: #00aabb;
+      border-radius: 50% 50% 50% 50%;
+      box-shadow: 5px 10px 8px -5px black; }
+    body header nav {
+      display: flex;
+      position: relative;
+      top: 2px;
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      align-items: flex-start;
+      justify-content: flex-end;
+      align-content: space-between;
+      background-color: #FFFFFF;
+      border-radius: 400px 0px 0px 0px / 100% 0px 0px 0px;
+      box-shadow: inset 7px 14px 15px -10px black; }
+  body #root {
+    width: 100%; }
+  body main {
+    display: block;
+    position: relative;
+    max-width: 800px;
+    height: 600px;
+    padding: 15px;
+    padding-bottom: 50px;
+    margin: 0px auto 30px auto; }
+    body main .cup-holder {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: flex-end; }
+      body main .cup-holder .my-cup {
+        display: flex;
+        position: relative;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 25px 0px 5px;
+        background: linear-gradient(121deg, #E0DDB0 0%, #E0DDB0 41%, #000000 100%);
+        border-bottom-left-radius: 100% 32px;
+        border-bottom-right-radius: 100% 32px;
+        box-shadow: 0px 20px 15px -23px black;
+        /* Ingredient Vars */
+        /* Inherited Vars */ }
+        body main .cup-holder .my-cup.cup-8oz {
+          height: 300px;
+          width: 250px; }
+        body main .cup-holder .my-cup.cup-12oz {
+          height: 400px;
+          width: 300px; }
+        body main .cup-holder .my-cup.cup-16oz {
+          height: 500px;
+          width: 300px; }
+        body main .cup-holder .my-cup::before {
+          content: "";
+          position: absolute;
+          height: calc(100% - 15px);
+          width: 20%;
+          top: 15px;
+          left: -13%;
+          background-color: #FFFFFF;
+          -webkit-transform: skewX(3deg); }
+        body main .cup-holder .my-cup::after {
+          content: "";
+          position: absolute;
+          height: calc(100% - 15px);
+          width: 20%;
+          top: 15px;
+          right: -13%;
+          background-color: #FFFFFF;
+          -webkit-transform: skewX(-3deg); }
+        body main .cup-holder .my-cup div.ingredient {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          min-height: 7%;
+          margin-top: -10px;
+          padding-top: 5px;
+          border-bottom-left-radius: 100% 32px;
+          border-bottom-right-radius: 100% 32px;
+          color: #FFFFFF; }
+          body main .cup-holder .my-cup div.ingredient.base {
+            height: 50%;
+            background: radial-gradient(#2e1f15 0%, #2e1f15 50%, #000000 100%); }
+          body main .cup-holder .my-cup div.ingredient.main {
+            height: 15%;
+            background: radial-gradient(#ffffff 0%, #ffffff 50%, #000000 100%);
+            color: #000000; }
+          body main .cup-holder .my-cup div.ingredient.flavor {
+            height: 10%;
+            background: radial-gradient(#661133 0%, #661133 50%, #000000 100%); }
+          body main .cup-holder .my-cup div.ingredient.topping {
+            height: 7%;
+            background: radial-gradient(#90d6d6 0%, #90d6d6 50%, #000000 100%); }
+          body main .cup-holder .my-cup div.ingredient.percent-10 {
+            height: 10%; }
+          body main .cup-holder .my-cup div.ingredient.percent-15 {
+            height: 15%; }
+          body main .cup-holder .my-cup div.ingredient.percent-20 {
+            height: 20%; }
+          body main .cup-holder .my-cup div.ingredient.percent-25 {
+            height: 25%; }
+          body main .cup-holder .my-cup div.ingredient.percent-30 {
+            height: 30%; }
+          body main .cup-holder .my-cup div.ingredient.percent-35 {
+            height: 35%; }
+          body main .cup-holder .my-cup div.ingredient.percent-40 {
+            height: 40%; }
+          body main .cup-holder .my-cup div.ingredient.percent-45 {
+            height: 45%; }
+          body main .cup-holder .my-cup div.ingredient.percent-50 {
+            height: 50%; }
+          body main .cup-holder .my-cup div.ingredient.percent-55 {
+            height: 55%; }
+          body main .cup-holder .my-cup div.ingredient.percent-60 {
+            height: 60%; }
+          body main .cup-holder .my-cup div.ingredient.percent-65 {
+            height: 65%; }
+          body main .cup-holder .my-cup div.ingredient.percent-70 {
+            height: 70%; }
+          body main .cup-holder .my-cup div.ingredient.percent-75 {
+            height: 75%; }
+          body main .cup-holder .my-cup div.ingredient.percent-80 {
+            height: 80%; }
+          body main .cup-holder .my-cup div.ingredient.percent-85 {
+            height: 85%; }
+          body main .cup-holder .my-cup div.ingredient.percent-90 {
+            height: 90%; }
+          body main .cup-holder .my-cup div.ingredient.percent-95 {
+            height: 95%; }
+          body main .cup-holder .my-cup div.ingredient.percent-100 {
+            height: 100%; }
+          body main .cup-holder .my-cup div.ingredient span {
+            position: relative; }
+            body main .cup-holder .my-cup div.ingredient span::after {
+              position: relative;
+              top: 0px;
+              right: -5px;
+              font-size: 90%;
+              font-family: "Font Awesome 6 Pro";
+              font-weight: 900;
+              content: '\f056'; }
+            body main .cup-holder .my-cup div.ingredient span:hover, body main .cup-holder .my-cup div.ingredient span:focus {
+              color: #00aabb;
+              font-weight: 600; }
+              body main .cup-holder .my-cup div.ingredient span:hover::after, body main .cup-holder .my-cup div.ingredient span:focus::after {
+                color: red; }
+    body main section.ingredientList {
+      background: #FFFFFF;
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 50;
+      width: 300px;
+      height: 500px;
+      padding: 0px 0px 0px 15px;
+      overflow: hidden;
+      border: 3px #00aabb solid;
+      border-radius: 30px;
+      box-shadow: 5px 5px 7px 0px black;
+      transition: left .5s; }
+      body main section.ingredientList .anti-scroll {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        padding-right: 25px;
+        box-sizing: content-box; }
+      body main section.ingredientList ul {
+        margin: 20px 0px 30px 0px;
+        padding-right: 10px; }
+        body main section.ingredientList ul label {
+          display: block;
+          width: 100%;
+          padding: 3px;
+          margin-bottom: 20px;
+          border-radius: 20px;
+          background: linear-gradient(#FFFFFF 0%, #00aabb 100%);
+          color: #412919;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 130%;
+          font-weight: 600;
+          font-family: "Lemonada", cursive;
+          box-shadow: 5px 5px 7px 0px black; }
+        body main section.ingredientList ul li {
+          padding: 8px 0px 8px 35px;
+          margin-bottom: 10px;
+          font-weight: 600; }
+          body main section.ingredientList ul li.ingredient-bean-0 {
+            background-image: url("../images/sprites/bean_0.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-bean-1 {
+            background-image: url("../images/sprites/bean_1.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-bean-2 {
+            background-image: url("../images/sprites/bean_2.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-bean-3 {
+            background-image: url("../images/sprites/bean_3.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-leaf-0 {
+            background-image: url("../images/sprites/leaf_0.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-leaf-1 {
+            background-image: url("../images/sprites/leaf_1.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-leaf-2 {
+            background-image: url("../images/sprites/leaf_2.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-liquid-0 {
+            background-image: url("../images/sprites/liquid_0.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-liquid-1 {
+            background-image: url("../images/sprites/liquid_1.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-liquid-2 {
+            background-image: url("../images/sprites/liquid_2.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-liquid-3 {
+            background-image: url("../images/sprites/liquid_3.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-liquid-4 {
+            background-image: url("../images/sprites/liquid_4.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-powder-0 {
+            background-image: url("../images/sprites/powder_0.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-powder-1 {
+            background-image: url("../images/sprites/powder_1.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-powder-2 {
+            background-image: url("../images/sprites/powder_2.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-powder-3 {
+            background-image: url("../images/sprites/powder_3.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-syrup-0 {
+            background-image: url("../images/sprites/syrup_0.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-syrup-1 {
+            background-image: url("../images/sprites/syrup_1.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li.ingredient-syrup-2 {
+            background-image: url("../images/sprites/syrup_2.png");
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 30px; }
+          body main section.ingredientList ul li span {
+            display: inline-block;
+            position: relative;
+            width: 22px;
+            height: 22px;
+            padding: 2px;
+            margin-left: 10px;
+            border-radius: 100%;
+            text-align: center;
+            background-color: #00aabb;
+            color: white; }
+          body main section.ingredientList ul li::after {
+            position: relative;
+            top: 2px;
+            right: -10px;
+            color: #412919;
+            font-size: 120%;
+            font-family: "Font Awesome 6 Pro";
+            font-weight: 900;
+            content: '\f055'; }
+          body main section.ingredientList ul li:hover, body main section.ingredientList ul li:focus {
+            text-shadow: 0 0 3px #00aabb;
+            font-weight: 600; }
+            body main section.ingredientList ul li:hover span, body main section.ingredientList ul li:focus span {
+              text-shadow: none; }
+            body main section.ingredientList ul li:hover::after, body main section.ingredientList ul li:focus::after {
+              color: #00aabb;
+              text-shadow: none; }
+    @media screen and (min-width: 950px) {
+      body main section.ingredientList {
+        left: -10%; } }
+    @media screen and (max-width: 800px) {
+      body main section.ingredientList {
+        border-radius: 0px 30px 30px 0px;
+        left: -275px; }
+        body main section.ingredientList ul {
+          padding-right: 30px; }
+        body main section.ingredientList:hover, body main section.ingredientList:focus {
+          left: -3px; }
+          body main section.ingredientList:hover ul, body main section.ingredientList:focus ul {
+            padding-right: 10px; } }
+    body main .businesssPortal {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      body main .businesssPortal .bpViewSelect {
+        display: flex;
+        flex-direction: row; }
+        body main .businesssPortal .bpViewSelect .bpWelcome {
+          font-size: 2rem; }
+  body footer {
+    display: block;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    padding: 5px 0px;
+    background-color: #412919; }
+    body footer p {
+      width: 100%;
+      text-align: center;
+      color: #FFFFFF; }

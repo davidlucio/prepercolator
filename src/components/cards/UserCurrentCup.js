@@ -32,9 +32,10 @@ export default function UserCurrentCup({ cupSize, setCupSize, drinkIngredients, 
         return(
             <div className={`ingredient ${ ingredient.tier }`}
                  key={ `cupcontent-${ingredient_id}-${number}`}
-                 onClick={ (e) => removeFromCup(ingredient_id) }
             >
-                <span>{ingredient.ingredient_name}</span>
+                <span onClick={ (e) => removeFromCup(ingredient_id) }>
+                    {ingredient.ingredient_name}
+                </span>
             </div>
         )
     }
