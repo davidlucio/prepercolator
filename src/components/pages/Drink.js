@@ -274,7 +274,7 @@ export default function Drink({ user }) {
                 />
 
                 <div className="btnHolder drink-mod-block">
-                    <button className="drink-save" onClick={ (e) => saveDrink}></button>
+                    <button className="drink-save" onClick={ saveDrink}></button>
                     <button className="drink-size-increase" disabled={!canGrow} onClick={ (e) => changeDrinkSize("increase") }></button>
                     <button className="drink-size-decrease" disabled={!canShrink} onClick={ (e) => changeDrinkSize("decrease") }></button>
                 </div>
