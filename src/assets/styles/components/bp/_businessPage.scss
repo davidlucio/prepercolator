@@ -30,8 +30,14 @@ $primary_color: rgb(33, 33, 33);
         padding: 0.6rem;
       }
       ul {
+        border: 1px solid grey;
+        padding: 0.3rem;
         li {
-          padding: 0.1rem;
+          span {
+            width: 25%;
+          }
+          border-bottom: 1px solid grey;
+          padding: 0.2rem;
           display: flex;
           justify-content: space-between;
         }
@@ -107,22 +113,33 @@ $primary_color: rgb(33, 33, 33);
 
       .bpDrinkTemplateCardBox {
         margin: 1rem 0;
-        padding: 0.5rem 0;
         border-top: 1px solid grey;
         border-bottom: 1px solid grey;
 
         .bpDrinkTemplateCard {
+          border: 1px solid grey;
+          margin: 1rem 0.3rem;
+          padding: 0.3rem;
           h5 {
             text-align: center;
+            margin: 0.2rem;
           }
           p {
-            font-size: 0.5rem;
+            text-align: center;
+            font-size: 1rem;
+            margin: 0.3rem;
           }
           h6 {
-            font-size: 0.8rem;
+            font-size: 1rem;
+            padding: 0.3rem;
           }
           ul {
+            width: 75%;
+            border-top: 1px solid grey;
+            border-bottom: 1px solid grey;
+            margin: 0 auto;
             li {
+              padding: 0.2rem 1rem;
               display: flex;
               justify-content: space-between;
             }

@@ -1,5 +1,5 @@
 const axios = require("axios");
-const URL_PREFIX = "https://prepercolator-backend.herokuapp.com/";
+const URL_PREFIX = "https://prepercolator-backend.herokuapp.com/api/";
 // const URL_PREFIX = "http://localhost:3001/api";
 // TODO:
 const API = {

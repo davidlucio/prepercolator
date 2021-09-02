@@ -9,6 +9,7 @@ export default function Header({ user }) {
     e.preventDefault();
     localStorage.removeItem("token");
     history.push("/");
+    window.location.reload();
   };
   return (
     <header>

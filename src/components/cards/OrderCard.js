@@ -53,20 +53,24 @@ export default function OrderCard({ user, order, setOrder }) {
   });
 
   return (
-    <div>
+    <div className="orderCard">
       <h2>Your Order:</h2>
       <ul>
-        {order.map(function (currentelement, index, arrayobj) {
-          return (
-            <OrderItem
-              key={index}
-              index={index}
-              item={currentelement}
-              order={order}
-              setOrder={setOrder}
-            />
-          );
-        })}
+        {order ? (
+          order.map(function (currentelement, index, arrayobj) {
+            return (
+              <OrderItem
+                key={index}
+                index={index}
+                item={currentelement}
+                order={order}
+                setOrder={setOrder}
+              />
+            );
+          })
+        ) : (
+          <>Loading...</>
+        )}
         <li>{runningPrice}</li>
         <li>Add a Drink to your order</li>
         <li>
