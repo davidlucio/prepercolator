@@ -7,6 +7,13 @@
 @import "./global/_images.scss";
 @import "./global/_flair.scss";
 
+/** Overwrite for React root **/
+html, body, .App, #root, .root {
+    width: 100%;
+    height: 100%;
+}
+
+
 /** Page Elements **/
 body{
     font-size: 18px;

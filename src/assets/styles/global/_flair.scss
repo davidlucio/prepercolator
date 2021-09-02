@@ -16,6 +16,40 @@
         box-shadow: 5px 10px 8px -5px black;
     }
 
+    @else if $location==input {
+        box-shadow: 3px 3px 5px 0px $color-primary3,
+                    3px -3px 5px 0px $color-primary3,
+                    -3px 3px 5px 0px $color-primary3,
+                    -3px -3px 5px 0px $color-primary3;
+    }
+
+}
+
+@mixin animate($type){
+
+    @if $type==logo{
+        animation: tilt_left 5s infinite;
+        transition: animation 5s;
+    }
+}
+
+@keyframes tilt_left {
+	30% {
+        transform: rotate(0);
+        animation-timing-function: ease-out;
+	}
+    50%{
+        transform: rotate(-45deg);
+        animation-timing-function: ease;
+    }
+    80%{
+        transform: rotate(-45deg);
+        animation-timing-function: ease-out;
+    }
+    100%{
+        transform: rotate(0);
+        animation-timing-function: ease;
+    }
 }
 
 $breakpoint_mobile: 480px;

@@ -82,7 +82,7 @@ export default function NewIngredientForm({ updateTable }) {
   return (
     <div className="bpActions">
       <h3>Add a New Ingredient</h3>
-      <div>
+      <div classname="bpForm">
         <form>
           <label>
             <label>

@@ -1,21 +1,15 @@
-/** Overwrite for React root **/
-#root{
-    width: 100%;
-}
+main {
+  display: block;
+  position: relative;
+  max-width: 800px;
+  max-height: 800px;
+  padding: 15px;
+  padding-bottom: 50px;
+  margin: 0px auto 30px auto;
+  // border: 1px solid black;
 
-main{
-
-    display: block;
-    position: relative;
-    max-width: 800px;
-    height: 600px;
-    padding: 15px;
-    padding-bottom: 50px;
-    margin: 0px auto 30px auto;
-    // border: 1px solid black;
-
-    @import "./cards/_cup.scss";
-    @import "./cards/_ingredientMenu.scss";
-    @import "./bp/businessPage.scss";
-
+  @import "./pages/_login.scss";
+  @import "./cards/_cup.scss";
+  @import "./cards/_ingredientMenu.scss";
+  @import "./bp/_businessPage.scss";
 }

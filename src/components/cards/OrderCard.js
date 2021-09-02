@@ -17,8 +17,6 @@ export default function OrderCard({ user, order, setOrder }) {
     console.log("OLD ORDER:");
     console.log(updatedOrder);
     user.drinks.forEach((element) => {
-      console.log(element.id);
-      console.log(drinkToAdd);
       if (element.id == drinkToAdd) {
         updatedOrder.push(element);
       }
@@ -46,7 +44,7 @@ export default function OrderCard({ user, order, setOrder }) {
     }
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     let sum = 0;
     order.forEach((item) => {
       sum += item.price;
@@ -61,6 +59,7 @@ export default function OrderCard({ user, order, setOrder }) {
         {order.map(function (currentelement, index, arrayobj) {
           return (
             <OrderItem
+              key={index}
               index={index}
               item={currentelement}
               order={order}
