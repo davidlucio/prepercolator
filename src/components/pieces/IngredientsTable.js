@@ -58,7 +58,7 @@ export default function IngredientsTable() {
           })}
         </ul>
       </div>
-      <NewIngredientForm updateTable={updateTable} />
+      <NewIngredientForm className="newIngredient" updateTable={updateTable} />
     </div>
   );
 }
