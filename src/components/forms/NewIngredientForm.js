@@ -63,11 +63,12 @@ export default function NewIngredientForm({ updateTable }) {
   };
 
   const addNewIngredient = (event) => {
+    let token = localStorage.getItem("token");
     event.preventDefault();
     console.log(newIngredient);
     if (newIngredient.ingredient_name.length > 0) {
       console.log(`New Ingredient to add: ${newIngredient}`);
-      API.addNewIngredient(newIngredient).then((res) => {
+      API.addNewIngredient(newIngredient, token).then((res) => {
         console.log(`New Ingredient added: ${res}`);
       });
     }

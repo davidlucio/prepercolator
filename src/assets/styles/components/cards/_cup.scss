@@ -53,7 +53,7 @@
             top: $cup_lip;
             left: -13%;
             background-color: $background-light;
-            -webkit-transform: skewX(3deg);
+            transform: skewX(3deg);
         }
         &::after{
             content: "";
@@ -63,7 +63,7 @@
             top: $cup_lip;
             right: -13%;
             background-color: $background-light;
-            -webkit-transform: skewX(-3deg);
+            transform: skewX(-3deg);
         }
 
         @import "_cupIngredient.scss";

@@ -234,10 +234,10 @@ export default function Drink({ user }) {
           newDrink={newDrink}
           setNewDrink={setNewDrink}
         />
-        <div className="btnHolder">
-          <button onClick={saveDrink}>Save</button>
-        </div>
       </main>
+      <div className="btnHolder">
+        <button onClick={saveDrink}>Save</button>
+      </div>
       <Footer />
     </>
   );

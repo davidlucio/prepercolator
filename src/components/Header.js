@@ -22,14 +22,11 @@ export default function Header({ user }) {
           <li>
             <Link to="/user/profile">Profile</Link>
           </li>
-          {user.admin ? (
+          {user.is_admin === true ? (
             <li>
-              <Link to="/supersecretbusinessportal" />
+              <Link to="/supersecretbusinessportal">Business</Link>
             </li>
           ) : null}
-          <li>
-            <Link to="/supersecretbusinessportal">Business</Link>
-          </li>
           {user ? (
             <li>
               <button onClick={logout}>Logout</button>

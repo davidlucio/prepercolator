@@ -40,13 +40,31 @@ ul {
 /** BRAND COLORS **/
 /** GLOBAL FONTS **/
 /** SPRITES **/
+@keyframes tilt_left {
+  30% {
+    transform: rotate(0);
+    animation-timing-function: ease-out; }
+  50% {
+    transform: rotate(-45deg);
+    animation-timing-function: ease; }
+  80% {
+    transform: rotate(-45deg);
+    animation-timing-function: ease-out; }
+  100% {
+    transform: rotate(0);
+    animation-timing-function: ease; } }
+
+/** Overwrite for React root **/
+html, body, .App, #root, .root {
+  width: 100%;
+  height: 100%; }
+
 /** Page Elements **/
 body {
   font-size: 18px;
   font-family: "Arimo", sans-serif;
   /** <header> **/
   /** <main> **/
-  /** Overwrite for React root **/
   /** <footer> **/ }
 
 body header {
@@ -83,17 +101,79 @@ body header nav {
   border-radius: 400px 0px 0px 0px / 100% 0px 0px 0px;
   box-shadow: inset 7px 14px 15px -10px black; }
 
-body #root {
-  width: 100%; }
-
 body main {
   display: block;
   position: relative;
   max-width: 800px;
-  height: 600px;
+  max-height: 800px;
   padding: 15px;
   padding-bottom: 50px;
   margin: 0px auto 30px auto; }
+
+body main.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: unset;
+  max-height: unset;
+  margin: 0px;
+  padding: 0px;
+  background: #00aabb; }
+
+body main.login-page div.login-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0px auto; }
+
+body main.login-page div.login-window img.logo {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-top: -150px;
+  animation: tilt_left 5s infinite;
+  transition: animation 5s; }
+
+body main.login-page div.login-window h1 {
+  font-size: 150%;
+  color: #FFFFFF;
+  font-family: "Lemonada", cursive;
+  margin-bottom: 30px; }
+
+body main.login-page div.login-window h3 {
+  font-size: 130%;
+  margin-bottom: 5px; }
+
+body main.login-page div.login-window input, body main.login-page div.login-window button {
+  display: block;
+  width: 50%;
+  min-width: 200px;
+  margin: 15px auto;
+  line-height: 18px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px; }
+
+body main.login-page div.login-window input:focus, body main.login-page div.login-window input:hover, body main.login-page div.login-window input:focus-visible, body main.login-page div.login-window input:focus-within, body main.login-page div.login-window button:focus, body main.login-page div.login-window button:hover, body main.login-page div.login-window button:focus-visible, body main.login-page div.login-window button:focus-within {
+  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa;
+  outline: none;
+  border: none; }
+
+body main.login-page div.login-window button {
+  color: #FFFFFF;
+  font-weight: 600;
+  background: #412919; }
+
+body main.login-page div.login-window button:focus, body main.login-page div.login-window button:hover, body main.login-page div.login-window button:focus-visible, body main.login-page div.login-window button:focus-within {
+  background: #FFFFFF;
+  color: #4800aa; }
 
 body main .cup-holder {
   display: flex;
@@ -136,7 +216,7 @@ body main .cup-holder .my-cup::before {
   top: 15px;
   left: -13%;
   background-color: #FFFFFF;
-  -webkit-transform: skewX(3deg); }
+  transform: skewX(3deg); }
 
 body main .cup-holder .my-cup::after {
   content: "";
@@ -146,7 +226,7 @@ body main .cup-holder .my-cup::after {
   top: 15px;
   right: -13%;
   background-color: #FFFFFF;
-  -webkit-transform: skewX(-3deg); }
+  transform: skewX(-3deg); }
 
 body main .cup-holder .my-cup div.ingredient {
   display: flex;
@@ -642,6 +722,115 @@ body main .homePage div .btnBox .drinkLink:hover, body main .homePage div .btnBo
 body main .orderCard h2 {
   font-size: 2rem;
   margin-bottom: 1rem; }
+
+body main .orderCard ul {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.8rem; }
+
+body main .orderCard ul li {
+  display: flex;
+  justify-content: space-evenly; }
+
+body main .orderCard ul li span {
+  width: fit-content; }
+
+body main .orderCard ul li button {
+  font-size: 1.3rem;
+  background-color: white;
+  padding: 1px;
+  border: none;
+  transition: transform 200ms ease; }
+
+body main .orderCard ul li button:hover, body main .orderCard ul li button:focus {
+  color: red;
+  transform: scale(1.1); }
+
+body main .orderCard ul hr {
+  margin: 5px; }
+
+body main .orderCard div {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: none; }
+
+body main .orderCard div p {
+  border: none;
+  text-align: center; }
+
+body main .orderCard div form {
+  margin: 0 auto;
+  padding: 5px;
+  border: none; }
+
+body main .orderCard div form select {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px; }
+
+body main .orderCard div form button {
+  margin: 5px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  transition: all 250ms ease; }
+
+body main .orderCard div form button:hover {
+  opacity: 0.8;
+  transform: scale(0.95); }
+
+body main .profile h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem; }
+
+body main .profile .settings {
+  padding: 1rem;
+  border-top: 1px solid grey; }
+
+body main .profile .settings .userAvatar {
+  display: flex; }
+
+body main .profile .settings .userAvatar img {
+  display: none; }
+
+body main .profile .settings .userAvatar h1 {
+  font-size: 1.5rem;
+  margin: 1rem; }
+
+body main .profile .settings ul {
+  display: flex; }
+
+body main .profile .settings ul li {
+  padding: 5px; }
+
+body main .profile .bpDrinkTemplateCard {
+  background-color: #e9e8e7;
+  border-radius: 25px;
+  margin: 1rem auto;
+  max-width: 70%;
+  padding: 1rem 0; }
+
+body main .profile .bpDrinkTemplateCard h5 {
+  text-align: center;
+  margin: 5px; }
+
+body main .profile .bpDrinkTemplateCard p {
+  text-align: center;
+  margin: 5px; }
+
+body main .profile .bpDrinkTemplateCard h6 {
+  margin-left: 20%;
+  margin-bottom: 5px; }
+
+body main .profile .bpDrinkTemplateCard ul {
+  width: 50%;
+  margin: 0 auto; }
+
+body main .profile .bpDrinkTemplateCard ul li {
+  display: flex;
+  justify-content: space-between; }
 
 body footer {
   display: block;

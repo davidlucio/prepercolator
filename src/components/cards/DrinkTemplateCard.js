@@ -9,18 +9,23 @@ export default function DrinkTemplateCard({ drink }) {
       </p>
       <h6>Ingredients:</h6>
       <ul>
-        {drink.ingredient ? (
-          drink.ingredient.map((ingredient) => {
-            return (
-              <li key={ingredient.id}>
-                <span>{ingredient.ingredient_name}</span>
-                <span>{ingredient.ingredient_amount}</span>
-              </li>
-            );
-          })
-        ) : (
-          <li>Looks like theres nothing here...</li>
-        )}
+        {drink.ingredients ? (
+          drink.ingredients.length > 0 ? (
+            drink.ingredients.map((ingredient) => {
+              return (
+                <li key={ingredient.id}>
+                  <span>{ingredient.ingredient_name}</span>
+                  <span>
+                    {ingredient.drinkIngredients.amount}
+                    {/* {ingredient.type.units} */}
+                  </span>
+                </li>
+              );
+            })
+          ) : (
+            <li>Looks like theres nothing here...</li>
+          )
+        ) : null}
       </ul>
     </div>
   );

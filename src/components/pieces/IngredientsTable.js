@@ -30,8 +30,9 @@ export default function IngredientsTable() {
 
   const deleteIngredient = (event) => {
     let id = event.target.value;
+    let token = localStorage.getItem("token");
     console.log("User double-clicked delete, move to delete item");
-    API.deleteIngredientById(id).then((res) => {
+    API.deleteIngredientById(id, token).then((res) => {
       console.log(`Successfully deleted Ingredient. ${res}`);
     });
     updateTable();
