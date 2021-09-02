@@ -149,7 +149,7 @@ body main {
   position: relative;
   max-width: 800px;
   padding: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   margin: 0px auto 30px auto; }
 
 body main.login-page {
@@ -244,7 +244,8 @@ body main.landing-page {
 
 body main.landing-page h1 {
   font-size: 200%;
-  color: #412919; }
+  color: #412919;
+  text-align: center; }
 
 body main.landing-page h1 span.username {
   color: #00aabb;
@@ -252,7 +253,8 @@ body main.landing-page h1 span.username {
 
 body main.landing-page h2 {
   margin-bottom: 30px;
-  color: #00aabb; }
+  color: #00aabb;
+  text-align: center; }
 
 body main.landing-page a {
   text-align: center;
@@ -651,7 +653,7 @@ body main.newdrink section.ingredientList ul li:hover::after, body main.newdrink
 body main.newdrink input {
   display: block;
   position: absolute;
-  bottom: 10px;
+  bottom: 30px;
   margin-right: auto;
   left: 0;
   right: 0;
@@ -674,6 +676,48 @@ body main.newdrink input:focus, body main.newdrink input:hover, body main.newdri
 body main.newdrink input:-internal-autofill-selected {
   appearance: menulist-button;
   background-color: unset !important; }
+
+body main.newdrink .drink-mod-block {
+  display: block;
+  position: absolute;
+  right: 15px;
+  top: 15px; }
+
+body main.newdrink .drink-mod-block button {
+  display: block;
+  margin-bottom: 10px;
+  padding-top: 4px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #00aabb;
+  font-size: 190%;
+  color: #FFFFFF; }
+
+body main.newdrink .drink-mod-block button.drink-save:after {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 400;
+  content: '\1f4be'; }
+
+body main.newdrink .drink-mod-block button.drink-size-increase:after {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  content: '\f139'; }
+
+body main.newdrink .drink-mod-block button.drink-size-decrease:after {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  content: '\f13a'; }
+
+body main.newdrink .drink-mod-block button:hover, body main.newdrink .drink-mod-block button:focus {
+  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa; }
+
+body main.newdrink .drink-mod-block button:disabled {
+  background: #555555; }
+
+body main.newdrink .drink-mod-block button:disabled:hover, body main.newdrink .drink-mod-block button:disabled:focus {
+  box-shadow: none; }
 
 body main .businessPortal {
   height: 100%;
@@ -804,53 +848,6 @@ body main .businessPortal .bpViewDrinks .bpDrinkTemplates .bpDrinkTemplateCardBo
   padding: 0.2rem 1rem;
   display: flex;
   justify-content: space-between; }
-
-body main .homePage {
-  text-align: center; }
-
-body main .homePage .hpWelcome {
-  padding: 1rem;
-  font-size: 2rem; }
-
-body main .homePage div h5 {
-  padding: 0.4rem 0;
-  border-bottom: 1px solid grey; }
-
-body main .homePage div .btnBox {
-  width: 50%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center; }
-
-body main .homePage div .btnBox .orderLink {
-  margin: 1rem; }
-
-body main .homePage div .btnBox .orderLink a {
-  text-decoration: none;
-  color: black;
-  border: 1px solid grey;
-  border-radius: 5px;
-  padding: 0.2rem;
-  transition: transform 250ms ease; }
-
-body main .homePage div .btnBox .orderLink:hover, body main .homePage div .btnBox .orderLink:focus {
-  transform: scale(0.95);
-  opacity: 0.8; }
-
-body main .homePage div .btnBox .drinkLink {
-  margin: 1rem; }
-
-body main .homePage div .btnBox .drinkLink a {
-  border: 1px solid grey;
-  border-radius: 5px;
-  padding: 0.2rem;
-  color: black;
-  text-decoration: none;
-  transition: transform 200ms ease-in-out; }
-
-body main .homePage div .btnBox .drinkLink:hover, body main .homePage div .btnBox .drinkLink:focus {
-  transform: scale(0.95);
-  opacity: 0.8; }
 
 body main .orderCard h2 {
   font-size: 2rem;

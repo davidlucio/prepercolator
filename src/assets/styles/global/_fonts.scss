@@ -22,6 +22,18 @@ $font_3: 'Medula One', cursive;
         content: '\f056';
     }
 
+    @else if $name=="grow"{
+        content: '\f139';
+    }
+
+    @else if $name=="shrink"{
+        content: '\f13a';
+    }
+
+    @else if $name=="save"{
+        content: '\1f4be';
+    }
+
     @else{
         content: '\f06a';
     }
