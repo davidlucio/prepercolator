@@ -1,17 +1,7 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Content from './components/Content'
+import React from "react";
+
+import Nav from "./components/Nav";
 
 export default function App() {
-    return (
-        <>
-
-            <Header />
-            
-            <Content />
-
-            <Footer />
-
-        </>
-    );
+  return <Nav />;
 }

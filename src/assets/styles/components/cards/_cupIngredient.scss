@@ -1,0 +1,84 @@
+/* Ingredient Vars */
+$color_base: radial-gradient(
+    #2e1f15 0%,
+    #2e1f15 50%,
+    #000000 100%);
+$color_main: radial-gradient(
+    #ffffff 0%,
+    #ffffff 50%,
+    #000000 100%);
+$color_flavor: radial-gradient(
+    #661133 0%,
+    #661133 50%,
+    #000000 100%);
+$color_topping: radial-gradient(
+    #90d6d6 0%,
+    #90d6d6 50%,
+    #000000 100%);
+
+/* Inherited Vars */
+// $cup_curve
+
+div.ingredient {
+    display: flex;
+    align-items: center;        // Horizontal
+    justify-content: center;    // Vertical
+
+    width: 100%;
+    min-height: 7%;
+    margin-top: -10px;
+    padding-top: 5px;
+
+    border-bottom-left-radius: $cup_curve;
+    border-bottom-right-radius: $cup_curve;
+    color: $font-white;
+    
+    &.base{
+        height: 50%;
+        background: $color_base;
+    }
+    &.main{
+        height: 15%;
+        background: $color_main;
+        color: $font-black;
+    }
+    &.flavor{
+        height: 10%;
+        background: $color_flavor;
+    }
+    &.topping{
+        height: 7%;
+        background: $color_topping;
+    }
+
+    // Percentage based heights for dynamic calculations
+    @for $i from 2 through 20{
+        &.percent-#{$i * 5} { 
+            height: #{$i * 5%};
+        }
+    }
+
+    span{
+        position:relative;
+
+        &::after{
+            position: relative;
+            top: 0px;
+            right:-5px;
+            font-size: 90%;
+            @include icon('minus', 900);
+        }
+
+        &:hover, &:focus{
+            color: $color-primary1;
+            //text-shadow: 0 0 3px $font-white;
+            font-weight: 600;
+
+            &::after{
+                color: red;
+            }
+        }
+        
+    }
+
+}

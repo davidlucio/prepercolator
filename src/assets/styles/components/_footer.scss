@@ -1,0 +1,18 @@
+footer{
+
+    display: block;
+    position: fixed;
+    z-index:99;
+    width: 100%;
+    bottom: 0px;
+    left:0px;
+    padding: 5px 0px;
+    background-color: $color-primary2;
+    
+    p{
+        width: 100%;
+        text-align: center;
+        color: $font-white;
+    }
+
+}

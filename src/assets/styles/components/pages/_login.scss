@@ -1,0 +1,59 @@
+&.login-page {
+    display:flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    height:100%;
+    width: 100%;
+    max-width: unset;
+    max-height: unset;
+    margin:0px;
+    padding: 0px;
+
+    background: $color-primary1;
+
+    div.login-window{
+
+        display:flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: flex-start;
+            justify-content: center;
+
+        max-width: 800px;
+        margin: 0px auto;
+
+        img.logo{
+            display:block;
+            width:200px;
+            height:200px;
+            margin-top: -150px;
+
+            @include animate(logo);
+        }
+
+        h1{
+            color: $font-white;
+            font-family: $font_2;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h3{
+            text-align: center;
+        }
+
+        input{
+            @include prettyfield(input,login);
+        }
+
+        button{
+            @include prettyfield(button,login);
+        }
+
+    }
+    
+
+    
+}

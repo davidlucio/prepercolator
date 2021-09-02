@@ -1,11 +1,7 @@
-import React from 'react';
-import Home from './pages/Home';
+/** FORMER ROUTER - DEPRECATED **/
 
-export default function Content(){
-    
-    return(
-        <>
-            <Home />
-        </>
-    );
-}
+// import React from "react";
+
+// export default function Content({ drinkIngredients, setDrinkIngredients }) {
+//   return <main className="currentPage"></main>;
+// }

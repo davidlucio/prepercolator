@@ -1,0 +1,123 @@
+@mixin shadow($location) {
+
+    @if $location == top {
+        box-shadow: inset 7px 14px 15px -10px black;
+    }
+    
+    @else if $location==bottom {
+        box-shadow: 0px 20px 15px -23px black;
+    }
+    
+    @else if $location==bottomright {
+        box-shadow: 5px 5px 7px 0px black;
+    }
+    
+    @else if $location==icon {
+        box-shadow: 5px 10px 8px -5px black;
+    }
+
+    @else if $location==input {
+        box-shadow: 3px 3px 5px 0px $color-primary3,
+                    3px -3px 5px 0px $color-primary3,
+                    -3px 3px 5px 0px $color-primary3,
+                    -3px -3px 5px 0px $color-primary3;
+    }
+
+}
+
+@mixin animate($type){
+
+    @if $type==logo{
+        animation: tilt_left 5s infinite;
+        transition: animation 5s;
+    }
+}
+
+@keyframes tilt_left {
+	30% {
+        transform: rotate(0);
+        animation-timing-function: ease-out;
+	}
+    50%{
+        transform: rotate(-45deg);
+        animation-timing-function: ease;
+    }
+    80%{
+        transform: rotate(-45deg);
+        animation-timing-function: ease-out;
+    }
+    100%{
+        transform: rotate(0);
+        animation-timing-function: ease;
+    }
+}
+
+@mixin prettyfield($type, $style){
+
+    @if $style==wide{
+        display: block;
+        width: 50%;
+        min-width: 200px;
+        margin: 15px auto;
+        line-height: 18px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    @if $style==login{
+        display: block;
+        width: 50%;
+        min-width: 200px;
+        margin: 15px auto;
+        line-height: 18px;
+        padding: 5px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    @if $style==solo{
+        display: block;
+        width: 50%;
+        min-width: 150px;
+
+        font-size: 150%;
+        margin: 15px auto;
+        padding: 3px;
+
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none;
+        border-bottom: 3px dashed $color-primary3;
+
+        text-align: center;
+    }
+
+    @if $type==button{
+        border: none;
+        color: $font-white;
+        font-weight: 600;
+        background: $color-primary2;
+
+        &:focus, &:hover, &:focus-visible, &:focus-within {
+            @include shadow(input);
+            outline: none;
+            border: none;
+            background: $font-white;
+            color: $color-primary3;
+        }
+    }
+
+    @if $type==input{
+
+        &:focus, &:hover, &:focus-visible, &:focus-within {
+            @include shadow(input);
+            outline: none;
+        }
+    }
+
+    &:-internal-autofill-selected {
+        appearance: menulist-button;
+        background-color: unset !important;
+    }
+
+}

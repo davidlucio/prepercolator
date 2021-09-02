@@ -1,0 +1,17 @@
+/** SPRITES **/
+@function getSprite($filename){
+
+    @if filename{
+        @return url("../images/sprites/#{$filename}.png");
+    }
+
+}
+
+@mixin funBullets($type,$style) {
+
+    background-image: getSprite('#{$type}_#{$style}');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px;
+
+}

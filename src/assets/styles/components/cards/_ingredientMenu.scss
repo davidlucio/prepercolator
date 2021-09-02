@@ -1,0 +1,149 @@
+
+section.ingredientList{
+    $edge: 25px;
+    $fromedge: 15px;
+
+    background: $background-light;
+
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index:50;
+
+    width: 300px;
+    height: 500px;
+    padding: 0px 0px 0px $fromedge;
+    overflow: hidden;
+
+    border: 3px $color-primary1 solid;
+    border-radius: 30px;
+
+    @include shadow(bottomright);
+    transition: left .5s;
+
+    .anti-scroll{
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        padding-right: $edge;
+        box-sizing: content-box;
+    }
+
+    ul{
+        margin: 20px 0px 30px 0px;
+        padding-right: 10px;
+
+        label{
+            display: block;
+            width: 100%;
+
+            padding: 3px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+
+            background: linear-gradient($background-light 0%, $color-primary1 100%);
+            color: $color-primary2;
+
+            text-align: center;
+            text-transform: uppercase;
+
+            font-size: 130%;
+            font-weight: 600;
+            font-family: $font_2;
+            @include shadow(bottomright);
+        }
+
+        li{
+            padding: 8px 0px 8px 35px;
+            margin-bottom: 10px;
+            font-weight: 600;
+
+            &.ingredient-bean-0{ @include funBullets('bean','0');}
+            &.ingredient-bean-1{ @include funBullets('bean','1');}
+            &.ingredient-bean-2{ @include funBullets('bean','2');}
+            &.ingredient-bean-3{ @include funBullets('bean','3');}
+
+            &.ingredient-leaf-0{ @include funBullets('leaf','0');}
+            &.ingredient-leaf-1{ @include funBullets('leaf','1');}
+            &.ingredient-leaf-2{ @include funBullets('leaf','2');}
+
+            &.ingredient-liquid-0{ @include funBullets('liquid','0');}
+            &.ingredient-liquid-1{ @include funBullets('liquid','1');}
+            &.ingredient-liquid-2{ @include funBullets('liquid','2');}
+            &.ingredient-liquid-3{ @include funBullets('liquid','3');}
+            &.ingredient-liquid-4{ @include funBullets('liquid','4');}
+
+            &.ingredient-powder-0{ @include funBullets('powder','0');}
+            &.ingredient-powder-1{ @include funBullets('powder','1');}
+            &.ingredient-powder-2{ @include funBullets('powder','2');}
+            &.ingredient-powder-3{ @include funBullets('powder','3');}
+
+            &.ingredient-syrup-0{ @include funBullets('syrup','0');}
+            &.ingredient-syrup-1{ @include funBullets('syrup','1');}
+            &.ingredient-syrup-2{ @include funBullets('syrup','2');}
+
+            span{
+                display: inline-block;
+                position: relative;
+                width: 22px;
+                height:22px;
+                padding: 2px;
+                margin-left: 10px;
+                border-radius: 100%;
+
+                text-align: center;
+                background-color: $color-primary1;
+                color: white;
+            }
+
+            &::after{
+                position: relative;
+                top: 2px;
+                right:-10px;
+                color: $color-primary2;
+                font-size: 120%;
+                @include icon('plus', 900);
+            }
+
+            &:hover, &:focus{
+                text-shadow: 0 0 3px $color-primary1;
+                font-weight: 600;
+
+                span{
+                    text-shadow: none;
+                }
+
+                &::after{
+                    color: $color-primary1;
+                    text-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint_medium){
+    section.ingredientList{
+        left: -10%;
+    }
+}
+
+@media screen and (max-width: $breakpoint_small){
+    section.ingredientList{
+        border-radius: 0px 30px 30px 0px;
+        left: -275px;
+
+        ul{
+            padding-right: 30px;
+        }
+
+        &:hover, &:focus{
+            left: -3px;
+
+            ul{
+                padding-right: 10px;
+            }
+        }
+    }
+}
