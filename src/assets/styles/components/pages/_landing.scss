@@ -1,0 +1,29 @@
+&.landing-page{
+    display:flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+
+    h1{
+        font-size: 200%;
+        color: $color-primary2;
+
+        span.username{
+            color: $color-primary1;
+            text-transform: capitalize;
+        }
+    }
+
+    h2{
+        margin-bottom: 30px;
+        color: $color-primary1;
+    }
+    
+    a {
+        text-align: center;
+        text-decoration: none;
+        @include prettyfield(button, wide);
+        background: $color-primary3;
+    }
+}

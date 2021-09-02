@@ -6,6 +6,7 @@
 @import "./global/_fonts.scss";
 @import "./global/_images.scss";
 @import "./global/_flair.scss";
+@import "./global/_breakpoints.scss";
 
 /** Overwrite for React root **/
 html, body, .App, #root, .root {
@@ -18,6 +19,21 @@ html, body, .App, #root, .root {
 body{
     font-size: 18px;
     font-family: $font_1;
+
+    h1{
+        font-size:150%;
+        margin-bottom: 20px;
+    }
+
+    h2{
+        font-size: 140%;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 130%;
+        margin-bottom: 5px;
+    }
 
     /** <header> **/
     @import "./components/_header.scss";
