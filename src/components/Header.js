@@ -32,6 +32,11 @@ export default function Header({ user }) {
               <button onClick={logout}>Logout</button>
             </li>
           ) : null}
+          {user.newOrder ? (
+            <li>
+              <Link to="/order">Your Current Order</Link>
+            </li>
+          ) : null}
         </ul>
       </nav>
     </header>

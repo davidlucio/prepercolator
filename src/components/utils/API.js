@@ -45,6 +45,9 @@ const API = {
       },
     });
   },
+  addOrder: function (thingToAdd) {
+    return axios.post(`${URL_PREFIX}/orders`, thingToAdd);
+  },
   login: function (user) {
     return axios.post(`${URL_PREFIX}/users/login`, user);
   },
