@@ -14,16 +14,16 @@ export default function Drink({ user }) {
     const [drinkIngredients, setDrinkIngredients] = useState([]);
     const [drinkIngredientsAmnt, setDrinkIngredientsAmnt] = useState([]);
 
-    useEffect(() => {
-        // TODO: (MAYBE) Check drink size against sum of drinkIngredients to see if drink has room for more ingredients
-        // const sumIngr = 0;
-        // drinkIngredients.forEach((drink) => {
-        //   sumIngr = sumIngr + drink.unitAmount;
-        // });
-        // if (sumIngr > size) {
-        //   return <div>You've added more than fits in your cup!!</div>;
-        // }
-    }, []);
+    // useEffect(() => {
+    //     // TODO: (MAYBE) Check drink size against sum of drinkIngredients to see if drink has room for more ingredients
+    //     // const sumIngr = 0;
+    //     // drinkIngredients.forEach((drink) => {
+    //     //   sumIngr = sumIngr + drink.unitAmount;
+    //     // });
+    //     // if (sumIngr > size) {
+    //     //   return <div>You've added more than fits in your cup!!</div>;
+    //     // }
+    // }, []);
 
     const addIngredient = (id) => {
         API.getIngredients().then((res) => {
@@ -68,6 +68,8 @@ export default function Drink({ user }) {
                     setCupSize={setCupSize}
                     drinkIngredients={drinkIngredients}
                     setDrinkIngredients={setDrinkIngredients}
+                    drinkIngredientsAmnt={drinkIngredientsAmnt}
+                    setDrinkIngredientsAmnt={setDrinkIngredientsAmnt}
                 />
 
                 <UserAddIngredientMenu

@@ -62,8 +62,6 @@ export default function AddIngredientMenu({ drinkIngredients, setDrinkIngredient
             var key = ingredientQueue.indexOf(id);
             ingredientCount[key] += 1;
             setDrinkIngredientsAmnt(ingredientCount);
-            
-            console.log(`Adding more ${id} at index ${key} (Total = ${ ingredientCount[key] })`);
         }
         else{
             ingredientQueue.push(id);
@@ -72,8 +70,6 @@ export default function AddIngredientMenu({ drinkIngredients, setDrinkIngredient
 
             setDrinkIngredientsAmnt(ingredientCount);
             setDrinkIngredients(ingredientQueue);
-
-            console.log(`Adding one ${id}`);
         }
         return;
     }

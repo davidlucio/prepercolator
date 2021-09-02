@@ -162,19 +162,20 @@ body main .cup-holder .my-cup div.ingredient {
 
 body main .cup-holder .my-cup div.ingredient.base {
   height: 50%;
-  background: linear-gradient(180deg, #2e1f15 0%, #2e1f15 50%, #000000 100%); }
+  background: radial-gradient(#2e1f15 0%, #2e1f15 50%, #000000 100%); }
 
 body main .cup-holder .my-cup div.ingredient.main {
   height: 15%;
-  background: linear-gradient(180deg, #ffffff 0%, #ffffff 50%, #000000 100%); }
+  background: radial-gradient(#ffffff 0%, #ffffff 50%, #000000 100%);
+  color: #000000; }
 
 body main .cup-holder .my-cup div.ingredient.flavor {
   height: 10%;
-  background: linear-gradient(180deg, #661133 0%, #661133 50%, #000000 100%); }
+  background: radial-gradient(#661133 0%, #661133 50%, #000000 100%); }
 
 body main .cup-holder .my-cup div.ingredient.topping {
   height: 7%;
-  background: linear-gradient(180deg, #90d6d6 0%, #90d6d6 50%, #000000 100%); }
+  background: radial-gradient(#90d6d6 0%, #90d6d6 50%, #000000 100%); }
 
 body main .cup-holder .my-cup div.ingredient.percent-10 {
   height: 10%; }
