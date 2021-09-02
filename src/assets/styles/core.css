@@ -54,6 +54,7 @@ ul {
     transform: rotate(0);
     animation-timing-function: ease; } }
 
+/** RESPONSIVE BREAKPOINTS **/
 /** Overwrite for React root **/
 html, body, .App, #root, .root {
   width: 100%;
@@ -66,6 +67,18 @@ body {
   /** <header> **/
   /** <main> **/
   /** <footer> **/ }
+
+body h1 {
+  font-size: 150%;
+  margin-bottom: 20px; }
+
+body h2 {
+  font-size: 140%;
+  margin-bottom: 15px; }
+
+body h3 {
+  font-size: 130%;
+  margin-bottom: 5px; }
 
 body header {
   display: block;
@@ -105,7 +118,6 @@ body main {
   display: block;
   position: relative;
   max-width: 800px;
-  max-height: 800px;
   padding: 15px;
   padding-bottom: 50px;
   margin: 0px auto 30px auto; }
@@ -142,47 +154,111 @@ body main.login-page div.login-window img.logo {
   transition: animation 5s; }
 
 body main.login-page div.login-window h1 {
-  font-size: 150%;
   color: #FFFFFF;
   font-family: "Lemonada", cursive;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  text-align: center; }
 
 body main.login-page div.login-window h3 {
-  font-size: 130%;
-  margin-bottom: 5px; }
+  text-align: center; }
 
-body main.login-page div.login-window input, body main.login-page div.login-window button {
+body main.login-page div.login-window input {
   display: block;
   width: 50%;
   min-width: 200px;
   margin: 15px auto;
   line-height: 18px;
   padding: 5px;
-  border: none;
-  border-radius: 10px; }
-
-body main.login-page div.login-window input:focus, body main.login-page div.login-window input:hover, body main.login-page div.login-window input:focus-visible, body main.login-page div.login-window input:focus-within, body main.login-page div.login-window button:focus, body main.login-page div.login-window button:hover, body main.login-page div.login-window button:focus-visible, body main.login-page div.login-window button:focus-within {
-  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa;
-  outline: none;
+  border-radius: 10px;
   border: none; }
 
+body main.login-page div.login-window input:focus, body main.login-page div.login-window input:hover, body main.login-page div.login-window input:focus-visible, body main.login-page div.login-window input:focus-within {
+  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa;
+  outline: none; }
+
+body main.login-page div.login-window input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: unset !important; }
+
 body main.login-page div.login-window button {
+  display: block;
+  width: 50%;
+  min-width: 200px;
+  margin: 15px auto;
+  line-height: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  border: none;
   color: #FFFFFF;
   font-weight: 600;
   background: #412919; }
 
 body main.login-page div.login-window button:focus, body main.login-page div.login-window button:hover, body main.login-page div.login-window button:focus-visible, body main.login-page div.login-window button:focus-within {
+  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa;
+  outline: none;
+  border: none;
   background: #FFFFFF;
   color: #4800aa; }
 
-body main .cup-holder {
+body main.login-page div.login-window button:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: unset !important; }
+
+body main.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center; }
+
+body main.landing-page h1 {
+  font-size: 200%;
+  color: #412919; }
+
+body main.landing-page h1 span.username {
+  color: #00aabb;
+  text-transform: capitalize; }
+
+body main.landing-page h2 {
+  margin-bottom: 30px;
+  color: #00aabb; }
+
+body main.landing-page a {
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 50%;
+  min-width: 200px;
+  margin: 15px auto;
+  line-height: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  font-weight: 600;
+  background: #412919;
+  background: #4800aa; }
+
+body main.landing-page a:focus, body main.landing-page a:hover, body main.landing-page a:focus-visible, body main.landing-page a:focus-within {
+  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa;
+  outline: none;
+  border: none;
+  background: #FFFFFF;
+  color: #4800aa; }
+
+body main.landing-page a:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: unset !important; }
+
+body main.newdrink .cup-holder {
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: flex-end; }
 
-body main .cup-holder .my-cup {
+body main.newdrink .cup-holder .my-cup {
   display: flex;
   position: relative;
   flex-direction: column-reverse;
@@ -196,19 +272,19 @@ body main .cup-holder .my-cup {
   /* Ingredient Vars */
   /* Inherited Vars */ }
 
-body main .cup-holder .my-cup.cup-8oz {
+body main.newdrink .cup-holder .my-cup.cup-8oz {
   height: 300px;
   width: 250px; }
 
-body main .cup-holder .my-cup.cup-12oz {
+body main.newdrink .cup-holder .my-cup.cup-12oz {
   height: 400px;
   width: 300px; }
 
-body main .cup-holder .my-cup.cup-16oz {
+body main.newdrink .cup-holder .my-cup.cup-16oz {
   height: 500px;
   width: 300px; }
 
-body main .cup-holder .my-cup::before {
+body main.newdrink .cup-holder .my-cup::before {
   content: "";
   position: absolute;
   height: calc(100% - 15px);
@@ -218,7 +294,7 @@ body main .cup-holder .my-cup::before {
   background-color: #FFFFFF;
   transform: skewX(3deg); }
 
-body main .cup-holder .my-cup::after {
+body main.newdrink .cup-holder .my-cup::after {
   content: "";
   position: absolute;
   height: calc(100% - 15px);
@@ -228,7 +304,7 @@ body main .cup-holder .my-cup::after {
   background-color: #FFFFFF;
   transform: skewX(-3deg); }
 
-body main .cup-holder .my-cup div.ingredient {
+body main.newdrink .cup-holder .my-cup div.ingredient {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,84 +316,84 @@ body main .cup-holder .my-cup div.ingredient {
   border-bottom-right-radius: 100% 32px;
   color: #FFFFFF; }
 
-body main .cup-holder .my-cup div.ingredient.base {
+body main.newdrink .cup-holder .my-cup div.ingredient.base {
   height: 50%;
   background: radial-gradient(#2e1f15 0%, #2e1f15 50%, #000000 100%); }
 
-body main .cup-holder .my-cup div.ingredient.main {
+body main.newdrink .cup-holder .my-cup div.ingredient.main {
   height: 15%;
   background: radial-gradient(#ffffff 0%, #ffffff 50%, #000000 100%);
   color: #000000; }
 
-body main .cup-holder .my-cup div.ingredient.flavor {
+body main.newdrink .cup-holder .my-cup div.ingredient.flavor {
   height: 10%;
   background: radial-gradient(#661133 0%, #661133 50%, #000000 100%); }
 
-body main .cup-holder .my-cup div.ingredient.topping {
+body main.newdrink .cup-holder .my-cup div.ingredient.topping {
   height: 7%;
   background: radial-gradient(#90d6d6 0%, #90d6d6 50%, #000000 100%); }
 
-body main .cup-holder .my-cup div.ingredient.percent-10 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-10 {
   height: 10%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-15 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-15 {
   height: 15%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-20 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-20 {
   height: 20%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-25 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-25 {
   height: 25%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-30 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-30 {
   height: 30%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-35 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-35 {
   height: 35%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-40 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-40 {
   height: 40%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-45 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-45 {
   height: 45%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-50 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-50 {
   height: 50%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-55 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-55 {
   height: 55%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-60 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-60 {
   height: 60%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-65 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-65 {
   height: 65%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-70 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-70 {
   height: 70%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-75 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-75 {
   height: 75%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-80 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-80 {
   height: 80%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-85 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-85 {
   height: 85%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-90 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-90 {
   height: 90%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-95 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-95 {
   height: 95%; }
 
-body main .cup-holder .my-cup div.ingredient.percent-100 {
+body main.newdrink .cup-holder .my-cup div.ingredient.percent-100 {
   height: 100%; }
 
-body main .cup-holder .my-cup div.ingredient span {
+body main.newdrink .cup-holder .my-cup div.ingredient span {
   position: relative; }
 
-body main .cup-holder .my-cup div.ingredient span::after {
+body main.newdrink .cup-holder .my-cup div.ingredient span::after {
   position: relative;
   top: 0px;
   right: -5px;
@@ -326,14 +402,14 @@ body main .cup-holder .my-cup div.ingredient span::after {
   font-weight: 900;
   content: '\f056'; }
 
-body main .cup-holder .my-cup div.ingredient span:hover, body main .cup-holder .my-cup div.ingredient span:focus {
+body main.newdrink .cup-holder .my-cup div.ingredient span:hover, body main.newdrink .cup-holder .my-cup div.ingredient span:focus {
   color: #00aabb;
   font-weight: 600; }
 
-body main .cup-holder .my-cup div.ingredient span:hover::after, body main .cup-holder .my-cup div.ingredient span:focus::after {
+body main.newdrink .cup-holder .my-cup div.ingredient span:hover::after, body main.newdrink .cup-holder .my-cup div.ingredient span:focus::after {
   color: red; }
 
-body main section.ingredientList {
+body main.newdrink section.ingredientList {
   background: #FFFFFF;
   display: block;
   position: absolute;
@@ -349,18 +425,18 @@ body main section.ingredientList {
   box-shadow: 5px 5px 7px 0px black;
   transition: left .5s; }
 
-body main section.ingredientList .anti-scroll {
+body main.newdrink section.ingredientList .anti-scroll {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
   padding-right: 25px;
   box-sizing: content-box; }
 
-body main section.ingredientList ul {
+body main.newdrink section.ingredientList ul {
   margin: 20px 0px 30px 0px;
   padding-right: 10px; }
 
-body main section.ingredientList ul label {
+body main.newdrink section.ingredientList ul label {
   display: block;
   width: 100%;
   padding: 3px;
@@ -375,126 +451,126 @@ body main section.ingredientList ul label {
   font-family: "Lemonada", cursive;
   box-shadow: 5px 5px 7px 0px black; }
 
-body main section.ingredientList ul li {
+body main.newdrink section.ingredientList ul li {
   padding: 8px 0px 8px 35px;
   margin-bottom: 10px;
   font-weight: 600; }
 
-body main section.ingredientList ul li.ingredient-bean-0 {
+body main.newdrink section.ingredientList ul li.ingredient-bean-0 {
   background-image: url("../images/sprites/bean_0.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-bean-1 {
+body main.newdrink section.ingredientList ul li.ingredient-bean-1 {
   background-image: url("../images/sprites/bean_1.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-bean-2 {
+body main.newdrink section.ingredientList ul li.ingredient-bean-2 {
   background-image: url("../images/sprites/bean_2.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-bean-3 {
+body main.newdrink section.ingredientList ul li.ingredient-bean-3 {
   background-image: url("../images/sprites/bean_3.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-leaf-0 {
+body main.newdrink section.ingredientList ul li.ingredient-leaf-0 {
   background-image: url("../images/sprites/leaf_0.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-leaf-1 {
+body main.newdrink section.ingredientList ul li.ingredient-leaf-1 {
   background-image: url("../images/sprites/leaf_1.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-leaf-2 {
+body main.newdrink section.ingredientList ul li.ingredient-leaf-2 {
   background-image: url("../images/sprites/leaf_2.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-liquid-0 {
+body main.newdrink section.ingredientList ul li.ingredient-liquid-0 {
   background-image: url("../images/sprites/liquid_0.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-liquid-1 {
+body main.newdrink section.ingredientList ul li.ingredient-liquid-1 {
   background-image: url("../images/sprites/liquid_1.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-liquid-2 {
+body main.newdrink section.ingredientList ul li.ingredient-liquid-2 {
   background-image: url("../images/sprites/liquid_2.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-liquid-3 {
+body main.newdrink section.ingredientList ul li.ingredient-liquid-3 {
   background-image: url("../images/sprites/liquid_3.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-liquid-4 {
+body main.newdrink section.ingredientList ul li.ingredient-liquid-4 {
   background-image: url("../images/sprites/liquid_4.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-powder-0 {
+body main.newdrink section.ingredientList ul li.ingredient-powder-0 {
   background-image: url("../images/sprites/powder_0.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-powder-1 {
+body main.newdrink section.ingredientList ul li.ingredient-powder-1 {
   background-image: url("../images/sprites/powder_1.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-powder-2 {
+body main.newdrink section.ingredientList ul li.ingredient-powder-2 {
   background-image: url("../images/sprites/powder_2.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-powder-3 {
+body main.newdrink section.ingredientList ul li.ingredient-powder-3 {
   background-image: url("../images/sprites/powder_3.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-syrup-0 {
+body main.newdrink section.ingredientList ul li.ingredient-syrup-0 {
   background-image: url("../images/sprites/syrup_0.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-syrup-1 {
+body main.newdrink section.ingredientList ul li.ingredient-syrup-1 {
   background-image: url("../images/sprites/syrup_1.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li.ingredient-syrup-2 {
+body main.newdrink section.ingredientList ul li.ingredient-syrup-2 {
   background-image: url("../images/sprites/syrup_2.png");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px; }
 
-body main section.ingredientList ul li span {
+body main.newdrink section.ingredientList ul li span {
   display: inline-block;
   position: relative;
   width: 22px;
@@ -506,7 +582,7 @@ body main section.ingredientList ul li span {
   background-color: #00aabb;
   color: white; }
 
-body main section.ingredientList ul li::after {
+body main.newdrink section.ingredientList ul li::after {
   position: relative;
   top: 2px;
   right: -10px;
@@ -516,31 +592,58 @@ body main section.ingredientList ul li::after {
   font-weight: 900;
   content: '\f055'; }
 
-body main section.ingredientList ul li:hover, body main section.ingredientList ul li:focus {
+body main.newdrink section.ingredientList ul li:hover, body main.newdrink section.ingredientList ul li:focus {
   text-shadow: 0 0 3px #00aabb;
   font-weight: 600; }
 
-body main section.ingredientList ul li:hover span, body main section.ingredientList ul li:focus span {
+body main.newdrink section.ingredientList ul li:hover span, body main.newdrink section.ingredientList ul li:focus span {
   text-shadow: none; }
 
-body main section.ingredientList ul li:hover::after, body main section.ingredientList ul li:focus::after {
+body main.newdrink section.ingredientList ul li:hover::after, body main.newdrink section.ingredientList ul li:focus::after {
   color: #00aabb;
   text-shadow: none; }
 
 @media screen and (min-width: 950px) {
-  body main section.ingredientList {
+  body main.newdrink section.ingredientList {
     left: -10%; } }
 
 @media screen and (max-width: 800px) {
-  body main section.ingredientList {
+  body main.newdrink section.ingredientList {
     border-radius: 0px 30px 30px 0px;
     left: -275px; }
-  body main section.ingredientList ul {
+  body main.newdrink section.ingredientList ul {
     padding-right: 30px; }
-  body main section.ingredientList:hover, body main section.ingredientList:focus {
+  body main.newdrink section.ingredientList:hover, body main.newdrink section.ingredientList:focus {
     left: -3px; }
-  body main section.ingredientList:hover ul, body main section.ingredientList:focus ul {
+  body main.newdrink section.ingredientList:hover ul, body main.newdrink section.ingredientList:focus ul {
     padding-right: 10px; } }
+
+body main.newdrink input {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 50%;
+  min-width: 150px;
+  font-size: 150%;
+  margin: 15px auto;
+  padding: 3px;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none;
+  border-bottom: 3px dashed #4800aa;
+  text-align: center; }
+
+body main.newdrink input:focus, body main.newdrink input:hover, body main.newdrink input:focus-visible, body main.newdrink input:focus-within {
+  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa;
+  outline: none; }
+
+body main.newdrink input:-internal-autofill-selected {
+  appearance: menulist-button;
+  background-color: unset !important; }
 
 body main .businessPortal {
   height: 100%;
