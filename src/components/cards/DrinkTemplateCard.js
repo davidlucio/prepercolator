@@ -7,13 +7,14 @@ export default function DrinkTemplateCard({ drink }) {
       <p>
         A {drink.size} ounce {drink.is_steamed ? "Hot " : "Iced "} drink.
       </p>
-      <p>Ingredients:</p>
+      <h6>Ingredients:</h6>
       <ul>
         {drink.ingredient ? (
           drink.ingredient.map((ingredient) => {
             return (
               <li key={ingredient.id}>
-                {ingredient.ingredient_name} {ingredient.ingredient_amount}
+                <span>{ingredient.ingredient_name}</span>
+                <span>{ingredient.ingredient_amount}</span>
               </li>
             );
           })

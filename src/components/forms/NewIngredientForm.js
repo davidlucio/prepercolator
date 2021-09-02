@@ -82,10 +82,10 @@ export default function NewIngredientForm({ updateTable }) {
   return (
     <div className="bpActions">
       <h3>Add a New Ingredient</h3>
-      <div classname="bpForm">
-        <form>
-          <label>
-            <label>
+      <div>
+        <form className="bpForm">
+          <label className="newTypeLabel">
+            <p>
               New Type?
               <input
                 name="newExisting"
@@ -94,7 +94,7 @@ export default function NewIngredientForm({ updateTable }) {
                 onChange={handleInputChange}
                 value={newExistingType}
               />
-            </label>
+            </p>
           </label>
           {newExistingType === false ? (
             // User hasn't checked the new type checkbox, so display the select element with our existing types, the values of each being their id,
@@ -134,37 +134,42 @@ export default function NewIngredientForm({ updateTable }) {
             onChange={handleInputChange}
             value={newIngredient.ingredient_name}
           />
-          <label className="bpActionsCbLabel">
-            Tier:
-            <select
-              name="tier"
-              value={newIngredient.tier}
-              onChange={handleInputChange}
-            >
-              <option value={"Base"}>Base</option>
-              <option value={"Main"}>Main</option>
-              <option value={"Flavor"}>Flavor</option>
-              <option value={"Topping"}>Topping</option>
-            </select>
+          <label className="newNameLabel">
+            <p>
+              Tier:
+              <select
+                name="tier"
+                value={newIngredient.tier}
+                onChange={handleInputChange}
+              >
+                <option value={"Base"}>Base</option>
+                <option value={"Main"}>Main</option>
+                <option value={"Flavor"}>Flavor</option>
+                <option value={"Topping"}>Topping</option>
+              </select>
+            </p>
           </label>
-          <label className="bpActionsCbLabel">
-            Vegan:
-            <input
-              className="bpActionsCb"
-              name="isVegan"
-              type="checkbox"
-              checked={newIngredient.is_vegan}
-              onChange={handleInputChange}
-            />
+          <label className="newVeganLabel">
+            <p>
+              Vegan:
+              <input
+                className="bpActionsCb"
+                name="isVegan"
+                type="checkbox"
+                checked={newIngredient.is_vegan}
+                onChange={handleInputChange}
+              />
+            </p>
           </label>
-          <label className="bpActionsCbLabel">
-            Price per Unit:
+          <label className="newPriceLabel">
+            <p>Price per Unit:</p>
             <input
               className="bpActionsCb"
               name="pricePerUnit"
               type="number"
               value={newIngredient.price_per_unit}
               onChange={handleInputChange}
+              placeholder={0.0}
             />
           </label>
           <button
