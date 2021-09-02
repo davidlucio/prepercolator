@@ -101,6 +101,36 @@ body header nav {
   border-radius: 400px 0px 0px 0px / 100% 0px 0px 0px;
   box-shadow: inset 7px 14px 15px -10px black; }
 
+body header nav ul {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+body header nav ul li {
+  margin: 0 5px; }
+
+body header nav ul li a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 3px; }
+
+body header nav ul li a:hover {
+  opacity: 0.5; }
+
+body header nav ul li button {
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 3px; }
+
+body header nav ul li button:hover {
+  opacity: 0.5;
+  cursor: pointer; }
+
 body main {
   display: block;
   position: relative;

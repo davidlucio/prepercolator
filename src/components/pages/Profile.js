@@ -28,12 +28,14 @@ export default function Profile({ user }) {
       <main>
         <div className="profile">
           <h2>{user.username}'s Profile</h2>
-          {usersDrinks
-            ? usersDrinks.map((drink) => {
-                return <DrinkTemplateCard key={drink.id} drink={drink} />;
-              })
-            : null}
-          {/* ADD DRINK CARDS HERE */}
+          <h3>Saved Drinks</h3>
+          {usersDrinks ? (
+            usersDrinks.map((drink) => {
+              return <DrinkTemplateCard key={drink.id} drink={drink} />;
+            })
+          ) : (
+            <>Loading...</>
+          )}
           <Settings user={user} />
         </div>
       </main>

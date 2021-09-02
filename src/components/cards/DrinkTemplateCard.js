@@ -16,8 +16,8 @@ export default function DrinkTemplateCard({ drink }) {
                 <li key={ingredient.id}>
                   <span>{ingredient.ingredient_name}</span>
                   <span>
-                    {ingredient.drinkIngredients.amount}
-                    {/* {ingredient.type.units} */}
+                    {ingredient.drinkIngredients.amount}{" "}
+                    {ingredient.type.type_units}
                   </span>
                 </li>
               );
