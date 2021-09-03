@@ -1,0 +1,29 @@
+
+div.card-wrapper{
+    flex: 1 1 70%;
+    min-width: 50%;
+
+    .bpDrinkTemplateCard {
+
+        background-color: rgb(233, 232, 231);
+        border-radius: 25px;
+        margin: 1rem auto;
+        max-width: 500px;
+        padding: 1rem 0;
+        z-index: 2;
+
+        p {
+            text-align: center;
+            margin: 5px 5px;
+        }
+        ul {
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+/* Ingredient Vars */
+$color_base: radial-gradient(
+    #2e1f15 0%,
+    #2e1f15 50%,
+    #000000 100%);
+$height_base: 60%;
+
+$color_main: radial-gradient(
+    #ffffff 0%,
+    #ffffff 50%,
+    #000000 100%);
+$height_main: 12%;
+
+$color_flavor: radial-gradient(
+    #661133 0%,
+    #661133 50%,
+    #000000 100%);
+$height_flavor: 10%;
+
+$color_topping: radial-gradient(
+    #90d6d6 0%,
+    #90d6d6 50%,
+    #000000 100%);
+$height_topping: 8%;
+
+div.ingredient {
+    display: flex;
+    align-items: center;        // Horizontal
+    justify-content: center;    // Vertical
+
+    width: 100%;
+    min-height: 10%;
+    margin-top: -10px;
+    padding-top: 0px;
+
+    border-bottom-left-radius: $cup_curve;
+    border-bottom-right-radius: $cup_curve;
+    color: $font-white;
+    overflow: hidden;
+    
+    &.base{
+        height: $height_base;
+        background: $color_base;
+    }
+    &.main{
+        height: $height_main;
+        background: $color_main;
+        color: $font-black;
+    }
+    &.flavor{
+        height: $height_flavor;
+        background: $color_flavor;
+    }
+    &.topping{
+        height: $height_topping;
+        background: $color_topping;
+    }
+
+    span{
+        margin-top:7px;
+        font-size: 80%;
+        position:relative;
+        cursor: default;
+    }
+
+}

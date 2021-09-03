@@ -3,9 +3,9 @@ import React from "react";
 export default function Settings({ user }) {
   return (
     <div className="settings">
-      <h1 style={{ fontSize: "2rem" }}>Settings</h1>
+      <h3>Settings</h3>
       <div className="userAvatar">
-        <h1>{user.username}</h1>
+        <h4>Username: <span className="username">{user.username}</span></h4>
       </div>
       <ul className="userOptions">
         <li>Update Email</li>

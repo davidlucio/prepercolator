@@ -166,6 +166,10 @@ body main {
   padding-bottom: 100px;
   margin: 0px auto 0px auto; }
 
+body main span.username {
+  text-transform: capitalize;
+  color: #00aabb; }
+
 body main.login-page {
   display: flex;
   flex-direction: column;
@@ -841,6 +845,188 @@ body main.newdrink .drink-mod-block button:disabled {
     top: unset;
     bottom: 125px; } }
 
+body main .profile h1, body main .profile h2, body main .profile h3, body main .profile h4, body main .profile h5, body main .profile h6 {
+  text-align: center;
+  margin-bottom: 10px; }
+
+body main .profile h2 {
+  font-size: 2rem; }
+
+body main .profile h3 {
+  color: #4800aa; }
+
+body main .profile h4 {
+  font-size: 1.5rem;
+  margin: 0px; }
+
+body main .profile .settings {
+  padding: 1rem;
+  border-top: 1px solid grey; }
+
+body main .profile .settings .userAvatar {
+  display: flex; }
+
+body main .profile .settings .userAvatar img {
+  display: none; }
+
+body main .profile .settings .userAvatar h1 {
+  font-size: 1.5rem; }
+
+body main .profile .settings ul {
+  display: none; }
+
+body main .profile .settings ul li {
+  padding: 5px; }
+
+body main .profile div.display-drink-details {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: flex-end; }
+
+body main .profile div.display-drink-details .cup-holder {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 50%;
+  margin: 10px;
+  padding: 20px; }
+
+body main .profile div.display-drink-details .cup-holder p.error {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  padding: 5px 0px 0px 0px;
+  border-radius: 50%;
+  background: #ad0c0c;
+  color: white;
+  text-align: center;
+  font-weight: 400; }
+
+body main .profile div.display-drink-details .cup-holder .my-cup {
+  display: flex;
+  position: relative;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 17px 0px 5px;
+  background: linear-gradient(121deg, #E0DDB0 0%, #E0DDB0 41%, #000000 100%);
+  border-bottom-left-radius: 100% 32px;
+  border-bottom-right-radius: 100% 32px;
+  box-shadow: 0px 20px 15px -23px black;
+  transition: height .5s ease, width .5s ease;
+  /* Ingredient Vars */ }
+
+body main .profile div.display-drink-details .cup-holder .my-cup.cup-8oz {
+  height: 230px;
+  width: 160px; }
+
+body main .profile div.display-drink-details .cup-holder .my-cup.cup-12oz {
+  height: 260px;
+  width: 175px; }
+
+body main .profile div.display-drink-details .cup-holder .my-cup.cup-16oz {
+  height: 300px;
+  width: 175px; }
+
+body main .profile div.display-drink-details .cup-holder .my-cup::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: calc(100% - 15px);
+  width: 20%;
+  top: 7px;
+  left: -13%;
+  background-color: #FFFFFF;
+  transform: skewX(3deg); }
+
+body main .profile div.display-drink-details .cup-holder .my-cup::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  height: calc(100% - 7px);
+  width: 20%;
+  top: 7px;
+  right: -13%;
+  background-color: #FFFFFF;
+  transform: skewX(-3deg); }
+
+body main .profile div.display-drink-details .cup-holder .my-cup div.ingredient {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 10%;
+  margin-top: -10px;
+  padding-top: 0px;
+  border-bottom-left-radius: 100% 32px;
+  border-bottom-right-radius: 100% 32px;
+  color: #FFFFFF;
+  overflow: hidden; }
+
+body main .profile div.display-drink-details .cup-holder .my-cup div.ingredient.base {
+  height: 60%;
+  background: radial-gradient(#2e1f15 0%, #2e1f15 50%, #000000 100%); }
+
+body main .profile div.display-drink-details .cup-holder .my-cup div.ingredient.main {
+  height: 12%;
+  background: radial-gradient(#ffffff 0%, #ffffff 50%, #000000 100%);
+  color: #000000; }
+
+body main .profile div.display-drink-details .cup-holder .my-cup div.ingredient.flavor {
+  height: 10%;
+  background: radial-gradient(#661133 0%, #661133 50%, #000000 100%); }
+
+body main .profile div.display-drink-details .cup-holder .my-cup div.ingredient.topping {
+  height: 8%;
+  background: radial-gradient(#90d6d6 0%, #90d6d6 50%, #000000 100%); }
+
+body main .profile div.display-drink-details .cup-holder .my-cup div.ingredient span {
+  margin-top: 7px;
+  font-size: 80%;
+  position: relative;
+  cursor: default; }
+
+body main .profile div.display-drink-details .cup-holder h3 {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center; }
+
+@media screen and (max-width: 480px) {
+  body main .profile div.display-drink-details .cup-holder {
+    display: none; } }
+
+body main .profile div.display-drink-details div.card-wrapper {
+  flex: 1 1 70%;
+  min-width: 50%; }
+
+body main .profile div.display-drink-details div.card-wrapper .bpDrinkTemplateCard {
+  background-color: #e9e8e7;
+  border-radius: 25px;
+  margin: 1rem auto;
+  max-width: 500px;
+  padding: 1rem 0;
+  z-index: 2; }
+
+body main .profile div.display-drink-details div.card-wrapper .bpDrinkTemplateCard p {
+  text-align: center;
+  margin: 5px 5px; }
+
+body main .profile div.display-drink-details div.card-wrapper .bpDrinkTemplateCard ul {
+  width: 80%;
+  margin: 0 auto; }
+
+body main .profile div.display-drink-details div.card-wrapper .bpDrinkTemplateCard ul li {
+  display: flex;
+  justify-content: space-between; }
+
 body main .businessPortal {
   height: 100%;
   width: 100%;
@@ -1032,57 +1218,6 @@ body main .orderCard div form button {
 body main .orderCard div form button:hover {
   opacity: 0.8;
   transform: scale(0.95); }
-
-body main .profile h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem; }
-
-body main .profile .settings {
-  padding: 1rem;
-  border-top: 1px solid grey; }
-
-body main .profile .settings .userAvatar {
-  display: flex; }
-
-body main .profile .settings .userAvatar img {
-  display: none; }
-
-body main .profile .settings .userAvatar h1 {
-  font-size: 1.5rem;
-  margin: 1rem; }
-
-body main .profile .settings ul {
-  display: flex; }
-
-body main .profile .settings ul li {
-  padding: 5px; }
-
-body main .profile .bpDrinkTemplateCard {
-  background-color: #e9e8e7;
-  border-radius: 25px;
-  margin: 1rem auto;
-  max-width: 70%;
-  padding: 1rem 0; }
-
-body main .profile .bpDrinkTemplateCard h5 {
-  text-align: center;
-  margin: 5px; }
-
-body main .profile .bpDrinkTemplateCard p {
-  text-align: center;
-  margin: 5px; }
-
-body main .profile .bpDrinkTemplateCard h6 {
-  margin-left: 20%;
-  margin-bottom: 5px; }
-
-body main .profile .bpDrinkTemplateCard ul {
-  width: 50%;
-  margin: 0 auto; }
-
-body main .profile .bpDrinkTemplateCard ul li {
-  display: flex;
-  justify-content: space-between; }
 
 body footer {
   display: block;
