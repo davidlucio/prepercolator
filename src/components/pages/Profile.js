@@ -16,11 +16,12 @@ export default function Profile({ user }) {
     if (!user.username) {
       history.push("/login");
     }
-    let token = localStorage.getItem("token");
-    API.getUserDrinks(token).then((res) => {
-      console.log(res.data);
+    async function getData() {
+      let token = localStorage.getItem("token");
+      let res = await API.getUserDrinks(token);
       setUsersDrinks(res.data);
-    });
+    }
+    getData();
   }, []);
   return (
     <>
@@ -34,7 +35,7 @@ export default function Profile({ user }) {
               return <DrinkTemplateCard key={drink.id} drink={drink} />;
             })
           ) : (
-            <>Loading...</>
+            <div>Loading...</div>
           )}
           <Settings user={user} />
         </div>
