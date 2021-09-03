@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import API from "../utils/API";
 
 export default function UserCurrentCup({ cupSize, setCupSize, drinkIngredients, setDrinkIngredients, drinkIngredientsAmnt, setDrinkIngredientsAmnt}) {
@@ -30,13 +31,17 @@ export default function UserCurrentCup({ cupSize, setCupSize, drinkIngredients, 
         const tableCopy = [...ingredientTable];
         var ingredient = tableCopy.find( item => { return item.id == ingredient_id; });
         return(
-            <div className={`ingredient ${ ingredient.tier }`}
-                 key={ `cupcontent-${ingredient_id}-${number}`}
+            <CSSTransition
+                classNames="pour-in"
+                key={ `cupcontent-${ingredient_id}-${number}`}
+                timeout={1000}
             >
-                <span onClick={ (e) => removeFromCup(ingredient_id) }>
-                    {ingredient.ingredient_name}
-                </span>
-            </div>
+                <div className={`ingredient ${ ingredient.tier }`}>
+                    <span onClick={ (e) => removeFromCup(ingredient_id) }>
+                        {ingredient.ingredient_name}
+                    </span>
+                </div>
+            </CSSTransition>
         )
     }
 
@@ -67,10 +72,10 @@ export default function UserCurrentCup({ cupSize, setCupSize, drinkIngredients, 
 
     return (
         <section className="cup-holder">
-            <div className={`my-cup cup-${cupSize}oz`}>
+            <TransitionGroup className={`my-cup cup-${cupSize}oz`}>
                 { cupdate() }
-            </div>
-
+            </TransitionGroup >
+                
             {/** CHANGE CUP SIZE **/}
         </section>
     );

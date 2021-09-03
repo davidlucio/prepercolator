@@ -3,18 +3,27 @@ $color_base: radial-gradient(
     #2e1f15 0%,
     #2e1f15 50%,
     #000000 100%);
+$height_base: 60%;
+
 $color_main: radial-gradient(
     #ffffff 0%,
     #ffffff 50%,
     #000000 100%);
+$height_main: 12%;
+
 $color_flavor: radial-gradient(
     #661133 0%,
     #661133 50%,
     #000000 100%);
+$height_flavor: 10%;
+
 $color_topping: radial-gradient(
     #90d6d6 0%,
     #90d6d6 50%,
     #000000 100%);
+$height_topping: 8%;
+
+
 
 /* Inherited Vars */
 // $cup_curve
@@ -32,23 +41,28 @@ div.ingredient {
     border-bottom-left-radius: $cup_curve;
     border-bottom-right-radius: $cup_curve;
     color: $font-white;
+    overflow: hidden;
     
     &.base{
-        height: 50%;
+        height: $height_base;
         background: $color_base;
+        @include pourin($height_base);
     }
     &.main{
-        height: 15%;
+        height: $height_main;
         background: $color_main;
         color: $font-black;
+        @include pourin($height_main);
     }
     &.flavor{
-        height: 10%;
+        height: $height_flavor;
         background: $color_flavor;
+        @include pourin($height_flavor);
     }
     &.topping{
-        height: 7%;
+        height: $height_topping;
         background: $color_topping;
+        @include pourin($height_topping);
     }
 
     // Percentage based heights for dynamic calculations

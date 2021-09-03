@@ -88,22 +88,26 @@ body header {
   height: 150px;
   margin-bottom: 0px; }
 
-body header img.logo {
+body header a.logo {
   display: block;
   position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 1;
+  z-index: 99;
   width: 120px;
   height: 120px;
-  background-color: #00aabb;
   border-radius: 50% 50% 50% 50%;
+  background: #00aabb url("../images/logo_bold.png") no-repeat center/cover;
   box-shadow: 5px 10px 8px -5px black; }
+
+body header a.logo:hover, body header a.logo:focus {
+  background: #00aabb url("../images/logo_bold_white.png") no-repeat center/cover; }
 
 body header nav {
   display: block;
   position: relative;
   top: 2px;
+  z-index: 4;
   width: 100%;
   height: 100%;
   padding: 35px 15px 15px 150px;
@@ -123,7 +127,8 @@ body header nav ul li {
   margin: 3px;
   text-align: center;
   font-family: "Medula One", cursive;
-  font-size: 160%; }
+  font-size: 160%;
+  flex: 1 1 60px; }
 
 body header nav ul li a, body header nav ul li button {
   display: flex;
@@ -131,16 +136,27 @@ body header nav ul li a, body header nav ul li button {
   justify-content: center;
   align-items: center;
   height: 35px;
-  width: 80px;
+  width: 100%;
+  min-width: 60px;
   background: #412919;
   color: #FFFFFF;
+  white-space: nowrap;
   text-decoration: none;
   border-radius: 10px;
-  padding: 3px; }
+  padding: 3px;
+  box-shadow: 5px 5px 7px 0px black; }
 
 body header nav ul li a:hover, body header nav ul li a:focus, body header nav ul li button:hover, body header nav ul li button:focus {
-  opacity: 0.5;
+  background: #4800aa;
   cursor: pointer; }
+
+@media screen and (max-width: 480px) {
+  body header nav ul li {
+    font-size: 140%; } }
+
+@media screen and (min-width: 800px) {
+  body header nav ul li a, body header nav ul li button {
+    height: 70px; } }
 
 body main {
   display: block;
@@ -282,6 +298,8 @@ body main.landing-page a:-internal-autofill-selected {
   background-color: unset !important; }
 
 body main.newdrink {
+  display: flex;
+  min-height: 620px;
   /** Wonky Shit **/ }
 
 body main.newdrink .cup-holder {
@@ -289,7 +307,8 @@ body main.newdrink .cup-holder {
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: flex-end; }
+  align-items: flex-end;
+  align-self: flex-end; }
 
 body main.newdrink .cup-holder .my-cup {
   display: flex;
@@ -321,6 +340,7 @@ body main.newdrink .cup-holder .my-cup.cup-16oz {
 body main.newdrink .cup-holder .my-cup::before {
   content: "";
   position: absolute;
+  z-index: 1;
   height: calc(100% - 15px);
   width: 20%;
   top: 15px;
@@ -331,6 +351,7 @@ body main.newdrink .cup-holder .my-cup::before {
 body main.newdrink .cup-holder .my-cup::after {
   content: "";
   position: absolute;
+  z-index: 1;
   height: calc(100% - 15px);
   width: 20%;
   top: 15px;
@@ -348,24 +369,113 @@ body main.newdrink .cup-holder .my-cup div.ingredient {
   padding-top: 5px;
   border-bottom-left-radius: 100% 32px;
   border-bottom-right-radius: 100% 32px;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  overflow: hidden; }
 
 body main.newdrink .cup-holder .my-cup div.ingredient.base {
-  height: 50%;
+  height: 60%;
   background: radial-gradient(#2e1f15 0%, #2e1f15 50%, #000000 100%); }
 
+body main.newdrink .cup-holder .my-cup div.ingredient.base.pour-in-enter {
+  min-height: unset;
+  height: 10px; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.base.pour-in-enter-active {
+  height: 60%;
+  transition: height 1s ease-out; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.base.pour-in-exit {
+  min-height: unset;
+  height: 60%; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.base.pour-in-exit span {
+  display: none; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.base.pour-in-exit-active {
+  height: 10px;
+  transition: height 1s ease; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.base.pour-in-exit-active span {
+  display: none; }
+
 body main.newdrink .cup-holder .my-cup div.ingredient.main {
-  height: 15%;
+  height: 12%;
   background: radial-gradient(#ffffff 0%, #ffffff 50%, #000000 100%);
   color: #000000; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.main.pour-in-enter {
+  min-height: unset;
+  height: 10px; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.main.pour-in-enter-active {
+  height: 12%;
+  transition: height 1s ease-out; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.main.pour-in-exit {
+  min-height: unset;
+  height: 12%; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.main.pour-in-exit span {
+  display: none; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.main.pour-in-exit-active {
+  height: 10px;
+  transition: height 1s ease; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.main.pour-in-exit-active span {
+  display: none; }
 
 body main.newdrink .cup-holder .my-cup div.ingredient.flavor {
   height: 10%;
   background: radial-gradient(#661133 0%, #661133 50%, #000000 100%); }
 
+body main.newdrink .cup-holder .my-cup div.ingredient.flavor.pour-in-enter {
+  min-height: unset;
+  height: 10px; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.flavor.pour-in-enter-active {
+  height: 10%;
+  transition: height 1s ease-out; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.flavor.pour-in-exit {
+  min-height: unset;
+  height: 10%; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.flavor.pour-in-exit span {
+  display: none; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.flavor.pour-in-exit-active {
+  height: 10px;
+  transition: height 1s ease; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.flavor.pour-in-exit-active span {
+  display: none; }
+
 body main.newdrink .cup-holder .my-cup div.ingredient.topping {
-  height: 7%;
+  height: 8%;
   background: radial-gradient(#90d6d6 0%, #90d6d6 50%, #000000 100%); }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.topping.pour-in-enter {
+  min-height: unset;
+  height: 10px; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.topping.pour-in-enter-active {
+  height: 8%;
+  transition: height 1s ease-out; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.topping.pour-in-exit {
+  min-height: unset;
+  height: 8%; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.topping.pour-in-exit span {
+  display: none; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.topping.pour-in-exit-active {
+  height: 10px;
+  transition: height 1s ease; }
+
+body main.newdrink .cup-holder .my-cup div.ingredient.topping.pour-in-exit-active span {
+  display: none; }
 
 body main.newdrink .cup-holder .my-cup div.ingredient.percent-10 {
   height: 10%; }
@@ -687,7 +797,9 @@ body main.newdrink .drink-mod-block {
   display: block;
   position: absolute;
   right: 15px;
-  top: 15px; }
+  top: 15px;
+  z-index: 5;
+  transition: top .5s ease, bottom .5s ease; }
 
 body main.newdrink .drink-mod-block button {
   display: block;
@@ -699,7 +811,8 @@ body main.newdrink .drink-mod-block button {
   border-radius: 50%;
   background-color: #00aabb;
   font-size: 190%;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  box-shadow: 5px 5px 7px 0px black; }
 
 body main.newdrink .drink-mod-block button.drink-save:after {
   font-family: "Font Awesome 6 Pro";
@@ -717,13 +830,16 @@ body main.newdrink .drink-mod-block button.drink-size-decrease:after {
   content: '\f13a'; }
 
 body main.newdrink .drink-mod-block button:hover, body main.newdrink .drink-mod-block button:focus {
-  box-shadow: 3px 3px 5px 0px #4800aa, 3px -3px 5px 0px #4800aa, -3px 3px 5px 0px #4800aa, -3px -3px 5px 0px #4800aa; }
+  background: #4800aa; }
 
 body main.newdrink .drink-mod-block button:disabled {
-  background: #555555; }
-
-body main.newdrink .drink-mod-block button:disabled:hover, body main.newdrink .drink-mod-block button:disabled:focus {
+  background: #555555;
   box-shadow: none; }
+
+@media screen and (max-width: 480px) {
+  body main.newdrink .drink-mod-block {
+    top: unset;
+    bottom: 125px; } }
 
 body main .businessPortal {
   height: 100%;

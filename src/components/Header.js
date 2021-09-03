@@ -13,8 +13,10 @@ export default function Header({ user }) {
     };
     return (
         <header>
-            <Link to="/">
+            <Link to="/" className="logo">
+                {/****}
                 <img className="logo" src={Logo} alt="Prepercolator Logo" />
+                {/***/}
             </Link>
             
             <nav>

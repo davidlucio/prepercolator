@@ -121,3 +121,33 @@
     }
 
 }
+
+@mixin pourin($fillheight){
+
+    &.pour-in-enter{
+        min-height: unset;
+        height: 10px;
+    }
+    
+    &.pour-in-enter-active{
+        height: $fillheight;
+        transition: height 1s ease-out;
+    }
+
+    &.pour-in-exit{
+        min-height: unset;
+        height: $fillheight;
+        span{
+            display:none;
+        }
+    }
+    
+    &.pour-in-exit-active{
+        height: 10px;
+        transition: height 1s ease;
+        span{
+            display:none;
+        }
+    }
+
+}
