@@ -27,6 +27,7 @@ export default function OrderCard({ user, order, setOrder }) {
     });
     console.log("NEW DRINK ADDED FROM USER.DRINKS");
     setOrder(updatedOrder);
+    window.alert("Drink Added!");
     localStorage.setItem("currentOrder", order);
   };
   const sendOrder = (e) => {
