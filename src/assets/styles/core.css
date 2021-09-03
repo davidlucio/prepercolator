@@ -253,6 +253,13 @@ body main.login-page div.login-window button:-internal-autofill-selected {
   appearance: menulist-button;
   background-color: unset !important; }
 
+body main.login-page div.login-window button a {
+  text-decoration: none;
+  color: white; }
+
+body main.login-page div.login-window button a:hover, body main.login-page div.login-window button a:focus {
+  color: #4800aa; }
+
 body main.landing-page {
   display: flex;
   flex-direction: column;
@@ -1005,7 +1012,9 @@ body main .profile div.display-drink-details .cup-holder h3 {
 
 body main .profile div.display-drink-details div.card-wrapper {
   flex: 1 1 70%;
-  min-width: 50%; }
+  min-width: 50%;
+  max-height: 500px;
+  overflow: scroll; }
 
 body main .profile div.display-drink-details div.card-wrapper .bpDrinkTemplateCard {
   background-color: #e9e8e7;
@@ -1171,7 +1180,7 @@ body main .orderCard ul li {
   justify-content: space-evenly; }
 
 body main .orderCard ul li span {
-  width: fit-content; }
+  width: 30%; }
 
 body main .orderCard ul li button {
   font-size: 1.3rem;

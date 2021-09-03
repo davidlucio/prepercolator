@@ -18,11 +18,12 @@ export default function Profile({ user }) {
         if (!user.username) {
             history.push("/login");
         }
-        let token = localStorage.getItem("token");
-        API.getUserDrinks(token).then((res) => {
-            // console.log(res.data);
+        async function getData() {
+            let token = localStorage.getItem("token");
+            let res = await API.getUserDrinks(token);
             setUsersDrinks(res.data);
-        });
+        }
+        getData();
     }, []);
     return (
         <>
@@ -35,16 +36,16 @@ export default function Profile({ user }) {
                         <div className="card-wrapper">
                             {usersDrinks ? (
                                 usersDrinks.map((drink) => {
-                                    return <DrinkTemplateCard key={drink.id} 
-                                    drink={drink}
-                                    currentDrink={currentDrink}
-                                    setCurrentDrink={setCurrentDrink} />;
+                                    return <DrinkTemplateCard key={drink.id}
+                                        drink={drink}
+                                        currentDrink={currentDrink}
+                                        setCurrentDrink={setCurrentDrink} />;
                                 })
                             ) : (
                                 <>Loading...</>
                             )}
                         </div>
-                        <ProfileCupCard 
+                        <ProfileCupCard
                             usersDrinks={usersDrinks}
                             currentDrink={currentDrink}
                         />

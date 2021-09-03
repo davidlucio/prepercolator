@@ -3,7 +3,7 @@ import { useHistory, Link } from "react-router-dom";
 import API from "../utils/API";
 import Footer from "../Footer";
 
-export default function Login(props) {
+export default function CreateAccount(props) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,14 +29,14 @@ export default function Login(props) {
         break;
     }
   };
-  const handleLogin = async (e) => {
+  const handleCreate = async (e) => {
     e.preventDefault();
-    let loginUser = {
+    let createUser = {
       username: username,
       email: email,
       password: password,
     };
-    const res = await API.login(loginUser);
+    const res = await API.signUp(createUser);
     const user = res.data;
     if (user !== undefined) {
       localStorage.setItem("token", user.token);
@@ -44,7 +44,7 @@ export default function Login(props) {
       props.setUser(user.user);
       history.push("/");
     } else {
-      return <div>Incorrect Username, email or password</div>;
+      return <div>Something went wrong</div>;
     }
     setPassword("");
     setEmail("");
@@ -59,7 +59,7 @@ export default function Login(props) {
             src="../assets/images/logo_bold_white.png"
           ></img>
           <h1>Welcome to Prepercolator!</h1>
-          <h3>Please Login</h3>
+          <h3>Create Account</h3>
           <div>
             <input
               name="username"
@@ -68,17 +68,17 @@ export default function Login(props) {
               onChange={handleChange}
               placeholder="Username"
             />
-            {/** }
-                        <input
-                            name="email"
-                            type="email"
-                            value={email}
-                            onChange={handleChange}
-                            placeholder="Email"
-                            required autocomplete="on"
-                            autocompletetype="email"
+
+            <input
+                name="email"
+                type="email"
+                value={email}
+                onChange={handleChange}
+                placeholder="Email"
+                required autocomplete="on"
+                autocompletetype="email"
                         />
-                        { /**/}
+
             <input
               name="password"
               type="password"
@@ -87,12 +87,12 @@ export default function Login(props) {
               placeholder="Password"
             />
           </div>
-          <button type="submit" name="login" onClick={handleLogin}>
-            Login
+          <button type="submit" name="login" onClick={handleCreate}>
+            Create Account
           </button>
           <h3>or</h3>
           <button type="submit">
-          <Link id="createUserLink"to="/createaccount">Create Account</Link>
+          <Link id="createUserLink"to="/login">Login</Link>
           </button>
         </div>
       </main>

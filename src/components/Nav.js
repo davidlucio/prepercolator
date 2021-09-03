@@ -15,6 +15,7 @@ import SavedDrinks from "./pages/SavedDrinks";
 import Drink from "./pages/Drink";
 import OrderHistory from "./pages/OrderHistory";
 import Order from "./pages/Order";
+import CreateAccount from "./pages/CreateAccount";
 
 import "../assets/styles/core.css";
 
@@ -58,6 +59,9 @@ export default function Nav() {
                     </Route>
                     <Route path="/user/profile">
                         <Profile user={user} setUser={setUser} />
+                    </Route>
+                    <Route path="/createaccount">
+                        <CreateAccount user={user} setUser={setUser} />
                     </Route>
                 </Switch>
             </Router>

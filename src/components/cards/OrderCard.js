@@ -5,11 +5,16 @@ import API from "../utils/API";
 export default function OrderCard({ user, order, setOrder }) {
     const [drinkToAdd, setDrinkToAdd] = useState(1);
     const [runningPrice, setRunningPrice] = useState(0.0);
+    const [drinks, setDrinks] = useState({
+        id: 0,
+        drink_name: "loading...",
+    });
 
     const handleSelect = (e) => {
         e.preventDefault();
         setDrinkToAdd(e.target.value);
     };
+
     const addDrink = async (e) => {
         e.preventDefault();
         console.log(`ID OF ITEM TO ADD: ${drinkToAdd}`);
@@ -17,14 +22,16 @@ export default function OrderCard({ user, order, setOrder }) {
         console.log("OLD ORDER:");
         console.log(updatedOrder);
         user.drinks.forEach((element) => {
-            if (element.id === drinkToAdd) {
+            if (element.id == drinkToAdd) {
                 updatedOrder.push(element);
             }
         });
         console.log("NEW DRINK ADDED FROM USER.DRINKS");
         setOrder(updatedOrder);
+        window.alert("Drink Added!");
         localStorage.setItem("currentOrder", order);
     };
+
     const sendOrder = (e) => {
         e.preventDefault();
         if (e.target.name === "sendOrder") {
@@ -34,23 +41,35 @@ export default function OrderCard({ user, order, setOrder }) {
                 drinks: order,
             };
             console.log(orderToAdd);
+            if (orderToAdd.drinks.length === 0) {
+                window.alert("Looks like your order is empty..");
+                return;
+            }
             API.addOrder(orderToAdd).then((res) => {
                 if (res.status !== 200) {
                     return <>ERROR SENDING NEW ORDER</>;
                 } else {
-                    return <>ORDER ADDED TO ORDERHISTORY</>;
+                    window.alert("Your order has been submitted!");
+                    setOrder([]);
+                    return;
                 }
             });
         }
-    };
+    }
 
-    useEffect(async () => {
+    useEffect(() => {
         let sum = 0;
         order.forEach((item) => {
             sum += item.price;
         });
+        sum = sum.toFixed(2);
         setRunningPrice(sum);
-    }, []);
+        async function getDrinks() {
+            let token = localStorage.getItem("token");
+            let res = await API.getUserDrinks(token);
+            setDrinks(res.data);
+        }
+    }, [order]);
 
     return (
         <div className="orderCard">
