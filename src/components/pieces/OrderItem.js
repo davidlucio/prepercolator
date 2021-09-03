@@ -11,7 +11,7 @@ export default function OrderItem({ item, order, setOrder, index }) {
   return (
     <li style={{ display: "flex", justifyContent: "space-evenly" }}>
       <span>{item?.drink_name}</span>
-      <span>${item?.price}</span>
+      <span>${item?.price.toFixed(2)}</span>
       <button value={index} onClick={removeDrink}>
         x
       </button>

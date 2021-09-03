@@ -49,6 +49,7 @@ export default function OrderCard({ user, order, setOrder }) {
     order.forEach((item) => {
       sum += item.price;
     });
+    sum = sum.toFixed(2)
     setRunningPrice(sum);
   });
 
