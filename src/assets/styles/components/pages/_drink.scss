@@ -9,6 +9,8 @@ $color_cup: linear-gradient(121deg,
 #000000 100%);
 
 &.newdrink{
+    display: flex;
+    min-height: 620px;
 
     @import "../cards/_cup.scss";
     @import "../cards/_ingredientMenu.scss";
@@ -29,6 +31,9 @@ $color_cup: linear-gradient(121deg,
         position:absolute;
         right:15px;
         top: 15px;
+        z-index: 5;
+
+        transition: top .5s ease, bottom .5s ease;
 
         button{
             display: block;
@@ -42,6 +47,7 @@ $color_cup: linear-gradient(121deg,
             font-size: 190%;
             color: $font-white;
             
+            @include shadow(bottomright);
 
             &.drink-save{
                 &:after{
@@ -62,15 +68,20 @@ $color_cup: linear-gradient(121deg,
             }
 
             &:hover, &:focus{
-                @include shadow(input);
+                background: $color-primary3;
             }
 
             &:disabled{
                 background: $font-grey;
-                &:hover, &:focus{
-                    box-shadow: none;
-                }
+                box-shadow: none;
             }
+        }
+    }
+
+    @media screen and (max-width: $breakpoint_mobile){
+        .drink-mod-block{
+            top: unset;
+            bottom: 125px;
         }
     }
 

@@ -12,7 +12,7 @@ section.ingredientList{
     z-index:50;
 
     width: 300px;
-    height: 500px;
+    height: 450px;
     padding: 0px 0px 0px $fromedge;
     overflow: hidden;
 
@@ -20,7 +20,7 @@ section.ingredientList{
     border-radius: 30px;
 
     @include shadow(bottomright);
-    transition: left .5s;
+    transition: left 1s ease, width .5s ease;
 
     .anti-scroll{
         width: 100%;
@@ -58,6 +58,7 @@ section.ingredientList{
             padding: 8px 0px 8px 35px;
             margin-bottom: 10px;
             font-weight: 600;
+            white-space: nowrap;
 
             &.ingredient-bean-0{ @include funBullets('bean','0');}
             &.ingredient-bean-1{ @include funBullets('bean','1');}
@@ -123,16 +124,25 @@ section.ingredientList{
     }
 }
 
+
 @media screen and (min-width: $breakpoint_medium){
     section.ingredientList{
         left: -10%;
     }
 }
 
+/** Wonky Shit **/
+@media screen and (max-width: 949px) and (min-width: 500px){
+    section.ingredientList{
+        width: 250px;
+    }
+}
+
 @media screen and (max-width: $breakpoint_small){
     section.ingredientList{
+        width: 250px;
         border-radius: 0px 30px 30px 0px;
-        left: -275px;
+        left: -225px;
 
         ul{
             padding-right: 30px;
@@ -140,10 +150,6 @@ section.ingredientList{
 
         &:hover, &:focus{
             left: -3px;
-
-            ul{
-                padding-right: 10px;
-            }
         }
     }
 }

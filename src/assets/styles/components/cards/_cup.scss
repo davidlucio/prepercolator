@@ -4,6 +4,7 @@
     height: 100%;
     justify-content: center;
     align-items: flex-end;
+    align-self: flex-end;
 
     .my-cup{
 
@@ -34,10 +35,13 @@
             width: 300px;
         }
 
+        transition: height .5s ease, width .5s ease;
+
         // Left side skew
         &::before{
             content: "";
             position: absolute;
+            z-index: 1;
             height: calc(100% - #{$cup_lip});
             width: 20%;
             top: $cup_lip;
@@ -48,6 +52,7 @@
         &::after{
             content: "";
             position: absolute;
+            z-index: 1;
             height: calc(100% - #{$cup_lip});
             width: 20%;
             top: $cup_lip;
