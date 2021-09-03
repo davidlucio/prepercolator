@@ -88,6 +88,7 @@ export default function Drink({ user }) {
       is_steamed: false,
       userId: user.id,
     };
+    // This is a problem! It's alerting several times...
     drinkToSave.ingredients.forEach((ingredient) => {
       if (ingredient.is_vegan === false) {
         drinkToSave.is_vegan = false;
@@ -100,14 +101,17 @@ export default function Drink({ user }) {
         drinkToSave.is_vegan = true;
         // OBJ VARIENT
         if (drinkToSave.drink_name.length === 0) {
-          window.alert("You forgot to name your drink!");
+          // window.alert("You forgot to name your drink!");
+          console.log("You forgot to name your drink!");
           return;
         }
         setNewDrink({
           ...newDrink,
           is_vegan: true,
         });
-        window.alert("Drink Saved!");
+
+        //window.alert("Drink Saved!");
+        console.log("Drink Saved!");
       }
     });
 
