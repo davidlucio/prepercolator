@@ -34,6 +34,8 @@
             width: 300px;
         }
 
+        transition: height .5s ease, width .5s ease;
+
         // Left side skew
         &::before{
             content: "";
