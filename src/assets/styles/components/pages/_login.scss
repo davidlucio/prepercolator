@@ -50,6 +50,13 @@
 
         button{
             @include prettyfield(button,login);
+            a {text-decoration: none;
+                color:white;
+                &:hover,&:focus {
+                    color: $color-primary3;
+;
+                }
+            }
         }
 
     }
